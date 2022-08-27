@@ -1,0 +1,14 @@
+.copyright {
+   font-size: 1rem;
+   padding: 2rem;
+   text-align: center;
+
+   @media (min-width: 768px) {
+      margin-top: 0;
+   }
+
+   & img {
+      width: 1rem;
+      height: 1rem;
+   }
+}

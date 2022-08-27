@@ -1,0 +1,86 @@
+.logo-container {
+   height: 100%;
+   background: transparent;
+
+   .logo {
+      @include flexBox(row, center, flex-start, 0.3rem);
+      overflow: hidden;
+
+      img {
+         width: 6rem;
+         height: 2.5rem;
+         visibility: hidden;
+         transition: all 500ms ease-in-out;
+
+         @media (min-width: 950px) {
+            width: 12rem;
+            height: 6rem;
+         }
+      }
+
+      .opening-tag {
+         margin-left: -0.5rem;
+      }
+
+      .melvin-text {
+         width: 8rem;
+         height: 1.5rem;
+         margin-left: -14rem;
+
+         @media (max-width: 374px) {
+            display: none;
+         }
+
+         @media (min-width: 950px) {
+            width: 11rem;
+            height: 4rem;
+            margin-left: -22rem;
+         }
+      }
+
+      .portfolio-text {
+         width: 8.5rem;
+         height: 1.5rem;
+         margin-left: -10rem;
+
+         @media (min-width: 950px) {
+            width: 14rem;
+            height: 4rem;
+            margin-left: -14rem;
+         }
+      }
+
+      .closing-tag {
+         overflow: hidden;
+         visibility: visible;
+         margin-left: 1rem;
+         transition: all 500ms ease-in-out;
+
+         @media (max-width: 374px) {
+            margin-left: -4.5rem;
+         }
+
+         @media (min-width: 950px) {
+            margin-left: -1rem;
+         }
+      }
+
+      &:hover .opening-tag {
+         visibility: visible;
+      }
+
+      &:hover .melvin-text {
+         margin-left: unset;
+         visibility: visible;
+      }
+
+      &:hover .portfolio-text {
+         margin-left: 0.5rem;
+         visibility: visible;
+      }
+
+      &:hover .closing-tag {
+         margin-left: unset;
+      }
+   }
+}
