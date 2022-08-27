@@ -1,4 +1,4 @@
-# Hi there, I'm Melvin 👋
+# I'm Melvin 👋
 
 ### A Career Shifter and has a strong desire to become a Full Stack Developer 👨‍💻
 
@@ -87,9 +87,5 @@
 <a href="https://boymelvs.github.io/travel-and-tours/" target="_blank" rel="noreferrer"><img align="center" width="100%" src="https://github-readme-stats.vercel.app/api/pin/?username=boymelvs&repo=travel-and-tours" alt="Travel and Tours Website" /></a>
 
 <a href="https://boymelvs.github.io/pairgo/" target="_blank" rel="noreferrer"><img align="center" width="100%" src="https://github-readme-stats.vercel.app/api/pin/?username=boymelvs&repo=pairgo" alt="Pairgo Website" /></a>
-
-<a href="https://search-photo-app-blond.vercel.app/" target="_blank" rel="noreferrer"><img align="center" width="100%" src="https://github-readme-stats.vercel.app/api/pin/?username=boymelvs&repo=api-unsplash-app" alt="api-unsplash-app Website" /></a>
-
-<a href="https://boymelvs.github.io/online-calculator/" target="_blank" rel="noreferrer"><img align="center" width="100%" src="https://github-readme-stats.vercel.app/api/pin/?username=boymelvs&repo=online-calculator" alt="Online Calculator" /></a>
 
 </div>
