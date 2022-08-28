@@ -5,17 +5,20 @@ import ProjectList from "../component/ProjectList";
 const Projects = () => {
    const [len, setLen] = useState(8);
    const [isActive, setActive] = useState(false);
+   const [result, setResult] = useState([]);
 
-   const sampleProject = [];
+   useEffect(() => {
+      const sampleProject = [];
 
-   for (let i = 0; i < len; i++) {
-      sampleProject.push(ProjectList[i]);
-   }
+      for (let i = 0; i < len; i++) {
+         sampleProject.push(ProjectList[i]);
+      }
 
-   // useEffect(() => {}, [sampleProject, len]);
+      setLen(isActive ? ProjectList.length : 8);
+      setResult(sampleProject);
+   }, [len, isActive]);
 
    const clickHandle = () => {
-      setLen(isActive ? ProjectList.length : 8);
       setActive(!isActive);
    };
 
@@ -32,7 +35,7 @@ const Projects = () => {
 
                <div className="slider">
                   <div className="card-slide">
-                     <Card projectList={sampleProject} />
+                     <Card projectList={result} />
                   </div>
 
                   <div className="see-all" onClick={clickHandle}>

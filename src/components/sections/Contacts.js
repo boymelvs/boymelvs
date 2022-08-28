@@ -1,38 +1,126 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
+import Modal from "./Modal";
 import emailIcon from "../../images/contact/icon-email.svg";
 import locationIcon from "../../images/contact/icon-location.svg";
 import phoneIcon from "../../images/contact/icon-phone.svg";
 import facebook from "../../images/social-media/facebook.svg";
 import github from "../../images/social-media/github.svg";
 import linkedin from "../../images/social-media/linkedin.svg";
+import FormValidation from "../component/FormValidation";
 
 const Contacts = () => {
+   const getForm = useRef();
+   const [contactForm, setContactForm] = useState();
+   const [name, setName] = useState("");
+   const [email, setEmail] = useState("");
+   const [subject, setSubject] = useState("");
+   const [message, setMessage] = useState("");
+   const [showModal, setShowModal] = useState(false);
+   const getUrl = "https://formspree.io/f/xaykywrp";
+   // const getUrl = "https://getform.io/f/09fc1c84-417f-4318-9853-4c0d232a6e51";
+   const method = "post";
+
+   useEffect(() => {
+      setContactForm(getForm);
+   }, []);
+
+   const onInputChange = (e) => {
+      let getId = e.target.id;
+      let value = e.target.value;
+
+      getId === "name" && setName(value);
+      getId === "email" && setEmail(value);
+      getId === "subject" && setSubject(value);
+      getId === "message" && setMessage(value);
+
+      if (value) {
+         FormValidation(contactForm.current, getId);
+      }
+   };
+
+   const onFormSubmit = async (e) => {
+      e.preventDefault();
+
+      if (FormValidation(contactForm.current)) {
+         let data = new FormData(contactForm.current);
+
+         try {
+            const res = await fetch(getUrl, { method: method, body: data, headers: { Accept: "application/json" } });
+
+            if (res.ok) {
+               setShowModal(true);
+            }
+         } catch (error) {
+            console.log(error);
+         }
+      }
+   };
+
+   const resetForm = () => {
+      setName("");
+      setEmail("");
+      setSubject("");
+      setMessage("");
+   };
+
    return (
       <>
          <section id="contacts" className="footer-content">
             <div className="contact-content">
-               <form id="contact-form">
+               <form id="contact-form" ref={getForm} onSubmit={onFormSubmit}>
                   <h2>Lets Talk</h2>
                   <div className="field-container">
-                     <label htmlFor="first-name">Name</label>
-                     <input type="text" name="name" id="name" className="form-field" placeholder="Huwan Delakrus" minLength="5" maxLength="32" required />
+                     <label htmlFor="name">Name*</label>
+                     <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        className="form-field"
+                        placeholder="Huwan Delakrus"
+                        minLength="5"
+                        maxLength="31"
+                        required
+                        value={name}
+                        onChange={onInputChange}
+                     />
                      <div className="warning">Must not be empty & minimum of 5 characters.</div>
                   </div>
 
                   <div className="field-container">
-                     <label htmlFor="email">Email</label>
-                     <input type="email" name="email" id="email" className="form-field" placeholder="huwan@example.com" maxLength="32" required />
+                     <label htmlFor="email">Email*</label>
+                     <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        className="form-field"
+                        placeholder="huwan@example.com"
+                        maxLength="31"
+                        required
+                        value={email}
+                        onChange={onInputChange}
+                     />
                      <div className="warning">Email is invalid. Must not be empty.</div>
                   </div>
 
                   <div className="field-container">
-                     <label htmlFor="subject">Subject</label>
-                     <input type="text" name="subject" id="subject" className="form-field" placeholder="Job Offer" minLength="5" maxLength="32" required />
+                     <label htmlFor="subject">Subject*</label>
+                     <input
+                        type="text"
+                        name="subject"
+                        id="subject"
+                        className="form-field"
+                        placeholder="Job Offer"
+                        minLength="5"
+                        maxLength="31"
+                        required
+                        value={subject}
+                        onChange={onInputChange}
+                     />
                      <div className="warning">Must not be empty & minimum of 5 characters.</div>
                   </div>
 
                   <div className="field-container">
-                     <label htmlFor="message">Message</label>
+                     <label htmlFor="message">Message*</label>
                      <textarea
                         name="message"
                         id="message"
@@ -41,8 +129,10 @@ const Contacts = () => {
                         rows="10"
                         placeholder="Please contact me in the above email address."
                         minLength="5"
-                        maxLength="200"
+                        maxLength="251"
                         required
+                        value={message}
+                        onChange={onInputChange}
                      ></textarea>
                      <div className="warning">Must not be empty & minimum of 5 characters.</div>
                   </div>
@@ -93,6 +183,7 @@ const Contacts = () => {
                </div>
             </div>
          </section>
+         {showModal && <Modal showModal={showModal} setShowModal={setShowModal} resetForm={resetForm} />}
       </>
    );
 };
