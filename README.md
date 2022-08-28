@@ -5,7 +5,7 @@
 -  🌱 I’m currently enrolled at **KODEGOPH Bootcamp**.
 -  👀 Interested to learn more in **Node js**, **React js**.
 -  📫 How to reach me? **melvin.enmocino@gmail.com**
--  Live Site: **[Portfolio](https://boymelvs.github.io/PORTFOLIO)**.
+-  Live Site: **[Portfolio](https://melvin-cyan.vercel.app/)**.
 
 <!-- WAKA TIME -->
 

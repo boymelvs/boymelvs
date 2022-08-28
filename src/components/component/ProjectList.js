@@ -29,7 +29,7 @@ import travelAndTours from "../../images/projects/travel-and-tours.png";
 const projectData = [
    {
       id: 1,
-      title: "TRAVEL AND TOURS",
+      title: "Travel & Tours",
       description: "A website for travel & tour businesses. My major project-1 from KODEGOPH Bootcamp",
       image: travelAndTours,
       alt: "project-travel-tours",
@@ -39,7 +39,7 @@ const projectData = [
 
    {
       id: 2,
-      title: "PAIRGO WEBSITE",
+      title: "Pairgo Website Project",
       description: "Website for warehousing business. Major Project-2 from KODEGOPH Bootcamp",
       image: pairgo,
       alt: "pairgo-website",
@@ -49,7 +49,7 @@ const projectData = [
 
    {
       id: 3,
-      title: "REST COUNTRIES API",
+      title: "Search Countries App",
       description: "A simple website that a user can search country information. Pulling data from API",
       image: searchCountry,
       alt: "search-country",
@@ -59,7 +59,7 @@ const projectData = [
 
    {
       id: 4,
-      title: "CROWDFUNDING PRODUCT PAGE",
+      title: "Crowdfunding Page",
       description: "A website that updates progress bar and total money raised based on user pledge after confirming.",
       image: crowdfunding,
       alt: "crowdfunding-page",
@@ -69,7 +69,7 @@ const projectData = [
 
    {
       id: 5,
-      title: "SIGNUP FORM PAGE",
+      title: "Signup Form Page",
       description: "A signup form with validation.",
       image: signUpForm,
       alt: "signup form page",
@@ -79,7 +79,7 @@ const projectData = [
 
    {
       id: 6,
-      title: "LOOPSTUDIOS LANDING PAGE",
+      title: "Loopstudios Landing Page",
       description: "A landing page",
       image: loopStudio,
       alt: "LoopStudio landing page",
@@ -89,7 +89,7 @@ const projectData = [
 
    {
       id: 7,
-      title: "PRICING COMPONENT WITH TOGGLE",
+      title: "Pricing Component w/ toggle",
       description: "A pricing component with toggle",
       image: pricingComponent,
       alt: "pricing component with toggle",
@@ -99,7 +99,7 @@ const projectData = [
 
    {
       id: 8,
-      title: "LANDING PAGE WITH CURVE",
+      title: "Landing Page with Curve",
       description: "A dark theme landing page with curve.",
       image: landingPageCurve,
       alt: "landing page with curve",
@@ -109,7 +109,7 @@ const projectData = [
 
    {
       id: 9,
-      title: "INTERACTIVE RATING COMPONENT",
+      title: "Interactive Rating Component",
       description: "A rating component",
       image: interactiveRating,
       alt: "interactive-rating-component",
@@ -119,7 +119,7 @@ const projectData = [
 
    {
       id: 10,
-      title: "SOCIAL MEDIA DASHBOARD",
+      title: "Social Media Dashboard",
       description: "A social media dashboard with theme switcher",
       image: socialMediaDashboard,
       alt: "social-media-dashboard-with-theme-switcher",
@@ -129,7 +129,7 @@ const projectData = [
 
    {
       id: 11,
-      title: "DATA STORAGE COMPONENT",
+      title: "Data Storage Component",
       description: "A data storage component",
       image: fyloDataStorage,
       alt: "fylo-data-storage-component",
@@ -139,7 +139,7 @@ const projectData = [
 
    {
       id: 12,
-      title: "PRODUCT PREVIEW CARD",
+      title: "Product Preview Card",
       description: "A product preview card component",
       image: productPreviewCard,
       alt: "product-preview-card-component",
@@ -149,7 +149,7 @@ const projectData = [
 
    {
       id: 13,
-      title: "INTERACTIVE PRICING COMPONENT",
+      title: "Interactive Pricing Component",
       description: "A component with slider and toggle to see prices for different page view numbers",
       image: interactivePricing,
       alt: "interactive-pricing-component",
@@ -159,7 +159,7 @@ const projectData = [
 
    {
       id: 14,
-      title: "SINGLE PRICE GRID SECTION",
+      title: "Single Price Grid Section",
       description: "A single price page component",
       image: singlePrice,
       alt: "single-price-grid-section",
@@ -169,7 +169,7 @@ const projectData = [
 
    {
       id: 15,
-      title: "INTRO SECTION WITH DROPDOWN NAVIGATION",
+      title: "Section w/ dropdown navigation",
       description: "A page with dropdown navigation",
       image: introSectionDropdown,
       alt: "Intro-section-with-dropdown-navigation",
@@ -179,7 +179,7 @@ const projectData = [
 
    {
       id: 16,
-      title: "TESTIMONIAL GRID SECTION",
+      title: "Testimonial Grid Section",
       description: "A testimonial page component",
       image: testimonialGrid,
       alt: "testimonials-grid-section",
@@ -189,7 +189,7 @@ const projectData = [
 
    {
       id: 17,
-      title: "SOCIAL PROOF SECTION",
+      title: "Social Proof Section",
       description: "Testimonial cards",
       image: socialProof,
       alt: "social-proof-sections",
@@ -199,7 +199,7 @@ const projectData = [
 
    {
       id: 18,
-      title: "BASE APPAREL",
+      title: "Base Apparel",
       description: "Base apparel",
       image: apparel,
       alt: "base-apparel",
@@ -209,7 +209,7 @@ const projectData = [
 
    {
       id: 19,
-      title: "TIME TRACKING DASHBOARD",
+      title: "Time Tracking Dashboard",
       description: "Time Trackin dashboard",
       image: timeTracking,
       alt: "time-tracking-dashboard",
@@ -219,7 +219,7 @@ const projectData = [
 
    {
       id: 20,
-      title: "SEARCH PHOTO APP",
+      title: "Search Photo App",
       description: "An app that can seach photo from unsplash api. Coding activity from KODEGOPH Bootcamp",
       image: searchPhotoApp,
       alt: "search-photo-app",
@@ -229,7 +229,7 @@ const projectData = [
 
    {
       id: 21,
-      title: "JOURNAL APP",
+      title: "Journal App",
       description: "An app that a user can records daily thoughts and task. React Coding activity from KODEGOPH Bootcamp",
       image: reactJournal,
       alt: "journal-app",
@@ -239,7 +239,7 @@ const projectData = [
 
    {
       id: 22,
-      title: "ONLINE CALCULATOR",
+      title: "Online Calculator",
       description: "A simple calculator with 4 basic operator. Coding activity from KODEGOPH Bootcamp",
       image: calculator,
       alt: "calculator",
@@ -249,7 +249,7 @@ const projectData = [
 
    {
       id: 23,
-      title: "CHAT APP ILLUSTRATION",
+      title: "Chat App Illustration",
       description: "A chat app illustration using css only",
       image: chatApp,
       alt: "chat app",
@@ -259,7 +259,7 @@ const projectData = [
 
    {
       id: 24,
-      title: "FYLO LANDING PAGE",
+      title: "Fylo Landing Page",
       description: "A dark theme landing page.",
       image: fyloLandingPage,
       alt: "fylo landing page",
@@ -269,7 +269,7 @@ const projectData = [
 
    {
       id: 25,
-      title: "NFT PREVIEW CARD",
+      title: "NFT Preview Card",
       description: "An NFT preview card",
       image: nftPreview,
       alt: "NFT preview card",
@@ -279,7 +279,7 @@ const projectData = [
 
    {
       id: 26,
-      title: "ADVICE GENERATOR APP",
+      title: "Advice Generator App",
       description: "An advice generator app, data from API",
       image: adviceGenerator,
       alt: "advice-generator-app",
@@ -289,7 +289,7 @@ const projectData = [
 
    {
       id: 27,
-      title: "ANALOG CLOCK",
+      title: "Analog Clock",
       description: "An analog clock.",
       image: clock,
       alt: "analog clock",
