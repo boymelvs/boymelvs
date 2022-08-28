@@ -42,8 +42,9 @@ const Contacts = ({ getContacts }) => {
 
    const onFormSubmit = async (e) => {
       e.preventDefault();
+      let getId = e.target.id;
 
-      if (FormValidation(contactForm.current)) {
+      if (FormValidation(contactForm.current, getId)) {
          let data = new FormData(contactForm.current);
 
          try {

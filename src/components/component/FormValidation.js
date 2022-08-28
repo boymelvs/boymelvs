@@ -119,17 +119,20 @@ const realTimeChecking = (contactForm, value) => {
             break;
 
          default:
-            return;
+            return "ERROR";
       }
    }, 500);
 };
 
 const FormValidation = (contactForm, value) => {
    /* ================= FORMS SUBMISSION ================= */
+
    realTimeChecking(contactForm, value);
 
-   if (checkName(contactForm) && checkEmail(contactForm) && checkSubject(contactForm) && checkMessage(contactForm)) {
-      return true;
+   if (value === "contact-form") {
+      if (checkName(contactForm) && checkEmail(contactForm) && checkSubject(contactForm) && checkMessage(contactForm)) {
+         return true;
+      }
    }
 };
 
