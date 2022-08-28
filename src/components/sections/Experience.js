@@ -1,7 +1,11 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
-const Experience = () => {
+const Experience = ({ getExp }) => {
    const expSection = useRef("");
+
+   useEffect(() => {
+      getExp(expSection.current);
+   }, [getExp]);
 
    return (
       <>

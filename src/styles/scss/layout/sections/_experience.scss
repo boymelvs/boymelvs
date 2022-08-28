@@ -13,7 +13,6 @@
       letter-spacing: 0.3rem;
 
       @media (min-width: 980px) {
-         font-size: 5rem;
          text-align: left;
       }
    }
@@ -29,10 +28,6 @@
          width: 100%;
          color: $black-pearl;
 
-         @media (min-width: 768px) {
-            font-size: 2.5rem;
-         }
-
          @media (min-width: 980px) {
             align-items: flex-start;
             text-align: left;
@@ -42,6 +37,7 @@
             padding-bottom: 0.5rem;
             border-bottom: 0.15rem solid $black-pearl;
             letter-spacing: 0.2rem;
+            font-size: 2rem;
          }
       }
 
@@ -57,18 +53,11 @@
          & .other_company {
             padding-bottom: 4rem;
             text-align: justify;
-
-            @media (min-width: 768px) {
-               font-size: 2.5rem;
-            }
+            font-size: 2rem;
 
             & .project {
                margin-top: 20px;
                font-weight: $font-weight-600;
-
-               @media (min-width: 768px) {
-                  font-size: 2rem;
-               }
             }
 
             & .jobsite {
@@ -78,10 +67,6 @@
             & .duties {
                margin-top: 20px;
                font-weight: $font-weight-600;
-
-               @media (min-width: 768px) {
-                  font-size: 2rem;
-               }
             }
 
             & .responsiblity {

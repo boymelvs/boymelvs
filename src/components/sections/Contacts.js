@@ -8,8 +8,9 @@ import github from "../../images/social-media/github.svg";
 import linkedin from "../../images/social-media/linkedin.svg";
 import FormValidation from "../component/FormValidation";
 
-const Contacts = () => {
+const Contacts = ({ getContacts }) => {
    const getForm = useRef();
+   const contactLocation = useRef();
    const [contactForm, setContactForm] = useState();
    const [name, setName] = useState("");
    const [email, setEmail] = useState("");
@@ -22,7 +23,8 @@ const Contacts = () => {
 
    useEffect(() => {
       setContactForm(getForm);
-   }, []);
+      getContacts(contactLocation.current);
+   }, [getContacts]);
 
    const onInputChange = (e) => {
       let getId = e.target.id;
@@ -65,7 +67,7 @@ const Contacts = () => {
 
    return (
       <>
-         <section id="contacts" className="footer-content">
+         <section id="contacts" className="footer-content" ref={contactLocation}>
             <div className="contact-content">
                <form id="contact-form" ref={getForm} onSubmit={onFormSubmit}>
                   <h2>Lets Talk</h2>

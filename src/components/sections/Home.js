@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import man from "../../images/intro.png";
 
-const Home = () => {
+const Home = ({ getHome }) => {
+   const homeSection = useRef("");
+
+   useEffect(() => {
+      getHome(homeSection.current);
+   }, [getHome]);
+
    return (
       <>
-         <section id="home">
+         <section id="home" ref={homeSection}>
             <div className="left">
                <h1 className="greeting">Hi, I'm Melvin</h1>
-               <div className="career">Full-Stack Developer</div>
+               <div className="career">Full-Stack Web Developer</div>
 
                <div className="cta">
                   <a href="#contacts">

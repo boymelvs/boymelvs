@@ -19,7 +19,6 @@
       letter-spacing: 0.3rem;
 
       @media (min-width: 980px) {
-         font-size: 5rem;
          text-align: left;
       }
    }
@@ -32,7 +31,6 @@
 
       & .projects-subtitle {
          @include flexBox(column, center, center, 0);
-         font-size: 2rem;
          text-align: center;
          font-weight: $font-weight-600;
          width: 100%;
@@ -44,6 +42,7 @@
          }
 
          & span {
+            font-size: 2rem;
             letter-spacing: 0.2rem;
          }
 

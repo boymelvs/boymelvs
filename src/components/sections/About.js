@@ -1,8 +1,12 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import check from "../../images/accept.png";
 
-const About = () => {
+const About = ({ getAbout }) => {
    const aboutSection = useRef("");
+
+   useEffect(() => {
+      getAbout(aboutSection.current);
+   }, [getAbout]);
 
    return (
       <>
@@ -15,7 +19,7 @@ const About = () => {
 
                <div className="about-list">
                   <p className="about-para">
-                     A former OFW. Career shifter and has as strong desire to become a Full-Stack Developer. I am a self-taught Front-End Developer, currently developing more
+                     A former OFW. Career shifter and has strong desire to become a Full-Stack Web Developer. I am a self-taught Front-End Developer, currently developing more
                      skills using ReactJS and NodeJS.
                   </p>
 

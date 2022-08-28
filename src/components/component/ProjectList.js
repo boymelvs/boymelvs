@@ -36,6 +36,7 @@ const projectData = [
       url: "https://boymelvs.github.io/travel-and-tours/",
       tags: ["HTML5", "BOOTSTRAP5", "FLEXBOX", "CSS3"],
    },
+
    {
       id: 2,
       title: "PAIRGO WEBSITE",
@@ -45,35 +46,9 @@ const projectData = [
       url: "https://boymelvs.github.io/pairgo/index.html",
       tags: ["HTML5", "JAVASCRIPT", "FLEXBOX", "SCSS/CSS", "CSSGRID"],
    },
+
    {
       id: 3,
-      title: "SEARCH PHOTO APP",
-      description: "An app that can seach photo from unsplash api. Coding activity from KODEGOPH Bootcamp",
-      image: searchPhotoApp,
-      alt: "search-photo-app",
-      url: "https://search-photo-app-blond.vercel.app/",
-      tags: ["HTML5", "JAVASCRIPT", "SCSS/CSS", "CSSGRID", "API", "REACTJS"],
-   },
-   {
-      id: 4,
-      title: "JOURNAL APP",
-      description: "An app that a user can records daily thoughts and task. React Coding activity from KODEGOPH Bootcamp",
-      image: reactJournal,
-      alt: "journal-app",
-      url: "https://journal-app-nu.vercel.app/",
-      tags: ["HTML5", "JAVASCRIPT", "SCSS/CSS", "FLEXBOX", "REACTJS"],
-   },
-   {
-      id: 5,
-      title: "CROWDFUNDING PRODUCT PAGE",
-      description: "A website that updates progress bar and total money raised based on user pledge after confirming.",
-      image: crowdfunding,
-      alt: "crowdfunding-page",
-      url: "https://boymelvs.github.io/crowdfunding-product-page-main/",
-      tags: ["HTML5", "JAVASCRIPT", "CSS3", "FLEXBOX"],
-   },
-   {
-      id: 6,
       title: "REST COUNTRIES API",
       description: "A simple website that a user can search country information. Pulling data from API",
       image: searchCountry,
@@ -81,35 +56,19 @@ const projectData = [
       url: "https://boymelvs.github.io/rest-countries-api-with-color-theme-switcher-master/",
       tags: ["HTML5", "JAVASCRIPT", "CSS3", "FLEXBOX", "API"],
    },
+
    {
-      id: 7,
-      title: "ONLINE CALCULATOR",
-      description: "A simple calculator with 4 basic operator. Coding activity from KODEGOPH Bootcamp",
-      image: calculator,
-      alt: "calculator",
-      url: "https://boymelvs.github.io/online-calculator/",
+      id: 4,
+      title: "CROWDFUNDING PRODUCT PAGE",
+      description: "A website that updates progress bar and total money raised based on user pledge after confirming.",
+      image: crowdfunding,
+      alt: "crowdfunding-page",
+      url: "https://boymelvs.github.io/crowdfunding-product-page-main/",
       tags: ["HTML5", "JAVASCRIPT", "CSS3", "FLEXBOX"],
    },
+
    {
-      id: 8,
-      title: "CHAT APP ILLUSTRATION",
-      description: "A chat app illustration using css only",
-      image: chatApp,
-      alt: "chat app",
-      url: "https://boymelvs.github.io/chat-app-css-illustration-master/",
-      tags: ["HTML5", "CSS3", "FLEXBOX"],
-   },
-   {
-      id: 9,
-      title: "LANDING PAGE WITH CURVE",
-      description: "A dark theme landing page with curve.",
-      image: landingPageCurve,
-      alt: "landing page with curve",
-      url: "https://boymelvs.github.io/huddle-landing-page-with-curved-sections-master/",
-      tags: ["HTML5", "CSS3", "FLEXBOX"],
-   },
-   {
-      id: 10,
+      id: 5,
       title: "SIGNUP FORM PAGE",
       description: "A signup form with validation.",
       image: signUpForm,
@@ -117,26 +76,9 @@ const projectData = [
       url: "https://boymelvs.github.io/INTRO-COMPONENT-WITH-SIGNUP-FORM/",
       tags: ["HTML5", "JAVASCRIPT", "CSS3", "FLEXBOX"],
    },
+
    {
-      id: 11,
-      title: "FYLO LANDING PAGE",
-      description: "A dark theme landing page.",
-      image: fyloLandingPage,
-      alt: "fylo landing page",
-      url: "https://boymelvs.github.io/fylo-dark-theme-landing-page-master/",
-      tags: ["HTML5", "BOOTSTRAP5", "JAVASCRIPT", "CSS3", "CSSGRID", "REACTJS"],
-   },
-   {
-      id: 12,
-      title: "NFT PREVIEW CARD",
-      description: "An NFT preview card",
-      image: nftPreview,
-      alt: "NFT preview card",
-      url: "https://boymelvs.github.io/nft-preview-card-component-main/",
-      tags: ["HTML5", "FLEXBOX", "CSS3"],
-   },
-   {
-      id: 13,
+      id: 6,
       title: "LOOPSTUDIOS LANDING PAGE",
       description: "A landing page",
       image: loopStudio,
@@ -144,8 +86,9 @@ const projectData = [
       url: "https://boymelvs.github.io/loopstudios-landing-page-main/",
       tags: ["HTML5", "FLEXBOX", "JAVASCRIPT", "CSS3", "CSSGRID"],
    },
+
    {
-      id: 14,
+      id: 7,
       title: "PRICING COMPONENT WITH TOGGLE",
       description: "A pricing component with toggle",
       image: pricingComponent,
@@ -153,17 +96,19 @@ const projectData = [
       url: "https://boymelvs.github.io/pricing-component-with-toggle-master",
       tags: ["HTML5", "JAVASCRIPT", "CSS3", "FLEXBOX"],
    },
+
    {
-      id: 15,
-      title: "ADVICE GENERATOR APP",
-      description: "An advice generator app, data from API",
-      image: adviceGenerator,
-      alt: "advice-generator-app",
-      url: "https://boymelvs.github.io/advice-generator-app-main/",
-      tags: ["HTML5", "JAVASCRIPT", "CSS3", "FLEXBOX", "API"],
+      id: 8,
+      title: "LANDING PAGE WITH CURVE",
+      description: "A dark theme landing page with curve.",
+      image: landingPageCurve,
+      alt: "landing page with curve",
+      url: "https://boymelvs.github.io/huddle-landing-page-with-curved-sections-master/",
+      tags: ["HTML5", "CSS3", "FLEXBOX"],
    },
+
    {
-      id: 16,
+      id: 9,
       title: "INTERACTIVE RATING COMPONENT",
       description: "A rating component",
       image: interactiveRating,
@@ -171,8 +116,9 @@ const projectData = [
       url: "https://boymelvs.github.io/interactive-rating-component-main/",
       tags: ["HTML5", "JAVASCRIPT", "CSS3", "FLEXBOX"],
    },
+
    {
-      id: 17,
+      id: 10,
       title: "SOCIAL MEDIA DASHBOARD",
       description: "A social media dashboard with theme switcher",
       image: socialMediaDashboard,
@@ -180,8 +126,9 @@ const projectData = [
       url: "https://boymelvs.github.io/social-media-dashboard-with-theme-switcher-master/",
       tags: ["HTML5", "JAVASCRIPT", "CSS3", "FLEXBOX", "CSSGRID"],
    },
+
    {
-      id: 18,
+      id: 11,
       title: "DATA STORAGE COMPONENT",
       description: "A data storage component",
       image: fyloDataStorage,
@@ -189,8 +136,9 @@ const projectData = [
       url: "https://boymelvs.github.io/fylo-data-storage-component-master/",
       tags: ["HTML5", "CSS3", "FLEXBOX"],
    },
+
    {
-      id: 19,
+      id: 12,
       title: "PRODUCT PREVIEW CARD",
       description: "A product preview card component",
       image: productPreviewCard,
@@ -198,8 +146,9 @@ const projectData = [
       url: "https://boymelvs.github.io/product-preview-card-component-main/",
       tags: ["HTML5", "CSS3", "FLEXBOX"],
    },
+
    {
-      id: 20,
+      id: 13,
       title: "INTERACTIVE PRICING COMPONENT",
       description: "A component with slider and toggle to see prices for different page view numbers",
       image: interactivePricing,
@@ -207,8 +156,9 @@ const projectData = [
       url: "https://boymelvs.github.io/interactive-pricing-component/",
       tags: ["HTML5", "JAVASCRIPT", "CSS3", "FLEXBOX"],
    },
+
    {
-      id: 21,
+      id: 14,
       title: "SINGLE PRICE GRID SECTION",
       description: "A single price page component",
       image: singlePrice,
@@ -216,8 +166,9 @@ const projectData = [
       url: "https://boymelvs.github.io/SINGLE-PRICE-GRID-COMPONENT/",
       tags: ["HTML5", "CSS3", "CSSGRID", "FLEXBOX"],
    },
+
    {
-      id: 22,
+      id: 15,
       title: "INTRO SECTION WITH DROPDOWN NAVIGATION",
       description: "A page with dropdown navigation",
       image: introSectionDropdown,
@@ -225,8 +176,9 @@ const projectData = [
       url: "https://boymelvs.github.io/intro-section-with-dropdown-navigation-main/",
       tags: ["HTML5", "JAVASCRIPT", "CSS3", "FLEXBOX"],
    },
+
    {
-      id: 23,
+      id: 16,
       title: "TESTIMONIAL GRID SECTION",
       description: "A testimonial page component",
       image: testimonialGrid,
@@ -234,8 +186,9 @@ const projectData = [
       url: "https://boymelvs.github.io/testimonials-grid-section-main/",
       tags: ["HTML5", "FLEXBOX", "CSS3", "CSSGRID"],
    },
+
    {
-      id: 24,
+      id: 17,
       title: "SOCIAL PROOF SECTION",
       description: "Testimonial cards",
       image: socialProof,
@@ -243,8 +196,9 @@ const projectData = [
       url: "https://boymelvs.github.io/SOCIAL-PROOF-SECTION-MASTER/",
       tags: ["HTML5", "FLEXBOX", "CSS3", "CSSGRID"],
    },
+
    {
-      id: 25,
+      id: 18,
       title: "BASE APPAREL",
       description: "Base apparel",
       image: apparel,
@@ -252,14 +206,85 @@ const projectData = [
       url: "https://boymelvs.github.io/BASE-APPAREL-COMING-SOON/",
       tags: ["HTML5", "JAVASCRIPT", "CSS3", "FLEXBOX"],
    },
+
    {
-      id: 26,
+      id: 19,
       title: "TIME TRACKING DASHBOARD",
       description: "Time Trackin dashboard",
       image: timeTracking,
       alt: "time-tracking-dashboard",
       url: "https://boymelvs.github.io/time-tracking-dashboard-main/",
       tags: ["HTML5", "JAVASCRIPT", "CSS3", "FLEXBOX", "GRID"],
+   },
+
+   {
+      id: 20,
+      title: "SEARCH PHOTO APP",
+      description: "An app that can seach photo from unsplash api. Coding activity from KODEGOPH Bootcamp",
+      image: searchPhotoApp,
+      alt: "search-photo-app",
+      url: "https://search-photo-app-blond.vercel.app/",
+      tags: ["HTML5", "JAVASCRIPT", "SCSS/CSS", "CSSGRID", "API", "REACTJS"],
+   },
+
+   {
+      id: 21,
+      title: "JOURNAL APP",
+      description: "An app that a user can records daily thoughts and task. React Coding activity from KODEGOPH Bootcamp",
+      image: reactJournal,
+      alt: "journal-app",
+      url: "https://journal-app-nu.vercel.app/",
+      tags: ["HTML5", "JAVASCRIPT", "SCSS/CSS", "FLEXBOX", "REACTJS"],
+   },
+
+   {
+      id: 22,
+      title: "ONLINE CALCULATOR",
+      description: "A simple calculator with 4 basic operator. Coding activity from KODEGOPH Bootcamp",
+      image: calculator,
+      alt: "calculator",
+      url: "https://boymelvs.github.io/online-calculator/",
+      tags: ["HTML5", "JAVASCRIPT", "CSS3", "FLEXBOX"],
+   },
+
+   {
+      id: 23,
+      title: "CHAT APP ILLUSTRATION",
+      description: "A chat app illustration using css only",
+      image: chatApp,
+      alt: "chat app",
+      url: "https://boymelvs.github.io/chat-app-css-illustration-master/",
+      tags: ["HTML5", "CSS3", "FLEXBOX"],
+   },
+
+   {
+      id: 24,
+      title: "FYLO LANDING PAGE",
+      description: "A dark theme landing page.",
+      image: fyloLandingPage,
+      alt: "fylo landing page",
+      url: "https://boymelvs.github.io/fylo-dark-theme-landing-page-master/",
+      tags: ["HTML5", "BOOTSTRAP5", "JAVASCRIPT", "CSS3", "CSSGRID", "REACTJS"],
+   },
+
+   {
+      id: 25,
+      title: "NFT PREVIEW CARD",
+      description: "An NFT preview card",
+      image: nftPreview,
+      alt: "NFT preview card",
+      url: "https://boymelvs.github.io/nft-preview-card-component-main/",
+      tags: ["HTML5", "FLEXBOX", "CSS3"],
+   },
+
+   {
+      id: 26,
+      title: "ADVICE GENERATOR APP",
+      description: "An advice generator app, data from API",
+      image: adviceGenerator,
+      alt: "advice-generator-app",
+      url: "https://boymelvs.github.io/advice-generator-app-main/",
+      tags: ["HTML5", "JAVASCRIPT", "CSS3", "FLEXBOX", "API"],
    },
 
    {

@@ -1,22 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Card from "../component/Card";
 import ProjectList from "../component/ProjectList";
 
-const Projects = () => {
+const Projects = ({ getProject }) => {
+   const projectSection = useRef("");
    const [len, setLen] = useState(8);
    const [isActive, setActive] = useState(false);
    const [result, setResult] = useState([]);
 
    useEffect(() => {
       const sampleProject = [];
+      getProject(projectSection.current);
+      setLen(isActive ? ProjectList.length : 8);
 
       for (let i = 0; i < len; i++) {
          sampleProject.push(ProjectList[i]);
       }
 
-      setLen(isActive ? ProjectList.length : 8);
       setResult(sampleProject);
-   }, [len, isActive]);
+   }, [len, isActive, getProject]);
 
    const clickHandle = () => {
       setActive(!isActive);
@@ -24,7 +26,7 @@ const Projects = () => {
 
    return (
       <>
-         <section id="projects">
+         <section id="projects" ref={projectSection}>
             <h2 className="featured-projects">PROJECTS</h2>
 
             <div className="projects-content">
@@ -39,11 +41,8 @@ const Projects = () => {
                   </div>
 
                   <div className="see-all" onClick={clickHandle}>
-                     {isActive ? "SEE LESS" : "SEE ALL..."}
+                     {isActive ? "SEE LESS..." : "SEE ALL..."}
                   </div>
-
-                  {/* <input type="button" value="<" className="btn btn-prev" id="btn-prev" aria-label="button previous" /> */}
-                  {/* <input type="button" value=">" className="btn btn-next" id="btn-next" aria-label="button next" /> */}
                </div>
             </div>
          </section>
