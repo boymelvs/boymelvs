@@ -521,7 +521,7 @@ body.active {
   letter-spacing: 0.2rem;
   padding-bottom: 0.5rem;
   border-bottom: 0.15rem solid hsl(212deg, 29%, 13%);
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 #about .about-content .about-list {
   display: flex;
@@ -533,7 +533,6 @@ body.active {
 }
 #about .about-content .about-list p {
   text-align: justify;
-  font-size: 2rem;
 }
 @media (min-width: 768px) {
   #about .about-content .about-list p {
@@ -562,14 +561,13 @@ body.active {
   padding-bottom: 0.5rem;
   border-bottom: 0.15rem solid hsl(212deg, 29%, 13%);
   letter-spacing: 0.2rem;
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 #about .about-content .about-list .recognition ul {
   margin-top: 3rem;
 }
 #about .about-content .about-list .recognition ul li {
   list-style-type: none;
-  font-size: 2rem;
 }
 @media (min-width: 768px) {
   #about .about-content .about-list .recognition ul li {
@@ -581,7 +579,6 @@ body.active {
   text-decoration: none;
   color: hsl(212deg, 29%, 13%);
   font-weight: 400;
-  font-size: 2rem;
   position: relative;
 }
 #about .about-content .about-list .recognition ul li a::before {
@@ -646,7 +643,7 @@ body.active {
   padding-bottom: 0.5rem;
   border-bottom: 0.15rem solid hsl(212deg, 29%, 13%);
   letter-spacing: 0.2rem;
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 #experience .work-experience-content .companies {
   margin-top: 2rem;
@@ -660,7 +657,6 @@ body.active {
 #experience .work-experience-content .companies .last_company, #experience .work-experience-content .companies .other_company {
   padding-bottom: 4rem;
   text-align: justify;
-  font-size: 2rem;
 }
 #experience .work-experience-content .companies .last_company .project, #experience .work-experience-content .companies .other_company .project {
   margin-top: 20px;
@@ -884,7 +880,7 @@ body.active {
   }
 }
 #projects .projects-content .projects-subtitle span {
-  font-size: 2rem;
+  font-size: 1.8rem;
   letter-spacing: 0.2rem;
 }
 #projects .projects-content .projects-subtitle .bottom {
@@ -952,7 +948,7 @@ body.active {
   }
 }
 #skills .skills-content .skills-subtitle span {
-  font-size: 2rem;
+  font-size: 1.8rem;
   letter-spacing: 0.2rem;
 }
 #skills .skills-content .skills-subtitle span:nth-child(2) {
@@ -1139,7 +1135,7 @@ body.active {
   padding-bottom: 3rem;
 }
 #contacts .contact-content .contact-social-container .address-container .address-text {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 600;
 }
 #contacts .contact-content .contact-social-container .address-container img {
@@ -1162,7 +1158,7 @@ body.active {
   color: hsl(180deg, 8%, 97%);
 }
 #contacts .contact-content .contact-social-container .social-media .social-media-text {
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 #contacts .contact-content .contact-social-container .social-media .social-media-icon {
   display: flex;

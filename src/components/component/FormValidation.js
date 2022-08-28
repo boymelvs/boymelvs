@@ -119,15 +119,11 @@ const realTimeChecking = (contactForm, value) => {
             break;
 
          default:
-            checkName(contactForm);
-            checkEmail(contactForm);
-            checkSubject(contactForm);
-            checkMessage(contactForm);
+            return;
       }
    }, 500);
 };
 
-/* form validation start here */
 const FormValidation = (contactForm, value) => {
    /* ================= FORMS SUBMISSION ================= */
    realTimeChecking(contactForm, value);

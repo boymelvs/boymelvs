@@ -13,7 +13,7 @@ const Experience = ({ getExp }) => {
             <h2>WORK EXPERIENCE</h2>
             <div className="work-experience-content">
                <div className="job">
-                  <span> Access Control System Administrator </span>
+                  <span> Access Control System Administration </span>
                </div>
 
                <ul className="companies">
