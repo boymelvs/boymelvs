@@ -3,20 +3,20 @@ import clock from "../../images/projects/analog-clock.png";
 import apparel from "../../images/projects/base-apparel.png";
 import calculator from "../../images/projects/calculator.png";
 import chatApp from "../../images/projects/chat-app-CSS-illustration.jpg";
-import crowdfunding from "../../images/projects/crowdfunding-page.jpg";
-import fyloDataStorage from "../../images/projects/fylo-data-storage-component.jpg";
+import crowdfunding from "../../images/projects/crowdfunding-page.png";
+import fyloDataStorage from "../../images/projects/fylo-data-storage-component.png";
 import fyloLandingPage from "../../images/projects/fylo-landing-page.jpg";
 import interactivePricing from "../../images/projects/interactive-pricing-component.jpg";
-import interactiveRating from "../../images/projects/interactive-rating-component.jpg";
+import interactiveRating from "../../images/projects/interactive-rating-component.png";
 import introSectionDropdown from "../../images/projects/Intro-section-with-dropdown-navigation.jpg";
 import landingPageCurve from "../../images/projects/landing-page-with-curve.png";
-import loopStudio from "../../images/projects/loopstudios-landing-page.jpg";
+import loopStudio from "../../images/projects/loopstudios-landing-page.png";
 import nftPreview from "../../images/projects/NFT-PREVIEW-CARD.png";
 import pairgo from "../../images/projects/pairgo.png";
 import pricingComponent from "../../images/projects/pricing-component-with-toggle.png";
-import productPreviewCard from "../../images/projects/product-preview-card-component.jpg";
+import productPreviewCard from "../../images/projects/product-preview-card-component.png";
 import reactJournal from "../../images/projects/react-journal.png";
-import searchCountry from "../../images/projects/search-country-dark.jpg";
+import searchCountry from "../../images/projects/search-country-dark.png";
 import searchPhotoApp from "../../images/projects/search-photo-app.png";
 import signUpForm from "../../images/projects/signup-form.png";
 import singlePrice from "../../images/projects/single-price-component.png";
@@ -24,7 +24,7 @@ import socialMediaDashboard from "../../images/projects/social-media-dashboard-w
 import socialProof from "../../images/projects/SOCIAL-PROOF-SECTION.jpg";
 import testimonialGrid from "../../images/projects/testimonials-grid-section.jpg";
 import timeTracking from "../../images/projects/time-tracking-dashboard.png";
-import travelAndTours from "../../images/projects/travel-and-tours.png";
+import travelAndTours from "../../images/projects/travel&tours.png";
 
 const projectData = [
    {
