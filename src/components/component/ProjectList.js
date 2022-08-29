@@ -25,8 +25,19 @@ import socialProof from "../../images/projects/SOCIAL-PROOF-SECTION.png";
 import testimonialGrid from "../../images/projects/testimonials-grid-section.png";
 import timeTracking from "../../images/projects/time-tracking-dashboard.png";
 import travelAndTours from "../../images/projects/travel&tours.png";
+import melvinport from "../../images/projects/melvin-portfolio.png";
 
 const projectData = [
+   {
+      id: 1,
+      title: "Melvin Portfolio",
+      description: "Melvin portfolio",
+      image: melvinport,
+      alt: "melvin portfolio",
+      url: "https://boymelvs.vercel.app/",
+      tags: ["HTML5", "SCSS/CSS", "REACTJS", "JAVASCRIPT", "FLEXBOX", "CSS3"],
+   },
+
    {
       id: 1,
       title: "Travel & Tours",

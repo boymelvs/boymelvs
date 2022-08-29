@@ -127,12 +127,12 @@ const realTimeChecking = (contactForm, value) => {
 const FormValidation = (contactForm, value) => {
    /* ================= FORMS SUBMISSION ================= */
 
-   realTimeChecking(contactForm, value);
-
    if (value === "contact-form") {
       if (checkName(contactForm) && checkEmail(contactForm) && checkSubject(contactForm) && checkMessage(contactForm)) {
          return true;
       }
+   } else {
+      realTimeChecking(contactForm, value);
    }
 };
 
