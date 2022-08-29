@@ -1027,12 +1027,12 @@ body.active {
     flex-direction: row;
     align-items: none;
     justify-content: space-between;
-    gap: 4rem;
+    gap: 2rem;
   }
 }
 @media (min-width: 992px) {
   #contacts .contact-content {
-    gap: 10rem;
+    gap: 5rem;
   }
 }
 #contacts .contact-content form {
@@ -1042,9 +1042,17 @@ body.active {
   justify-content: center;
   gap: 1rem;
   width: 100%;
+  border: 0.2rem solid hsl(180deg, 8%, 97%);
+  padding: 0 2rem 3rem 2rem;
+  border-radius: 1rem;
+}
+@media (min-width: 992px) {
+  #contacts .contact-content form {
+    padding: 0 4rem 3rem 4rem;
+  }
 }
 #contacts .contact-content form h2 {
-  font-size: 5rem;
+  font-size: 4rem;
 }
 #contacts .contact-content form .field-container {
   width: 100%;
@@ -1129,7 +1137,7 @@ body.active {
   }
 }
 #contacts .contact-content .contact-social-container .address-container .contact-text {
-  font-size: 5rem;
+  font-size: 4rem;
   text-align: center;
   width: 100%;
   padding-bottom: 3rem;

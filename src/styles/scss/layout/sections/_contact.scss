@@ -20,19 +20,26 @@
       width: 100%;
 
       @media (min-width: 768px) {
-         @include flexBox(row, none, space-between, 4rem);
+         @include flexBox(row, none, space-between, 2rem);
       }
 
       @media (min-width: 992px) {
-         gap: 10rem;
+         gap: 5rem;
       }
 
       & form {
          @include flexBox(column, center, center, 1rem);
          width: 100%;
+         border: 0.2rem solid $azure;
+         padding: 0 2rem 3rem 2rem;
+         border-radius: 1rem;
+
+         @media (min-width: 992px) {
+            padding: 0 4rem 3rem 4rem;
+         }
 
          & h2 {
-            font-size: 5rem;
+            font-size: 4rem;
          }
 
          & .field-container {
@@ -118,7 +125,7 @@
             }
 
             & .contact-text {
-               font-size: 5rem;
+               font-size: 4rem;
                text-align: center;
                width: 100%;
                padding-bottom: 3rem;
