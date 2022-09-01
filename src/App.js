@@ -12,10 +12,10 @@ const App = () => {
          setScrollYvalue(window.scrollY);
       };
 
-      window.addEventListener("scroll", handleScroll);
+      window.addEventListener("scroll", handleScroll, { capture: true });
 
       return () => {
-         window.removeEventListener("scroll", handleScroll);
+         window.removeEventListener("scroll", handleScroll, { capture: true });
       };
    }, []);
 

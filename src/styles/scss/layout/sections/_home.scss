@@ -54,15 +54,22 @@
          & .cta-btn {
             @extend %button-style;
             border: 0.2rem solid $navy-blue;
+            padding: 1.5rem 2rem;
+            width: 14rem;
 
             @media (min-width: 768px) {
-               padding: 1.5rem 2rem;
+               width: 18rem;
                font-size: 2rem;
+            }
+
+            @media (min-width: 992px) {
+               min-width: 20rem;
             }
 
             &:hover {
                border: 0.2rem solid $whisper;
-               color: $black-pearl;
+               color: $navy-blue;
+               font-weight: 600;
             }
          }
 

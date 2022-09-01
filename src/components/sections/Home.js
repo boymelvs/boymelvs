@@ -17,7 +17,7 @@ const Home = ({ getHome }) => {
 
                <div className="cta">
                   <a href="#contacts">
-                     <input type="button" id="contact-btn" className="cta-btn contact-btn" value="Get in Touch" aria-label="Get in Touch Button" />
+                     <input type="button" id="contact-btn" className="cta-btn contact-btn" value="Hire Me" aria-label="Get in Touch Button" />
                   </a>
 
                   <a href="#projects">
