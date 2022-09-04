@@ -24,7 +24,6 @@
       .skills-subtitle {
          @include flexBox(column, center, center, 0);
          text-align: center;
-         font-weight: $font-weight-600;
          width: 100%;
          color: $black-pearl;
 
@@ -35,7 +34,6 @@
 
          & span {
             font-size: 1.8rem;
-            letter-spacing: 0.2rem;
          }
 
          & span:nth-child(2) {

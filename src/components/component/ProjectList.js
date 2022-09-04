@@ -51,11 +51,11 @@ const projectData = [
    {
       id: 3,
       title: "Pairgo Website Project",
-      description: "Website for warehousing business. Major Project-2 from KODEGOPH Bootcamp",
+      description: "Website for warehousing business. Major Project-2 from KODEGOPH Bootcamp. I re-created using React Js.",
       image: pairgo,
       alt: "pairgo-website",
-      url: "https://boymelvs.github.io/pairgo/index.html",
-      tags: ["Html5", "Javascript", "Flexbox", "Scss/Css", "CSSGrid"],
+      url: "https://pairgoapp.vercel.app/",
+      tags: ["Html5", "React Js", "Flexbox", "Scss/Css", "CSSGrid"],
    },
 
    {

@@ -42,6 +42,21 @@ const checkEmail = (item) => {
    return false;
 };
 
+/* validation for phone */
+const checkPhone = (item) => {
+   let name = item.phone.value.trim();
+   let maxLength = name.length;
+   let element = item.phone;
+
+   if (isRequired(name) && maxLength >= 9 && maxLength < 26) {
+      return true;
+   }
+
+   showWarning(element.nextElementSibling, "add");
+   showWarning(element, "add");
+   return false;
+};
+
 /* validation for subject */
 const checkSubject = (item) => {
    let name = item.subject.value.trim();
@@ -128,7 +143,7 @@ const FormValidation = (contactForm, value) => {
    /* ================= FORMS SUBMISSION ================= */
 
    if (value === "contact-form") {
-      if (checkName(contactForm) && checkEmail(contactForm) && checkSubject(contactForm) && checkMessage(contactForm)) {
+      if (checkName(contactForm) && checkEmail(contactForm) && checkPhone(contactForm) && checkSubject(contactForm) && checkMessage(contactForm)) {
          return true;
       }
    } else {

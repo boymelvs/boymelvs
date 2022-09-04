@@ -42,6 +42,11 @@
             font-size: 4rem;
          }
 
+         & .email-phone-container {
+            display: flex;
+            gap: 1rem;
+         }
+
          & .field-container {
             width: 100%;
 
@@ -64,6 +69,10 @@
 
                &::placeholder {
                   color: $whisper-light;
+               }
+
+               &:focus {
+                  border: 0.2rem solid $navy-blue;
                }
 
                &.active {

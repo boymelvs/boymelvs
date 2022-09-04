@@ -14,6 +14,7 @@ const Contacts = ({ getContacts }) => {
    const [contactForm, setContactForm] = useState();
    const [name, setName] = useState("");
    const [email, setEmail] = useState("");
+   const [phone, setPhone] = useState("");
    const [subject, setSubject] = useState("");
    const [message, setMessage] = useState("");
    const [showModal, setShowModal] = useState(false);
@@ -32,6 +33,7 @@ const Contacts = ({ getContacts }) => {
 
       getId === "name" && setName(value);
       getId === "email" && setEmail(value);
+      getId === "phone" && setPhone(value);
       getId === "subject" && setSubject(value);
       getId === "message" && setMessage(value);
 
@@ -62,6 +64,7 @@ const Contacts = ({ getContacts }) => {
    const resetForm = () => {
       setName("");
       setEmail("");
+      setPhone("");
       setSubject("");
       setMessage("");
    };
@@ -82,27 +85,46 @@ const Contacts = ({ getContacts }) => {
                         placeholder="Huwan Delakrus"
                         minLength="5"
                         maxLength="31"
-                        required
                         value={name}
                         onChange={onInputChange}
+                        required
                      />
                      <div className="warning">Must not be empty & minimum of 5 characters.</div>
                   </div>
 
-                  <div className="field-container">
-                     <label htmlFor="email">Email*</label>
-                     <input
-                        type="email"
-                        name="email"
-                        id="email"
-                        className="form-field"
-                        placeholder="huwan@example.com"
-                        maxLength="31"
-                        required
-                        value={email}
-                        onChange={onInputChange}
-                     />
-                     <div className="warning">Email is invalid. Must not be empty.</div>
+                  <div className="email-phone-container">
+                     <div className="field-container">
+                        <label htmlFor="email">Email*</label>
+                        <input
+                           type="email"
+                           name="email"
+                           id="email"
+                           className="form-field"
+                           placeholder="huwan@example.com"
+                           maxLength="31"
+                           value={email}
+                           onChange={onInputChange}
+                           required
+                        />
+                        <div className="warning">Email is invalid. Must not be empty.</div>
+                     </div>
+
+                     <div className="field-container">
+                        <label htmlFor="phone">Phone*</label>
+                        <input
+                           type="text"
+                           name="phone"
+                           id="phone"
+                           className="form-field"
+                           placeholder="0949 1234567"
+                           minLength="9"
+                           maxLength="26"
+                           value={phone}
+                           onChange={onInputChange}
+                           required
+                        />
+                        <div className="warning">Its look like not a phone number. Must not be empty.</div>
+                     </div>
                   </div>
 
                   <div className="field-container">
@@ -115,9 +137,9 @@ const Contacts = ({ getContacts }) => {
                         placeholder="Job Offer"
                         minLength="5"
                         maxLength="31"
-                        required
                         value={subject}
                         onChange={onInputChange}
+                        required
                      />
                      <div className="warning">Must not be empty & minimum of 5 characters.</div>
                   </div>
@@ -133,9 +155,9 @@ const Contacts = ({ getContacts }) => {
                         placeholder="Please contact me in the above email address."
                         minLength="5"
                         maxLength="251"
-                        required
                         value={message}
                         onChange={onInputChange}
+                        required
                      ></textarea>
                      <div className="warning">Must not be empty & minimum of 5 characters.</div>
                   </div>
