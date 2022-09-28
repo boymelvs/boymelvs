@@ -31,7 +31,7 @@ const Experience = ({ getExp }) => {
                      <p className="duties">Duties and Resposibility</p>
 
                      <ul className="responsiblity">
-                        <li>Resposible for monitoring, maintaining the stability and reliability of Access Control System.</li>
+                        <li>Responsible for monitoring, maintaining the stability and reliability of Access Control System.</li>
 
                         <li>Access control installations, terminations, supervision, troubleshooting, programming and configuration, testing and commissioning.</li>
                      </ul>
@@ -62,7 +62,7 @@ const Experience = ({ getExp }) => {
                         <li>Upgrade the existing access control system.</li>
                         <li>After upgrading, monitoring the stability of the system and attending minor trouble.</li>
                         <li>
-                           Resposible for all Access control/CCTV system installations, terminations, supervision, troubleshooting, programming and configuration, testing and
+                           Responsible for all Access control/CCTV system installations, terminations, supervision, troubleshooting, programming and configuration, testing and
                            commissioning.
                         </li>
                      </ul>
