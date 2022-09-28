@@ -79,9 +79,10 @@
 
                & li {
                   list-style-type: none;
+                  padding: 0.5rem;
 
                   @media (min-width: 768px) {
-                     padding: 0 5rem;
+                     padding: 0.5rem 5rem;
                   }
 
                   & a {
@@ -94,10 +95,10 @@
                      &::before {
                         content: "";
                         position: absolute;
-                        bottom: -0.5rem;
+                        bottom: -0.3rem;
                         left: 0;
                         width: 100%;
-                        border-bottom: 0.3rem solid $navy-blue;
+                        border-bottom: 0.1rem solid $navy-blue;
                         transform: scale(0, 1);
                         transform-origin: right;
                         transition: transform 300ms ease-in-out;

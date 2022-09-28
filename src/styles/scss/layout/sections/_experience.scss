@@ -54,6 +54,11 @@
             padding-bottom: 4rem;
             text-align: justify;
 
+            & .company_name {
+               color: $navy-blue;
+               font-weight: $font-weight-600;
+            }
+
             & .project {
                margin-top: 20px;
                font-weight: $font-weight-600;

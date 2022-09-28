@@ -43,7 +43,7 @@
             bottom: -0.5rem;
             left: 0;
             width: 100%;
-            border-bottom: 0.3rem solid $azure;
+            border-bottom: 0.1rem solid $azure;
             transform: scale(0, 1);
             transform-origin: right;
             transition: transform 300ms ease-in-out;
@@ -64,6 +64,30 @@
             text-decoration: none;
             color: $azure;
             font-weight: $font-weight-400;
+         }
+      }
+
+      & .downloadCV {
+         list-style-type: none;
+         background: $navy-blue;
+         padding: 1rem 2rem;
+         border-radius: 3rem;
+         transition: all 300ms ease-in-out;
+
+         & a {
+            font-size: 1.8rem;
+            text-decoration: none;
+            color: $azure;
+         }
+
+         &:hover {
+            background: $whisper;
+            cursor: pointer;
+         }
+
+         &:hover a {
+            color: $navy-blue;
+            font-weight: $font-weight-600;
          }
       }
    }

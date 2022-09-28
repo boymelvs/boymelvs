@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import check from "../../images/accept.png";
+import awards from "../component/Awards";
 
 const About = ({ getAbout }) => {
    const aboutSection = useRef("");
@@ -7,6 +7,21 @@ const About = ({ getAbout }) => {
    useEffect(() => {
       getAbout(aboutSection.current);
    }, [getAbout]);
+
+   const results = awards.map((award) => {
+      return (
+         <li key={award.id}>
+            &#10003;
+            <a href={award.certificateLink} target="_blank" rel="noreferrer noopener" className="certificate">
+               {award.course}
+            </a>
+            -
+            <a href={award.schoolLink} target="_blank" rel="noreferrer noopener" className="freecodecamp">
+               {award.school}
+            </a>
+         </li>
+      );
+   });
 
    return (
       <>
@@ -31,23 +46,7 @@ const About = ({ getAbout }) => {
                   <div className="recognition">
                      <span> Awards and Recognition </span>
 
-                     <ul>
-                        <li>
-                           <img src={check} alt="Check Icon" />
-                           <a
-                              href="https://www.freecodecamp.org/certification/boymelvs/javascript-algorithms-and-data-structures"
-                              target="_blank"
-                              rel="noreferrer noopener"
-                              className="certificate"
-                           >
-                              JavaScript Algorithms and Data Structures
-                           </a>
-                           -
-                           <a href="https://www.freecodecamp.org/" target="_blank" rel="noreferrer noopener" className="freecodecamp">
-                              FREECODECAMP
-                           </a>
-                        </li>
-                     </ul>
+                     <ul>{results}</ul>
                   </div>
                </div>
             </div>

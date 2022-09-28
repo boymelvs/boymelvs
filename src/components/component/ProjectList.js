@@ -30,7 +30,7 @@ import musicappImg from "../../images/projects/musicapp.png";
 
 const projectData = [
    {
-      id: 1,
+      id: 0,
       title: "Music App",
       description:
          "Streaming Music App, Major Project III in Kodegoph bootcamp. Frontend is build in React Js, Backend is NodeJs deployed in heroku, Database is MySql deployed in AWS",

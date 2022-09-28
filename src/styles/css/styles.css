@@ -260,7 +260,7 @@ body.active {
   bottom: -0.5rem;
   left: 0;
   width: 100%;
-  border-bottom: 0.3rem solid hsl(180deg, 8%, 97%);
+  border-bottom: 0.1rem solid hsl(180deg, 8%, 97%);
   transform: scale(0, 1);
   transform-origin: right;
   transition: transform 300ms ease-in-out;
@@ -278,6 +278,26 @@ body.active {
   text-decoration: none;
   color: hsl(180deg, 8%, 97%);
   font-weight: 400;
+}
+.nav-bar .menu .downloadCV {
+  list-style-type: none;
+  background: hsl(204deg, 82%, 42%);
+  padding: 1rem 2rem;
+  border-radius: 3rem;
+  transition: all 300ms ease-in-out;
+}
+.nav-bar .menu .downloadCV a {
+  font-size: 1.8rem;
+  text-decoration: none;
+  color: hsl(180deg, 8%, 97%);
+}
+.nav-bar .menu .downloadCV:hover {
+  background: hsl(0deg, 0%, 90%);
+  cursor: pointer;
+}
+.nav-bar .menu .downloadCV:hover a {
+  color: hsl(204deg, 82%, 42%);
+  font-weight: 600;
 }
 
 #burger-checkbox:checked ~ .nav-bar {
@@ -576,10 +596,11 @@ body.active {
 }
 #about .about-content .about-list .recognition ul li {
   list-style-type: none;
+  padding: 0.5rem;
 }
 @media (min-width: 768px) {
   #about .about-content .about-list .recognition ul li {
-    padding: 0 5rem;
+    padding: 0.5rem 5rem;
   }
 }
 #about .about-content .about-list .recognition ul li a {
@@ -592,10 +613,10 @@ body.active {
 #about .about-content .about-list .recognition ul li a::before {
   content: "";
   position: absolute;
-  bottom: -0.5rem;
+  bottom: -0.3rem;
   left: 0;
   width: 100%;
-  border-bottom: 0.3rem solid hsl(204deg, 82%, 42%);
+  border-bottom: 0.1rem solid hsl(204deg, 82%, 42%);
   transform: scale(0, 1);
   transform-origin: right;
   transition: transform 300ms ease-in-out;
@@ -665,6 +686,10 @@ body.active {
 #experience .work-experience-content .companies .last_company, #experience .work-experience-content .companies .other_company {
   padding-bottom: 4rem;
   text-align: justify;
+}
+#experience .work-experience-content .companies .last_company .company_name, #experience .work-experience-content .companies .other_company .company_name {
+  color: hsl(204deg, 82%, 42%);
+  font-weight: 600;
 }
 #experience .work-experience-content .companies .last_company .project, #experience .work-experience-content .companies .other_company .project {
   margin-top: 20px;
@@ -816,7 +841,7 @@ body.active {
 }
 .slider .see-all {
   margin-top: 2rem;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 600;
   position: relative;
   cursor: pointer;
@@ -1197,7 +1222,7 @@ body.active {
   bottom: -0.5rem;
   left: 0;
   width: 100%;
-  border-bottom: 0.3rem solid hsl(180deg, 8%, 97%);
+  border-bottom: 0.1rem solid hsl(180deg, 8%, 97%);
   transform: scale(0, 1);
   transform-origin: right;
   transition: transform 300ms ease-in-out;

@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import resume from "../../images/cv/melvin-enmocino.pdf";
 
 const Nav = ({ id }) => {
    const checkBox = useRef();
@@ -19,7 +20,7 @@ const Nav = ({ id }) => {
                   <a href="#about">About</a>
                </li>
                <li className={`menu-item experience ${id === "experience" && "active"}`} onClick={onClickMenu}>
-                  <a href="#experience">Experience</a>
+                  <a href="#experience">Experiences</a>
                </li>
                <li className={`menu-item projects ${id === "projects" && "active"}`} onClick={onClickMenu}>
                   <a href="#projects">Projects</a>
@@ -29,6 +30,12 @@ const Nav = ({ id }) => {
                </li>
                <li className={`menu-item contacts ${id === "contacts" && "active"}`} onClick={onClickMenu}>
                   <a href="#contacts">Contacts</a>
+               </li>
+
+               <li className="menu-items downloadCV" onClick={onClickMenu}>
+                  <a href={resume} target="_blank" rel="noopenner noreferrer">
+                     Resume
+                  </a>
                </li>
             </ul>
          </nav>

@@ -10,7 +10,7 @@ const Experience = ({ getExp }) => {
    return (
       <>
          <section id="experience" ref={expSection}>
-            <h2>WORK EXPERIENCE</h2>
+            <h2>WORK EXPERIENCES</h2>
             <div className="work-experience-content">
                <div className="job">
                   <span> Access Control System Administration </span>
@@ -19,7 +19,7 @@ const Experience = ({ getExp }) => {
                <ul className="companies">
                   <li className="last_company">
                      <p>Jan 2016 - Jan 2022</p>
-                     <p>Gulf Business Machine (GBM)</p>
+                     <p className="company_name">Gulf Business Machine (GBM)</p>
                      <p>Kingdom of Bahrain</p>
 
                      <div className="project">Project Involvement</div>
@@ -45,8 +45,8 @@ const Experience = ({ getExp }) => {
                <ul className="companies">
                   <li className="other_company">
                      <p>March 2009 - June 2015</p>
-                     <p>Abdulla Fouad Holding Company</p>
-                     <p>Dammam Saudi Arabia</p>
+                     <p className="company_name">Abdulla Fouad Holding Company</p>
+                     <p>Dammam, Kingdom of Saudi Arabia</p>
 
                      <div className="project">Project Involvement</div>
 
