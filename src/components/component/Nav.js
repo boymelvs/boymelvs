@@ -28,7 +28,7 @@ const Nav = ({ id }) => {
                   <a href="#skills">Skills</a>
                </li>
                <li className={`menu-item contacts ${id === "contacts" && "active"}`} onClick={onClickMenu}>
-                  <a href="#contacts">Contact</a>
+                  <a href="#contacts">Contacts</a>
                </li>
             </ul>
          </nav>

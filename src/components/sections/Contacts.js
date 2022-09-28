@@ -192,7 +192,7 @@ const Contacts = ({ getContacts }) => {
                   <div className="social-media">
                      <h2 className="social-media-text">Social Media</h2>
                      <div className="social-media-icon">
-                        <a href="https://linkedin.com" target="_blank" rel="noreferrer noopener">
+                        <a href="https://www.linkedin.com/in/melvin-enmocino/" target="_blank" rel="noreferrer noopener">
                            <img src={linkedin} className="linkedin" alt="Linkedin Logo" />
                         </a>
 

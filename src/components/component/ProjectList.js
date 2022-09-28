@@ -26,12 +26,24 @@ import testimonialGrid from "../../images/projects/testimonials-grid-section.png
 import timeTracking from "../../images/projects/time-tracking-dashboard.png";
 import travelAndTours from "../../images/projects/travel&tours.png";
 import melvinport from "../../images/projects/melvin-portfolio.png";
+import musicappImg from "../../images/projects/musicapp.png";
 
 const projectData = [
    {
       id: 1,
+      title: "Music App",
+      description:
+         "Streaming Music App, Major Project III in Kodegoph bootcamp. Frontend is build in React Js, Backend is NodeJs deployed in heroku, Database is MySql deployed in AWS",
+      image: musicappImg,
+      alt: "Music App",
+      url: "https://musicapp-kodego-proj.vercel.app/",
+      tags: ["Html5", "Scss/Css", "React Js", "NodeJs", "Css3"],
+   },
+
+   {
+      id: 1,
       title: "Melvin Portfolio",
-      description: "Melvin portfolio",
+      description: "Melvin portfolio is build in React Js",
       image: melvinport,
       alt: "melvin portfolio",
       url: "https://boymelvs.vercel.app/",

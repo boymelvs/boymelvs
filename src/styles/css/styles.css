@@ -979,8 +979,8 @@ body.active {
 }
 
 .skill-card {
-  max-width: 12rem;
-  max-height: 12rem;
+  max-width: 10rem;
+  max-height: 10rem;
 }
 .skill-card h3 {
   text-align: center;

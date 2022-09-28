@@ -80,12 +80,3 @@
 <!-- WAKA TIME -->
 
 <a href="https://wakatime.com/@boymelvs" target="_blank" rel="noopener noreferrer"><img align="center" width="100%" src="https://github-readme-stats.vercel.app/api/wakatime?username=boymelvs&hide=Markdown,EJS,XML,Text,Other,CSV,Vue.js,JCL,COBOLFree,COBOL,TypeScript,Bash,PHP,SQL,Python" alt="Melvin's wakatime Weekly stats" /></a>
-
-<!-- GITHUB CARDS -->
-<div align=center styles="display:grid; grid-template-columns: 1fr 1fr; gap:1px;">
-
-<a href="https://boymelvs.github.io/travel-and-tours/" target="_blank" rel="noreferrer"><img align="center" width="100%" src="https://github-readme-stats.vercel.app/api/pin/?username=boymelvs&repo=travel-and-tours" alt="Travel and Tours Website" /></a>
-
-<a href="https://boymelvs.github.io/pairgo/" target="_blank" rel="noreferrer"><img align="center" width="100%" src="https://github-readme-stats.vercel.app/api/pin/?username=boymelvs&repo=pairgo" alt="Pairgo Website" /></a>
-
-</div>
