@@ -13,7 +13,7 @@ const Home = ({ getHome }) => {
          <section id="home" ref={homeSection}>
             <div className="left">
                <h1 className="greeting">Hi, I'm Melvin</h1>
-               <div className="career">Full-Stack Web Developer</div>
+               <div className="career">Web Developer</div>
 
                <div className="cta">
                   <a href="#contacts">
