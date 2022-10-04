@@ -31,12 +31,12 @@ import musicappImg from "../../images/projects/musicapp.png";
 const projectData = [
    {
       id: 0,
-      title: "Music App",
+      title: "My Music App",
       description:
          "Is a free music streaming service that offers unlimited listening with no commercial interruptions and no ads. Frontend is build in React Js, Backend is NodeJs deployed in heroku, Database is MySql deployed in AWS",
       image: musicappImg,
       alt: "Music App",
-      url: "https://musicapp-kodego-proj.vercel.app/",
+      url: "https://mymusicapp-nine.vercel.app/",
       tags: ["Html5", "Scss/Css", "React Js", "NodeJs", "MySQL"],
    },
 
