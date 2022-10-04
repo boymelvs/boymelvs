@@ -290,6 +290,7 @@ body.active {
   font-size: 1.8rem;
   text-decoration: none;
   color: hsl(180deg, 8%, 97%);
+  font-weight: 600;
 }
 .nav-bar .menu .downloadCV:hover {
   background: hsl(0deg, 0%, 90%);
