@@ -33,7 +33,7 @@ const Experience = ({ getExp }) => {
                      <ul className="responsiblity">
                         <li>Responsible for monitoring, maintaining the stability and reliability of Access Control System.</li>
 
-                        <li>Access control installations, terminations, supervision, troubleshooting, programming and configuration, testing and commissioning.</li>
+                        <li>In-charge for access control system design, installation, supervision, troubleshooting, programming and configuration, testing and commissioning.</li>
                      </ul>
                   </li>
                </ul>

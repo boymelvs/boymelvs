@@ -33,17 +33,17 @@ const projectData = [
       id: 0,
       title: "Music App",
       description:
-         "Streaming Music App, Major Project III in Kodegoph bootcamp. Frontend is build in React Js, Backend is NodeJs deployed in heroku, Database is MySql deployed in AWS",
+         "Is a free music streaming service that offers unlimited listening with no commercial interruptions and no ads. Frontend is build in React Js, Backend is NodeJs deployed in heroku, Database is MySql deployed in AWS",
       image: musicappImg,
       alt: "Music App",
       url: "https://musicapp-kodego-proj.vercel.app/",
-      tags: ["Html5", "Scss/Css", "React Js", "NodeJs", "Css3"],
+      tags: ["Html5", "Scss/Css", "React Js", "NodeJs", "MySQL"],
    },
 
    {
       id: 1,
       title: "Melvin Portfolio",
-      description: "Melvin portfolio is build in React Js",
+      description: "A compilation of my relevant work sample I gathered before and after KodegoPh Bootcamp. This portfolio is build in ReactJs",
       image: melvinport,
       alt: "melvin portfolio",
       url: "https://boymelvs.vercel.app/",
@@ -53,7 +53,7 @@ const projectData = [
    {
       id: 2,
       title: "Travel & Tours",
-      description: "A website for travel & tour businesses. My major project-1 from KODEGOPH Bootcamp",
+      description: "A website for travel & tour businesses. My Mini Project-1 in KODEGOPH Bootcamp. It is build in HTML, CSS & Bootstrap",
       image: travelAndTours,
       alt: "project-travel-tours",
       url: "https://boymelvs.github.io/travel-and-tours/",
@@ -63,7 +63,7 @@ const projectData = [
    {
       id: 3,
       title: "Pairgo Website Project",
-      description: "Website for warehousing business. Major Project-2 from KODEGOPH Bootcamp. I re-created using React Js.",
+      description: "Website for warehousing business. Mini Project-2 in KODEGOPH Bootcamp. After group presentation, I re-created this website using React Js.",
       image: pairgo,
       alt: "pairgo-website",
       url: "https://pairgoapp.vercel.app/",

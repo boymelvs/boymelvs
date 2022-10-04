@@ -177,7 +177,7 @@ const Contacts = ({ getContacts }) => {
 
                      <div className="phone">
                         <img src={phoneIcon} alt="Phone Icon" />
-                        <div className="phone-number">0949_9200932</div>
+                        <div className="phone-number">0949_9200932 / 0936_5641623</div>
                      </div>
 
                      <div className="email">
