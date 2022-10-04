@@ -35,7 +35,7 @@ const About = ({ getAbout }) => {
                <div className="about-list">
                   <p className="about-para">
                      A former hard-working OFW. Career shifter and has strong desire to become a Full-Stack Web Developer. A team player who can collaborate with different people.
-                     I am a self-taught Front-End Developer, currently developing more skills using ReactJS, NodeJS(express js) and MySQL.
+                     I am a self-taught Front-End Developer, continuously developing more skills using ReactJS, NodeJS(express js) and MySQL.
                   </p>
 
                   <p>
