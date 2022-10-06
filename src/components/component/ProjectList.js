@@ -42,8 +42,8 @@ const projectData = [
 
    {
       id: 1,
-      title: "Melvin Portfolio",
-      description: "A compilation of my relevant work sample I gathered before and after KodegoPh Bootcamp. This portfolio is build in ReactJs",
+      title: "My Portfolio",
+      description: "A compilation of my relevant work sample I gathered while developing my skills. This portfolio is build in ReactJs",
       image: melvinport,
       alt: "melvin portfolio",
       url: "https://boymelvs.vercel.app/",
