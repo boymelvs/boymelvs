@@ -52,8 +52,8 @@ const Experience = ({ getExp }) => {
 
                      <ul className="jobsite">
                         <li>Bahrain Petroleum Company - Access Control system upgrading and Maintenance Project, Kingdom of Bahrain</li>
-
                         <li>Al-Khafji Joint Operations - CCTV Upgrade Project and Maintenance, Kingdom of Saudi Arabia</li>
+                        <li>King Abdullah University of Science and Technology (KAUST) - Access Control System Installations Project, Kingdom of Saudi Arabia</li>
                      </ul>
 
                      <p className="duties">Duties and Resposibility</p>
