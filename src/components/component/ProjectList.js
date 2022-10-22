@@ -27,6 +27,7 @@ import timeTracking from "../../images/projects/time-tracking-dashboard.png";
 import travelAndTours from "../../images/projects/travel&tours.png";
 import melvinport from "../../images/projects/melvin-portfolio.png";
 import musicappImg from "../../images/projects/musicapp.png";
+import ecommercepage from "../../images/projects/ecommerce-product-page.png";
 
 const projectData = [
    {
@@ -92,12 +93,12 @@ const projectData = [
 
    {
       id: 6,
-      title: "Signup Form Page",
-      description: "A signup form with validation.",
-      image: signUpForm,
-      alt: "signup form page",
-      url: "https://boymelvs.github.io/INTRO-COMPONENT-WITH-SIGNUP-FORM/",
-      tags: ["Html5", "Javascript", "Css3", "Flexbox"],
+      title: "E-Commerice Product Page",
+      description: "E-Commerice Product Page.",
+      image: ecommercepage,
+      alt: "E-Commerice Product Page",
+      url: "https://product-page-gamma.vercel.app/",
+      tags: ["Html5", "React Js", "Javascript", "Scss", "Flexbox"],
    },
 
    {
@@ -112,6 +113,16 @@ const projectData = [
 
    {
       id: 8,
+      title: "Signup Form Page",
+      description: "A signup form with validation.",
+      image: signUpForm,
+      alt: "signup form page",
+      url: "https://boymelvs.github.io/INTRO-COMPONENT-WITH-SIGNUP-FORM/",
+      tags: ["Html5", "Javascript", "Css3", "Flexbox"],
+   },
+
+   {
+      id: 9,
       title: "Pricing Component w/ toggle",
       description: "A pricing component with toggle",
       image: pricingComponent,
@@ -121,7 +132,7 @@ const projectData = [
    },
 
    {
-      id: 9,
+      id: 10,
       title: "Landing Page with Curve",
       description: "A dark theme landing page with curve.",
       image: landingPageCurve,
@@ -131,7 +142,7 @@ const projectData = [
    },
 
    {
-      id: 10,
+      id: 11,
       title: "Interactive Rating Component",
       description: "A rating component",
       image: interactiveRating,
@@ -141,7 +152,7 @@ const projectData = [
    },
 
    {
-      id: 11,
+      id: 12,
       title: "Social Media Dashboard",
       description: "A social media dashboard with theme switcher",
       image: socialMediaDashboard,
@@ -151,7 +162,7 @@ const projectData = [
    },
 
    {
-      id: 12,
+      id: 13,
       title: "Data Storage Component",
       description: "A data storage component",
       image: fyloDataStorage,
@@ -161,7 +172,7 @@ const projectData = [
    },
 
    {
-      id: 13,
+      id: 14,
       title: "Product Preview Card",
       description: "A product preview card component",
       image: productPreviewCard,
@@ -171,7 +182,7 @@ const projectData = [
    },
 
    {
-      id: 14,
+      id: 15,
       title: "Interactive Pricing Component",
       description: "A component with slider and toggle to see prices for different page view numbers",
       image: interactivePricing,
@@ -181,7 +192,7 @@ const projectData = [
    },
 
    {
-      id: 15,
+      id: 16,
       title: "Single Price Grid Section",
       description: "A single price page component",
       image: singlePrice,
@@ -191,7 +202,7 @@ const projectData = [
    },
 
    {
-      id: 16,
+      id: 17,
       title: "Section w/ dropdown navigation",
       description: "A page with dropdown navigation",
       image: introSectionDropdown,
@@ -201,7 +212,7 @@ const projectData = [
    },
 
    {
-      id: 17,
+      id: 18,
       title: "Testimonial Grid Section",
       description: "A testimonial page component",
       image: testimonialGrid,
@@ -211,7 +222,7 @@ const projectData = [
    },
 
    {
-      id: 18,
+      id: 19,
       title: "Social Proof Section",
       description: "Testimonial cards",
       image: socialProof,
@@ -221,7 +232,7 @@ const projectData = [
    },
 
    {
-      id: 19,
+      id: 20,
       title: "Base Apparel",
       description: "Base apparel",
       image: apparel,
@@ -231,7 +242,7 @@ const projectData = [
    },
 
    {
-      id: 20,
+      id: 21,
       title: "Time Tracking Dashboard",
       description: "Time Trackin dashboard",
       image: timeTracking,
@@ -241,7 +252,7 @@ const projectData = [
    },
 
    {
-      id: 21,
+      id: 22,
       title: "Search Photo App",
       description: "An app that can seach photo from unsplash api. Coding activity from KODEGOPH Bootcamp",
       image: searchPhotoApp,
@@ -251,7 +262,7 @@ const projectData = [
    },
 
    {
-      id: 22,
+      id: 23,
       title: "Journal App",
       description: "An app that a user can records daily thoughts and task. React Coding activity from KODEGOPH Bootcamp",
       image: reactJournal,
@@ -261,7 +272,7 @@ const projectData = [
    },
 
    {
-      id: 23,
+      id: 24,
       title: "Online Calculator",
       description: "A simple calculator with 4 basic operator. Coding activity from KODEGOPH Bootcamp",
       image: calculator,
@@ -271,7 +282,7 @@ const projectData = [
    },
 
    {
-      id: 24,
+      id: 25,
       title: "Chat App Illustration",
       description: "A chat app illustration using css only",
       image: chatApp,
@@ -281,7 +292,7 @@ const projectData = [
    },
 
    {
-      id: 25,
+      id: 26,
       title: "Fylo Landing Page",
       description: "A dark theme landing page.",
       image: fyloLandingPage,
@@ -291,7 +302,7 @@ const projectData = [
    },
 
    {
-      id: 26,
+      id: 27,
       title: "NFT Preview Card",
       description: "An NFT preview card",
       image: nftPreview,
@@ -301,7 +312,7 @@ const projectData = [
    },
 
    {
-      id: 27,
+      id: 28,
       title: "Advice Generator App",
       description: "An advice generator app, data from API",
       image: adviceGenerator,
@@ -311,7 +322,7 @@ const projectData = [
    },
 
    {
-      id: 28,
+      id: 29,
       title: "Analog Clock",
       description: "An analog clock.",
       image: clock,
