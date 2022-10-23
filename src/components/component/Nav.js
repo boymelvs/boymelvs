@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import resume from "../../images/cv/melvin-enmocino.pdf";
+import resume from "../../images/cv/melvin-enmocino-cv.pdf";
 
 const Nav = ({ id }) => {
    const checkBox = useRef();
