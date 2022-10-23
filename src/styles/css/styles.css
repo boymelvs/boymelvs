@@ -738,7 +738,7 @@ body.active {
 }
 .card .card-image {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 0;
@@ -755,33 +755,41 @@ body.active {
   transition: all 1000ms ease-in-out;
 }
 .card .card-image .visit-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
   position: absolute;
-  background: hsl(204deg, 82%, 42%);
-  padding: 1rem 2rem;
-  border-radius: 0.5rem;
   visibility: hidden;
 }
 .card .card-image .visit-btn .visit {
   text-decoration: none;
   color: hsl(180deg, 8%, 97%);
   font-size: 1.8rem;
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+  background: hsl(204deg, 82%, 42%);
+}
+.card .card-image .visit-btn .visit .live, .card .card-image .visit-btn .visit .code {
   position: relative;
 }
-.card .card-image .visit-btn .visit::before {
+.card .card-image .visit-btn .visit .live::before, .card .card-image .visit-btn .visit .code::before {
   content: "";
   position: absolute;
   bottom: -0.2rem;
   left: 0;
   width: 100%;
-  border-bottom: 0.2rem solid hsl(180deg, 8%, 97%);
+  padding: 1rem;
+  border-bottom: 0.1rem solid hsl(180deg, 8%, 97%);
   transform: scale(0, 1);
   transform-origin: right;
   transition: transform 300ms ease-in-out;
 }
-.card .card-image .visit-btn:hover > .visit::before {
+.card .card-image .visit-btn .visit:hover > .live::before, .card .card-image .visit-btn .visit:hover > .code::before {
   cursor: pointer;
   transform: scale(1, 1);
-  transform-origin: left 1rem;
+  transform-origin: left;
 }
 .card .card-image .visit-btn.seemore {
   visibility: visible;

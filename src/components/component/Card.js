@@ -18,7 +18,11 @@ const Card = ({ projectList }) => {
 
                <div className="visit-btn">
                   <a href={project.url} target="_blank" rel="noreferrer noopener" className="visit">
-                     See Live
+                     <span className="live">Live</span>
+                  </a>
+
+                  <a href={project.code} target="_blank" rel="noreferrer noopener" className="visit">
+                     <span className="code">Code</span>
                   </a>
                </div>
             </div>

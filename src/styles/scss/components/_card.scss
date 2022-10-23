@@ -26,7 +26,7 @@
    }
 
    .card-image {
-      @include flexBox(column, center, center, 0);
+      @include flexBox(row, center, center, 0);
       width: 100%;
       height: 25rem;
       padding: 0 0.5rem;
@@ -41,35 +41,42 @@
       }
 
       .visit-btn {
+         @include flexBox(row, center, center, 2rem);
          position: absolute;
-         background: $navy-blue;
-         padding: 1rem 2rem;
-         border-radius: 0.5rem;
          visibility: hidden;
 
          .visit {
             text-decoration: none;
             color: $azure;
             font-size: 1.8rem;
-            position: relative;
+            border-radius: 0.5rem;
+            padding: 1rem 2rem;
+            background: $navy-blue;
 
-            &::before {
-               content: "";
-               position: absolute;
-               bottom: -0.2rem;
-               left: 0;
-               width: 100%;
-               border-bottom: 0.2rem solid $azure;
-               transform: scale(0, 1);
-               transform-origin: right;
-               transition: transform 300ms ease-in-out;
+            & .live,
+            & .code {
+               position: relative;
+
+               &::before {
+                  content: "";
+                  position: absolute;
+                  bottom: -0.2rem;
+                  left: 0;
+                  width: 100%;
+                  padding: 1rem;
+                  border-bottom: 0.1rem solid $azure;
+                  transform: scale(0, 1);
+                  transform-origin: right;
+                  transition: transform 300ms ease-in-out;
+               }
             }
-         }
 
-         &:hover > .visit::before {
-            cursor: pointer;
-            transform: scale(1, 1);
-            transform-origin: left 1rem;
+            &:hover > .live::before,
+            &:hover > .code::before {
+               cursor: pointer;
+               transform: scale(1, 1);
+               transform-origin: left;
+            }
          }
 
          &.seemore {
