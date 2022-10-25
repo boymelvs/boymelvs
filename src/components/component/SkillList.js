@@ -12,17 +12,17 @@ import nodeJsImg from "../../images/tools/nodejs.svg";
 import mySqlImg from "../../images/tools/mysql.svg";
 
 const toolImg = [
-   { id: 1, name: "Html5", image: html5 },
-   { id: 2, name: "Css3", image: css3 },
-   { id: 3, name: "Boostrap", image: bootstrap },
-   { id: 4, name: "Sass", image: sass },
-   { id: 5, name: "Javascript", image: javascript },
-   { id: 6, name: "React js", image: reactImg },
-   { id: 7, name: "Node js", image: nodeJsImg },
-   { id: 8, name: "MySql", image: mySqlImg },
-   { id: 9, name: "Git", image: git },
-   { id: 10, name: "Vscode", image: vscode },
-   { id: 11, name: "Google", image: google },
+     { id: 1, name: "Html5", image: html5 },
+     { id: 2, name: "Css3", image: css3 },
+     { id: 3, name: "Boostrap", image: bootstrap },
+     { id: 4, name: "Sass", image: sass },
+     { id: 5, name: "Javascript", image: javascript },
+     { id: 6, name: "React js", image: reactImg },
+     { id: 7, name: "Node js", image: nodeJsImg },
+     { id: 8, name: "MySql", image: mySqlImg },
+     { id: 9, name: "Git", image: git },
+     { id: 10, name: "Vscode", image: vscode },
+     { id: 11, name: "Google", image: google },
 ];
 
 export default toolImg;

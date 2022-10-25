@@ -1,99 +1,99 @@
 .nav-bar {
-   background: linear-gradient(45deg, $black-pearl 0%, $navy-blue 150%);
-   position: absolute;
-   top: 0;
-   left: 0;
-   min-height: 100vh;
-   width: 100%;
-   transform: translateY(-250%);
-   transition: transform 500ms ease-in-out;
+     background: linear-gradient(45deg, $black-pearl 0%, $navy-blue 150%);
+     position: absolute;
+     top: 0;
+     left: 0;
+     min-height: 100vh;
+     width: 100%;
+     transform: translateY(-250%);
+     transition: transform 500ms ease-in-out;
 
-   @media (min-width: 992px) {
-      @include flexBox(row, center, flex-end, 2.5rem);
-      padding: 0;
-      position: unset;
-      min-height: unset;
-      transform: translate(0%);
-      transition: transform 00ms ease-in-out;
-      background: transparent;
-   }
+     @media (min-width: 992px) {
+          @include flexBox(row, center, flex-end, 2.5rem);
+          padding: 0;
+          position: unset;
+          min-height: unset;
+          transform: translate(0%);
+          transition: transform 00ms ease-in-out;
+          background: transparent;
+     }
 
-   .menu {
-      @include flexBox(column, flex-start, flex-start, 2.5rem);
-      width: 100%;
-      padding: 5rem 0 0 10rem;
-      text-align: left;
+     .menu {
+          @include flexBox(column, flex-start, flex-start, 2.5rem);
+          width: 100%;
+          padding: 5rem 0 0 10rem;
+          text-align: left;
 
-      @media (min-width: 768px) {
-         padding-left: 15rem;
-      }
+          @media (min-width: 768px) {
+               padding-left: 15rem;
+          }
 
-      @media (min-width: 992px) {
-         @include flexBox(row, center, flex-end, 2.5rem);
-         padding: 0;
-      }
+          @media (min-width: 992px) {
+               @include flexBox(row, center, flex-end, 2.5rem);
+               padding: 0;
+          }
 
-      & .menu-item {
-         list-style-type: none;
-         position: relative;
+          & .menu-item {
+               list-style-type: none;
+               position: relative;
 
-         &::before {
-            content: "";
-            position: absolute;
-            bottom: -0.5rem;
-            left: 0;
-            width: 100%;
-            border-bottom: 0.1rem solid $azure;
-            transform: scale(0, 1);
-            transform-origin: right;
-            transition: transform 300ms ease-in-out;
-         }
+               &::before {
+                    content: "";
+                    position: absolute;
+                    bottom: -0.5rem;
+                    left: 0;
+                    width: 100%;
+                    border-bottom: 0.1rem solid $azure;
+                    transform: scale(0, 1);
+                    transform-origin: right;
+                    transition: transform 300ms ease-in-out;
+               }
 
-         &:hover::before {
-            transform: scale(1, 1);
-            transform-origin: left;
-         }
+               &:hover::before {
+                    transform: scale(1, 1);
+                    transform-origin: left;
+               }
 
-         &.active::before {
-            transform: scale(1, 1);
-            transform-origin: left;
-         }
+               &.active::before {
+                    transform: scale(1, 1);
+                    transform-origin: left;
+               }
 
-         & a {
-            font-size: 2rem;
-            text-decoration: none;
-            color: $azure;
-            font-weight: $font-weight-400;
-         }
-      }
+               & a {
+                    font-size: 2rem;
+                    text-decoration: none;
+                    color: $azure;
+                    font-weight: $font-weight-400;
+               }
+          }
 
-      & .downloadCV {
-         list-style-type: none;
-         background: $navy-blue;
-         padding: 1rem 2rem;
-         border-radius: 3rem;
-         transition: all 300ms ease-in-out;
+          & .downloadCV {
+               list-style-type: none;
+               background: $navy-blue;
+               padding: 1rem 2rem;
+               border-radius: 3rem;
+               transition: all 300ms ease-in-out;
 
-         & a {
-            font-size: 1.8rem;
-            text-decoration: none;
-            color: $azure;
-            font-weight: $font-weight-600;
-         }
+               & a {
+                    font-size: 1.8rem;
+                    text-decoration: none;
+                    color: $azure;
+                    font-weight: $font-weight-600;
+               }
 
-         &:hover {
-            background: $whisper;
-            cursor: pointer;
-         }
+               &:hover {
+                    background: $whisper;
+                    cursor: pointer;
+               }
 
-         &:hover a {
-            color: $navy-blue;
-            font-weight: $font-weight-600;
-         }
-      }
-   }
+               &:hover a {
+                    color: $navy-blue;
+                    font-weight: $font-weight-600;
+               }
+          }
+     }
 }
 
 #burger-checkbox:checked ~ .nav-bar {
-   transform: translateY(0%);
+     transform: translateY(0%);
 }
