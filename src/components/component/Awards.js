@@ -8,7 +8,7 @@ const Awards = [
    },
    {
       id: 2,
-      course: "Full Stack Web Developer (Soon)",
+      course: "Full Stack Web Developer",
       certificateLink: "",
       school: "KODEGOPH",
       schoolLink: "https://kodego.ph/",

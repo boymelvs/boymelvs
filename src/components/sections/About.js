@@ -34,13 +34,7 @@ const About = ({ getAbout }) => {
 
                          <div className="about-list">
                               <p className="about-para">
-                                   A former hard-working OFW. Career shifter. A team player who can collaborate with different people. I am a self-taught Front-End Developer,
-                                   continuously developing more skills using ReactJS, NodeJS(express js) and MySQL.
-                              </p>
-
-                              <p>
-                                   I enrolled in KODEGOPH bootcamp to learn more, enhance my skills as web developer and also looking for job opportunity where I can implement and
-                                   improve my skills simultaneously.
+                                   A former hard-working OFW. A team player who can collaborate with different people. I am a self-taught Web Developer,continuously developing and enhance my skills using ReactJS, NodeJS(express js) and MySQL. And also looking for job opportunity where I can implement and my skills.
                               </p>
 
                               <div className="recognition">
