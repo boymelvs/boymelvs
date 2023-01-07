@@ -44,11 +44,14 @@ const checkEmail = (item) => {
 
 /* validation for phone */
 const checkPhone = (item) => {
-     let name = item.phone.value.trim();
-     let maxLength = name.length;
+     let phoneNumber = item.phone.value.trim();
+     let maxLength = phoneNumber.length;
      let element = item.phone;
 
-     if (isRequired(name) && maxLength >= 9 && maxLength < 15) {
+     const phoneFormat = /[0-9]$/;
+     const isPhoneCorrect = phoneFormat.test(phoneNumber);
+
+     if (isRequired(phoneNumber) && isPhoneCorrect && maxLength >= 9 && maxLength < 14) {
           return true;
      }
 
@@ -124,6 +127,7 @@ const realTimeChecking = (contactForm, value) => {
                          let element = contactForm.phone;
                          removeWarning(element);
                     }
+
                     break;
 
                case "subject":

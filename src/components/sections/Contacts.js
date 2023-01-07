@@ -118,7 +118,7 @@ const Contacts = ({ getContacts }) => {
                                              className="form-field"
                                              placeholder="0949 1234567"
                                              minLength="9"
-                                             maxLength="15"
+                                             maxLength="14"
                                              value={phone}
                                              onChange={onInputChange}
                                              required
