@@ -1,11 +1,10 @@
 # I'm Melvin 👋
 
-### A career shifter and has strong desire to become a Full Stack Web Developer 👨‍💻
+### A former hard-working OFW. And looking for job opportunity where I can implement my skills. 👨
 
--  🌱 I’m currently enrolled at **KODEGOPH Bootcamp**.
--  👀 Interested to learn more in **Node js**, **React js**.
--  📫 How to reach me? **melvin.enmocino@gmail.com**
--  Live Site: **[Portfolio](https://boymelvs.vercel.app/)**.
+-    👀 Continuously developing and enhance my skills in **Node js**, **React js** , **MySaql**.
+-    📫 How to reach me? **melvin.enmocino@gmail.com**
+-    Live Site: **[Portfolio](https://boymelvs.vercel.app/)**.
 
 <!-- WAKA TIME -->
 
@@ -14,7 +13,7 @@
 ### Connect with me:
 
 <p align="left">
-<a href="#" target="_blank" rel="noreferrer" ><img align="left" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="32" height="32" /></a>
+<a href="https://www.linkedin.com/in/melvin-enmocino/" target="_blank" rel="noreferrer" ><img align="left" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="32" height="32" /></a>
 
 <a href="#" target="_blank" rel="noreferrer" ><img align="center" src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/instagram.svg" width="32" height="32" /></a>
 
