@@ -118,12 +118,12 @@ const Contacts = ({ getContacts }) => {
                                              className="form-field"
                                              placeholder="0949 1234567"
                                              minLength="9"
-                                             maxLength="26"
+                                             maxLength="15"
                                              value={phone}
                                              onChange={onInputChange}
                                              required
                                         />
-                                        <div className="warning">Its look like not a phone number. Must not be empty.</div>
+                                        <div className="warning">It's look like not a phone number. Must not be empty.</div>
                                    </div>
                               </div>
 

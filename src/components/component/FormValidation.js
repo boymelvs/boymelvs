@@ -48,7 +48,7 @@ const checkPhone = (item) => {
      let maxLength = name.length;
      let element = item.phone;
 
-     if (isRequired(name) && maxLength >= 9 && maxLength < 26) {
+     if (isRequired(name) && maxLength >= 9 && maxLength < 15) {
           return true;
      }
 
@@ -115,6 +115,13 @@ const realTimeChecking = (contactForm, value) => {
                case "email":
                     if (checkEmail(contactForm)) {
                          let element = contactForm.email;
+                         removeWarning(element);
+                    }
+                    break;
+
+               case "phone":
+                    if (checkPhone(contactForm)) {
+                         let element = contactForm.phone;
                          removeWarning(element);
                     }
                     break;
