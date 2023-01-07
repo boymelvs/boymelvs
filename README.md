@@ -2,7 +2,7 @@
 
 ### A former hard-working OFW. And looking for job opportunity where I can implement my skills. 👨
 
--    👀 Continuously developing and enhance my skills in **Node js**, **React js** , **MySaql**.
+-    👀 Continuously developing and enhance my skills in **Node js**, **React js** , **MySql**.
 -    📫 How to reach me? **melvin.enmocino@gmail.com**
 -    Live Site: **[Portfolio](https://boymelvs.vercel.app/)**.
 
