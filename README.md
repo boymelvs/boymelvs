@@ -2,7 +2,7 @@
 
 ### A former hard-working OFW. And looking for job opportunity where I can implement my skills. 👨
 
--    👀 Continuously developing and enhance my skills in **Node js**, **React js** , **MySql**.
+-    👀 Continuously developing and enhance my skills in **Node Js (Express Js)**, **React js** , **MySql**.
 -    📫 How to reach me? **melvin.enmocino@gmail.com**
 -    Live Site: **[Portfolio](https://boymelvs.vercel.app/)**.
 
@@ -44,6 +44,10 @@
 <!-- JAVASCRIPT logo -->
 
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"><img align="left" width="32" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" style="padding-right:10px;" /></a>
+
+<!-- TYPESCRIPT logo -->
+
+<a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"><img align="left" width="32" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="Typescript" style="padding-right:10px;" /></a>
 
 <!-- NODE  JS logo -->
 

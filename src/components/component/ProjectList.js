@@ -32,15 +32,16 @@ import ecommercepage from "../../images/projects/ecommerce-product-page.png";
 const projectData = [
      {
           id: 0,
-          title: "My Music App",
-          description:
-               "Is a free music streaming service that offers unlimited listening with no commercial interruptions and no ads. Frontend is build in React Js, Backend is NodeJs deployed in heroku, Database is MySql deployed in AWS",
-          image: musicappImg,
-          alt: "Music App",
-          url: "https://mymusicapp-nine.vercel.app/",
-          code: "https://github.com/boymelvs/mymusicapp",
-          tags: ["Html5", "Scss/Css", "React Js", "NodeJs", "MySQL"],
+          title: "E-Commerice Product Page",
+          description: "E-Commerice Product Page.",
+          image: ecommercepage,
+          alt: "E-Commerice Product Page",
+          url: "https://product-page-gamma.vercel.app/",
+          code: "https://github.com/boymelvs/ecommerce-product-page",
+          tags: ["Html5", "React Js", "Javascript", "Scss", "Flexbox"],
      },
+
+
 
      {
           id: 1,
@@ -62,21 +63,8 @@ const projectData = [
           url: "https://boymelvs.github.io/travel-and-tours/",
           code: "https://github.com/boymelvs/travel-and-tours",
           tags: ["Html5", "Booststrap5", "Flexbox", "Css3"],
-     },
-
-     {
+     }, {
           id: 3,
-          title: "Pairgo Website Project",
-          description: "Website for warehousing business. Mini Project-2 in KODEGOPH Bootcamp. After group presentation, I re-created this website using React Js.",
-          image: pairgo,
-          alt: "pairgo-website",
-          url: "https://pairgoapp.vercel.app/",
-          code: "https://github.com/boymelvs/pairgoapp",
-          tags: ["Html5", "React Js", "Flexbox", "Scss/Css", "CSSGrid"],
-     },
-
-     {
-          id: 4,
           title: "Search Countries App",
           description: "A simple website that a user can search country information. Pulling data from API",
           image: searchCountry,
@@ -87,7 +75,7 @@ const projectData = [
      },
 
      {
-          id: 5,
+          id: 4,
           title: "Crowdfunding Page",
           description: "A website that updates progress bar and total money raised based on user pledge after confirming.",
           image: crowdfunding,
@@ -98,14 +86,25 @@ const projectData = [
      },
 
      {
+          id: 5,
+          title: "Pairgo Website Project",
+          description: "Website for warehousing business. Mini Project-2 in KODEGOPH Bootcamp. After group presentation, I re-created this website using React Js.",
+          image: pairgo,
+          alt: "pairgo-website",
+          url: "https://pairgoapp.vercel.app/",
+          code: "https://github.com/boymelvs/pairgoapp",
+          tags: ["Html5", "React Js", "Flexbox", "Scss/Css", "CSSGrid"],
+     },
+     {
           id: 6,
-          title: "E-Commerice Product Page",
-          description: "E-Commerice Product Page.",
-          image: ecommercepage,
-          alt: "E-Commerice Product Page",
-          url: "https://product-page-gamma.vercel.app/",
-          code: "https://github.com/boymelvs/ecommerce-product-page",
-          tags: ["Html5", "React Js", "Javascript", "Scss", "Flexbox"],
+          title: "My Music App",
+          description:
+               "Is a free music streaming service that offers unlimited listening with no commercial interruptions and no ads. Frontend is build in React Js, Backend is NodeJs deployed in heroku, Database is MySql deployed in AWS",
+          image: musicappImg,
+          alt: "Music App",
+          url: "https://mymusicapp-nine.vercel.app/",
+          code: "https://github.com/boymelvs/mymusicapp",
+          tags: ["Html5", "Scss/Css", "React Js", "NodeJs", "MySQL"],
      },
 
      {

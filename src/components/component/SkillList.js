@@ -4,6 +4,7 @@ import git from "../../images/tools/git.svg";
 import google from "../../images/tools/google.svg";
 import html5 from "../../images/tools/html5.svg";
 import javascript from "../../images/tools/javascript.svg";
+import typescript from "../../images/tools/typescript.svg";
 // import msedge from "../../images/tools/ms-edge-logo.svg";
 import reactImg from "../../images/tools/react.svg";
 import sass from "../../images/tools/sass.svg";
@@ -17,12 +18,13 @@ const toolImg = [
      { id: 3, name: "Boostrap", image: bootstrap },
      { id: 4, name: "Sass", image: sass },
      { id: 5, name: "Javascript", image: javascript },
-     { id: 6, name: "React js", image: reactImg },
-     { id: 7, name: "Node js", image: nodeJsImg },
-     { id: 8, name: "MySql", image: mySqlImg },
-     { id: 9, name: "Git", image: git },
-     { id: 10, name: "Vscode", image: vscode },
-     { id: 11, name: "Google", image: google },
+     { id: 6, name: "Typescript", image: typescript },
+     { id: 7, name: "React js", image: reactImg },
+     { id: 8, name: "Node js", image: nodeJsImg },
+     { id: 9, name: "MySql", image: mySqlImg },
+     { id: 10, name: "Git", image: git },
+     { id: 11, name: "Vscode", image: vscode },
+     { id: 12, name: "Google", image: google },
 ];
 
 export default toolImg;

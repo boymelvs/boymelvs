@@ -31,8 +31,8 @@ const Projects = ({ getProject }) => {
 
                     <div className="projects-content">
                          <div className="projects-subtitle">
-                              <span className="top"> Website that I created while </span>
-                              <span className="bottom">learning as full-stack web developer</span>
+                              <span className="top"> Website that I created while continuously</span>
+                              <span className="bottom">enhancing my skills as web developer</span>
                          </div>
 
                          <div className="slider">
