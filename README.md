@@ -1,8 +1,8 @@
 # I'm Melvin 👋
 
-### A former hard-working OFW. And looking for job opportunity where I can implement my skills. 👨
+### A former hard-working OFW. Trainable, fast learner, a team player who can collaborate with different people. 👨
 
--    👀 Continuously developing and enhance my skills in **Node Js (Express Js)**, **React js** , **MySql**.
+-    👀 Continuously developing and enhance my skills in **Javascript**, **Typescript**, **Node Js (Express Js)**, **React js** , **MySql**.
 -    📫 How to reach me? **melvin.enmocino@gmail.com**
 -    Live Site: **[Portfolio](https://boymelvs.vercel.app/)**.
 
