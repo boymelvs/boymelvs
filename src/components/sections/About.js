@@ -16,7 +16,7 @@ const About = ({ getAbout }) => {
                          {award.course}
                     </a>
                     -
-                    <a href={award.schoolLink} target="_blank" rel="noreferrer noopener" className="freecodecamp">
+                    <a href={award.schoolLink} target="_blank" rel="noreferrer noopener" className="certificate">
                          {award.school}
                     </a>
                </li>
@@ -34,10 +34,14 @@ const About = ({ getAbout }) => {
 
                          <div className="about-list">
                               <p className="about-para">
-                                   A former hard-working OFW. Trainable, fast learner, a team player who can collaborate with different people. I am a self-taught Web Developer, continuously developing and enhance my skills using Javascript, Typescript, ReactJS, NodeJS(express js), MySQL and other Web Developement Technologies.
+                                   A former hard-working OFW. Trainable, fast learner, a team player who can collaborate with different people. I am a self-taught Web Developer, continuously developing and enhance my skills in Javascript, Typescript, ReactJS, NodeJS(express js), MySQL and other Web Developement Technologies.
+                              </p>
 
+                              <p className="about-para">
                                    The more I learned, the more I realized that this is what I want to do for a living. After much consideration, I've made the decision to switch careers and pursue web development full-time.
+                              </p>
 
+                              <p className="about-para">
                                    What I love most about coding is the challenge of problem-solving. I find it deeply satisfying to tackle complex issues and come up with solutions that meet both the user's needs and the project's requirements.
                               </p>
 
