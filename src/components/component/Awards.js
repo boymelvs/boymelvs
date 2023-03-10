@@ -13,6 +13,14 @@ const Awards = [
       school: "KODEGOPH",
       schoolLink: "https://kodego.ph/",
    },
+
+   {
+      id: 3,
+      course: "Foundations: Data, Data, Everywhere",
+      certificateLink: "https://www.coursera.org/account/accomplishments/certificate/W2WE3QEAWYV2",
+      school: "Coursera",
+      schoolLink: "https://www.coursera.org",
+   },
 ];
 
 export default Awards;
