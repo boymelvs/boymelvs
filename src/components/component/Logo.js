@@ -8,7 +8,7 @@ const Logo = () => {
      return (
           <>
                <div className="logo-container">
-                    <a href="https://boymelvs.github.io/PORTFOLIO/" className="logo">
+                    <a href="https://boymelvs.vercel.app/" className="logo">
                          <img src={opening} className="opening-tag" alt="Opening Html Tag Logo" />
 
                          <img src={melvin} className="melvin-text" alt="Melvin Text Logo" />

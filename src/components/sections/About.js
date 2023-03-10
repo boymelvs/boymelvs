@@ -34,7 +34,11 @@ const About = ({ getAbout }) => {
 
                          <div className="about-list">
                               <p className="about-para">
-                                   A former hard-working OFW. Trainable, fast learner, a team player who can collaborate with different people. I am a self-taught Web Developer, continuously developing and enhance my skills using Javascript, Typescript, ReactJS, NodeJS(express js) and MySQL. And also looking for job opportunity where I can implement my skills.
+                                   A former hard-working OFW. Trainable, fast learner, a team player who can collaborate with different people. I am a self-taught Web Developer, continuously developing and enhance my skills using Javascript, Typescript, ReactJS, NodeJS(express js), MySQL and other Web Developement Technologies.
+
+                                   The more I learned, the more I realized that this is what I want to do for a living. After much consideration, I've made the decision to switch careers and pursue web development full-time.
+
+                                   What I love most about coding is the challenge of problem-solving. I find it deeply satisfying to tackle complex issues and come up with solutions that meet both the user's needs and the project's requirements.
                               </p>
 
                               <div className="recognition">
