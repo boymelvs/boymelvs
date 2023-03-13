@@ -1,10 +1,14 @@
 # I'm Melvin 👋
 
-### A former hard-working OFW. Trainable, fast learner, a team player who can collaborate with different people. 👨
+### Web Developer | ReactJS | NodeJS ExpressJS | JavaScript | Typescript
+
+A former hard-working OFW. Trainable, fast learner, a team player who can collaborate with different people. 👨
 
 -    👀 Continuously developing and enhance my skills in **Javascript**, **Typescript**, **Node Js (Express Js)**, **React js** , **MySql**.
 -    📫 How to reach me? **melvin.enmocino@gmail.com**
 -    Live Site: **[Portfolio](https://boymelvs.vercel.app/)**.
+
+<!-- ![](https://komarev.com/ghpvc/?username=boymelvs&style=flat-square) -->
 
 <!-- WAKA TIME -->
 
