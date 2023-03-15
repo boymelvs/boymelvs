@@ -78,11 +78,11 @@ A former hard-working OFW. Trainable, fast learner, a team player who can collab
 
 <!-- GIT HUB STATS -->
 
-<a href="#" target="_blank" rel="noreferrer"><img  width="100%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=boymelvs&layout=compact" alt="Melvin's Top Languages" /></a>
+<!-- <a href="#" target="_blank" rel="noreferrer"><img  width="100%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=boymelvs&layout=compact" alt="Melvin's Top Languages" /></a> -->
 
 <!-- GIT LONG STREAK STATS -->
 
-<a href="#" target="_blank" rel="noreferrer"><img align="center" width="100%" src="https://github-readme-streak-stats.herokuapp.com/?user=boymelvs" alt="Melvin's GitHub Streak" /></a>
+<!-- <a href="#" target="_blank" rel="noreferrer"><img align="center" width="100%" src="https://github-readme-streak-stats.herokuapp.com/?user=boymelvs" alt="Melvin's GitHub Streak" /></a> -->
 
 <!-- WAKA TIME -->
 
