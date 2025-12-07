@@ -29,7 +29,7 @@ Thumbs.db
 nodemon-debug.log
 
 # .gitignore
-captionscraft-mvp-frontend.code-workspace
+n8nportfolio.code-workspace
 raw/
 
 
