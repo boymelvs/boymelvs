@@ -1,4 +1,6 @@
-const DemoPages = (props, { getState, setState, juris }) => {
+const CaseStudy = (props, { RouteManager }) => {
+     RouteManager.scrollUp();
+
      return {
           main: {
                className: "main",
@@ -309,9 +311,12 @@ const DemoPages = (props, { getState, setState, juris }) => {
                                                             children: [
                                                                  {
                                                                       a: {
-                                                                           href: "",
+                                                                           href: "#demo-chat-real-estate-ai",
                                                                            className: "btn btn-primary",
                                                                            text: "Try the Demo Chatbot",
+                                                                           onClick: () => {
+                                                                                RouteManager.navigate("#demo-chat-real-estate-ai");
+                                                                           },
                                                                       },
                                                                  },
                                                             ],
@@ -328,4 +333,4 @@ const DemoPages = (props, { getState, setState, juris }) => {
      };
 };
 
-export default DemoPages;
+export default CaseStudy;

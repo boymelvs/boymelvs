@@ -44,7 +44,7 @@ const Hero = (props, { getState, setState, juris }) => {
                                              children: [
                                                   {
                                                        a: {
-                                                            href: "#",
+                                                            href: "#contact",
                                                             className: "btn btn-primary",
                                                             text: "Start a Project",
                                                        },

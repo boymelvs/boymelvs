@@ -59,8 +59,8 @@ body {
      font-size: 1.6rem;
      color: var(--athens-gray);
      font-weight: var(--font-weight-400);
-     background: radial-gradient(1200px 600px at 10% 10%, rgba(72, 61, 255, 0.08), transparent 8%),
-          radial-gradient(900px 500px at 90% 90%, rgba(58, 208, 255, 0.04), transparent 8%), linear-gradient(180deg, var(--bg-1), var(--bg-2));
+     background: radial-gradient(120rem 60rem at 10% 10%, rgba(72, 61, 255, 0.08), transparent 8%),
+          radial-gradient(90rem 50rem at 90% 90%, rgba(58, 208, 255, 0.04), transparent 8%), linear-gradient(180deg, var(--bg-1), var(--bg-2));
      -webkit-font-smoothing: antialiased;
      -moz-osx-font-smoothing: grayscale;
      overflow-x: hidden;
@@ -70,6 +70,7 @@ body {
 .app-container {
      display: flex;
      flex-direction: column;
+     align-items: center;
 }
 
 /* header css */
@@ -77,8 +78,8 @@ body {
      max-width: 144rem;
      padding: 2rem;
      width: 100%;
-     background: radial-gradient(1200px 600px at 10% 10%, rgba(72, 61, 255, 0.08), transparent 8%),
-          radial-gradient(900px 500px at 90% 90%, rgba(58, 208, 255, 0.04), transparent 8%), linear-gradient(180deg, var(--bg-1), var(--bg-2));
+     background: radial-gradient(120rem 60rem at 10% 10%, rgba(72, 61, 255, 0.08), transparent 8%),
+          radial-gradient(90rem 50rem at 90% 90%, rgba(58, 208, 255, 0.04), transparent 8%), linear-gradient(180deg, var(--bg-1), var(--bg-2));
      position: fixed;
      transition: all 300ms ease-in;
      z-index: 99;
@@ -111,9 +112,9 @@ body {
      justify-content: center;
      width: 4.5rem;
      height: 4.5rem;
-     border-radius: 10px;
+     border-radius: 1rem;
      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-     box-shadow: 0 6px 20px rgba(58, 208, 255, 0.12), 0 1px 0 rgba(255, 255, 255, 0.02) inset;
+     box-shadow: 0 0.6rem 2rem rgba(58, 208, 255, 0.12), 0 0.1rem 0 rgba(255, 255, 255, 0.02) inset;
      font-weight: var(--font-weight-800);
      color: var(--blue-charcoal);
 }
@@ -246,9 +247,9 @@ body {
      }
 
      .nav-menu {
-          background: radial-gradient(1200px 600px at 10% 10%, rgba(72, 61, 255, 0.08), transparent 8%),
-               radial-gradient(900px 500px at 90% 90%, rgba(58, 208, 255, 0.04), transparent 8%), linear-gradient(180deg, var(--bg-1), var(--bg-2));
-          backdrop-filter: blur(25px);
+          background: radial-gradient(120rem 60rem at 10% 10%, rgba(72, 61, 255, 0.08), transparent 8%),
+               radial-gradient(90rem 50rem at 90% 90%, rgba(58, 208, 255, 0.04), transparent 8%), linear-gradient(180deg, var(--bg-1), var(--bg-2));
+          backdrop-filter: blur(2.5rem);
           position: absolute;
           top: 0;
           left: 0;
@@ -408,12 +409,12 @@ p.lead {
 
 .hero-right {
      width: 100%;
-     min-height: 300px;
-     border-radius: 18px;
-     padding: 10px;
+     min-height: 30rem;
+     border-radius: 1.8rem;
+     padding: 1rem;
      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
      border: 0.1rem solid var(--glass-border);
-     backdrop-filter: blur(8px) saturate(120%);
+     backdrop-filter: blur(0.8rem) saturate(120%);
      box-shadow: var(--shadow);
      display: flex;
      align-items: center;
@@ -471,7 +472,7 @@ p.lead {
 .services-grid {
      display: grid;
      gap: 2rem;
-     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+     grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
 }
 
 .service {
@@ -545,7 +546,7 @@ p.lead {
      flex-direction: column;
      gap: 0.5rem;
      color: var(--muted);
-     font-size: 1.2rem;
+     font-size: 1.4rem;
      padding-left: 1.5rem;
 }
 
@@ -605,6 +606,8 @@ p.lead {
      .contact-ctas {
           justify-content: center;
           align-items: center;
+          gap: 1rem;
+          padding: 1rem;
      }
 }
 
@@ -615,27 +618,27 @@ p.lead {
 .form-field {
      display: flex;
      flex-direction: column;
-     gap: 8px;
-     margin-bottom: 10px;
+     gap: 1rem;
+     margin-bottom: 1rem;
 }
 
 input,
 textarea {
      background: rgba(255, 255, 255, 0.02);
-     border: 1px solid rgba(255, 255, 255, 0.03);
-     color: #e8eef6;
-     padding: 10px;
-     border-radius: 8px;
+     border: 0.1rem solid rgba(255, 255, 255, 0.03);
+     color: hsl(214, 44%, 94%);
+     padding: 1rem;
+     border-radius: 0.8rem;
 }
 
 .send-btn {
      width: 100%;
-     padding: 12px;
+     padding: 1.2rem;
      background: linear-gradient(90deg, var(--accent), var(--accent-2));
      color: #001018;
      border: none;
-     font-weight: 700;
-     border-radius: 10px;
+     font-weight: var(--font-weight-700);
+     border-radius: 1rem;
      cursor: pointer;
      transition: all 0.3s ease;
 }
@@ -647,13 +650,12 @@ textarea {
 }
 
 /* footer */
-
 .footer {
      max-width: 144rem;
      padding: 2rem;
      width: 100%;
-     background: radial-gradient(1200px 600px at 10% 10%, rgba(72, 61, 255, 0.08), transparent 8%),
-          radial-gradient(900px 500px at 90% 90%, rgba(58, 208, 255, 0.04), transparent 8%), linear-gradient(180deg, var(--bg-1), var(--bg-2));
+     background: radial-gradient(120rem 60rem at 10% 10%, rgba(72, 61, 255, 0.08), transparent 8%),
+          radial-gradient(90rem 50rem at 90% 90%, rgba(58, 208, 255, 0.04), transparent 8%), linear-gradient(180deg, var(--bg-1), var(--bg-2));
 }
 
 @media (min-width: 768px) {
@@ -747,6 +749,16 @@ textarea {
      display: flex;
      justify-content: center;
      align-items: center;
+}
+
+@media (max-width: 768px) {
+     .case-study-title {
+          flex-direction: column;
+     }
+
+     .subtitle {
+          margin-top: 2rem;
+     }
 }
 
 .case-study-title h1 {
@@ -849,8 +861,177 @@ textarea {
      padding-bottom: 4rem;
 }
 
+@media (max-width: 768px) {
+     .demo {
+          align-items: flex-start;
+          flex-direction: column;
+     }
+}
+
 .demo h2 {
      color: var(--athens-gray);
      font-size: 2.4rem;
      padding: 2rem 0;
+}
+
+/* --- Demo Instructions Chat Box --- */
+.demo-instructions {
+     padding: 2.5rem;
+     border-radius: 1.6rem;
+     border: 0.1rem solid hsla(187, 100%, 55%, 0.333);
+     color: var(--muted);
+     box-shadow: 0 0 2rem hsla(187, 100%, 55%, 0.125);
+     font-size: 1.6rem;
+     background: hsl(216, 41%, 7%);
+}
+
+.demo-instructions {
+     display: flex;
+     flex-direction: column;
+     gap: 2rem;
+}
+
+.demo-instructions h2 {
+     color: hsl(187, 100%, 55%);
+     font-size: 2.4rem;
+}
+.demo-instructions h3 {
+     color: hsl(183, 100%, 75%);
+}
+
+.demo-instructions ul,
+.demo-instructions ol {
+     padding-left: 6rem;
+}
+
+.demo-instructions .json {
+     background: #0a0f18;
+     padding: 1rem;
+     border-radius: 1rem;
+     color: hsl(187, 100%, 55%);
+     border: 0.1rem solid hsla(187, 100%, 55%, 0.2);
+}
+
+/* --- Dashboard Layout --- */
+.dashboard-container {
+     display: flex;
+     flex: 1;
+     gap: 1rem;
+     box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+     .dashboard-container {
+          flex-direction: column;
+     }
+}
+
+.panel {
+     background: hsl(216, 41%, 7%);
+     border: 0.1rem solid hsla(187, 100%, 55%, 0.2);
+     border-radius: 1.6rem;
+     box-shadow: 0 0 2rem hsla(187, 100%, 55%, 0.063);
+     padding: 2rem;
+     display: flex;
+     flex-direction: column;
+}
+
+.sheet-panel {
+     flex: 1;
+     overflow: hidden;
+     min-width: 35rem;
+}
+
+.dashboard-container iframe {
+     border: none;
+     width: 100%;
+     height: 35rem;
+     border-radius: 1rem;
+}
+
+/* --- Chat Panel --- */
+.chat-panel {
+     height: 35%;
+     min-height: 35rem;
+     display: flex;
+     flex-direction: column;
+     border: 0.1rem solid hsla(187, 100%, 55%, 0.333);
+}
+
+/* Chat Input */
+.chat-input {
+     display: flex;
+}
+
+.chat-input iframe {
+     flex: 1;
+     padding: 1.4rem;
+     border: none;
+     /* font-size: 1.5rem; */
+     overflow: hidden;
+     border-radius: 2.5rem;
+}
+
+/* .privacy-policy */
+
+.privacy-policy-title {
+     color: var(--athens-gray);
+}
+
+.updated {
+     font-size: 14px;
+     color: #666;
+}
+
+.privacy-policy-overview {
+     color: var(--muted);
+}
+
+.privacy-section {
+     margin-bottom: 2rem;
+     color: var(--muted);
+}
+
+.privacy-section h2 {
+     color: var(--athens-gray);
+}
+
+.privacy-section p {
+     margin-top: 2rem;
+}
+
+.privacy-section ul {
+     padding-left: 3rem;
+}
+
+.privacy-section a,
+.privacy-policy-overview a {
+     text-decoration: none;
+     color: var(--athens-gray);
+     position: relative;
+     font-weight: var(--font-weight-800);
+}
+
+.privacy-section a:hover,
+.privacy-policy-overview a:hover {
+     color: var(--muted);
+}
+
+.privacy-section a::before,
+.privacy-policy-overview a::before {
+     content: "";
+     position: absolute;
+     bottom: -0.5rem;
+     left: 0;
+     width: 100%;
+     border-bottom: 0.1rem solid var(--athens-gray);
+     transform: scale(0, 1);
+     transform-origin: right;
+     transition: transform 300ms ease-in-out;
+}
+
+.privacy-section a:hover::before,
+.privacy-policy-overview a:hover::before {
+     transform: scale(1, 1);
+     transform-origin: left;
 }

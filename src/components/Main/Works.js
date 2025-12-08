@@ -1,6 +1,7 @@
-const Works = (props, { getState, setState, juris }) => {
+const Works = (props, { getState, setState, juris, RouteManager }) => {
      const projects = [
           {
+               id: "real-estate-ai",
                image: "/assets/images/RealEstate_Inquiry_Assistant_tempv2.0.png",
                info: {
                     title: "Real Estate AI Inquiry Assistant",
@@ -12,6 +13,7 @@ const Works = (props, { getState, setState, juris }) => {
           },
 
           {
+               id: "Trave_Tour",
                image: "/assets/images/RealEstate_Inquiry_Assistant_tempv2.0.png",
                info: {
                     title: "Real Estate AI Inquiry Assistant",
@@ -23,6 +25,7 @@ const Works = (props, { getState, setState, juris }) => {
           },
 
           {
+               id: "shoppe_lazada",
                image: "/assets/images/RealEstate_Inquiry_Assistant_tempv2.0.png",
                info: {
                     title: "Real Estate AI Inquiry Assistant",
@@ -34,6 +37,7 @@ const Works = (props, { getState, setState, juris }) => {
           },
 
           {
+               id: "AI_Social_Post",
                image: "/assets/images/RealEstate_Inquiry_Assistant_tempv2.0.png",
                info: {
                     title: "Real Estate AI Inquiry Assistant",
@@ -72,6 +76,7 @@ const Works = (props, { getState, setState, juris }) => {
                                    projects.map((project, index) => {
                                         return {
                                              article: {
+                                                  id: project.id,
                                                   className: "works-card",
                                                   children: [
                                                        {
@@ -105,6 +110,10 @@ const Works = (props, { getState, setState, juris }) => {
                                                             },
                                                        },
                                                   ],
+                                                  onClick: (e) => {
+                                                       e.preventDefault();
+                                                       RouteManager.navigate(`#${project.id}`);
+                                                  },
                                              },
                                         };
                                    }),

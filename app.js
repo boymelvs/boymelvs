@@ -1,4 +1,6 @@
 import All from "./src/All.js";
+import RouteManager from "./src/headless/RouteManager.js";
+import APIManager from "./src/headless/APIManager.js";
 
 const jurisInstance = new Juris({
      logLevel: "warn",
@@ -8,7 +10,8 @@ const jurisInstance = new Juris({
      },
 
      headlessComponents: {
-          // RouteManager: { fn: RouteManager, options: { autoInit: true } },
+          RouteManager: { fn: RouteManager, options: { autoInit: true } },
+          APIManager: { fn: APIManager, options: { autoInit: true } },
      },
 
      components: { All },

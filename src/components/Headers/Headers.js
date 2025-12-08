@@ -7,7 +7,6 @@ const Headers = (props, { getState, setState, juris }) => {
 
      return {
           header: {
-               id: "home",
                className: "header",
                children: [
                     {

@@ -30,7 +30,7 @@ const Contacts = (props, { getState, setState, juris }) => {
                                                        h3: { text: "Start a conversation" },
                                                   },
                                                   {
-                                                       p: { text: "Prefer a quick chat? Click the message button or send an email — I'll reply fast." },
+                                                       p: { text: "Prefer a quick chat? Click the message button — I'll reply fast." },
                                                   },
 
                                                   {
@@ -38,12 +38,24 @@ const Contacts = (props, { getState, setState, juris }) => {
                                                             className: "contact-ctas",
                                                             children: [
                                                                  {
-                                                                      button: { className: "btn btn-primary", text: "💬 Messenger" },
+                                                                      button: {
+                                                                           className: "btn btn-primary",
+                                                                           text: "💬 Messenger",
+                                                                           onClick: () => {
+                                                                                window.open("https://m.me/0000z0zz", "_blank");
+                                                                           },
+                                                                      },
                                                                  },
 
-                                                                 {
-                                                                      button: { className: "btn btn-ghost", text: "✉️ Email Me" },
-                                                                 },
+                                                                 // {
+                                                                 //      button: {
+                                                                 //           className: "btn btn-ghost",
+                                                                 //           text: "✉️ Email Me",
+                                                                 //           onClick: () => {
+                                                                 //                window.location.href = "mailto:melvin.enmocino@gmail.com";
+                                                                 //           },
+                                                                 //      },
+                                                                 // },
                                                             ],
                                                        },
                                                   },

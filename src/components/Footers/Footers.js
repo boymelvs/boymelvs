@@ -1,4 +1,4 @@
-const Footers = (props, { getState, setState, juris }) => {
+const Footers = (props, { RouteManager }) => {
      return {
           footer: {
                className: "footer",
@@ -37,9 +37,12 @@ const Footers = (props, { getState, setState, juris }) => {
                                    }, //logo
                                    {
                                         a: {
-                                             href: "#",
+                                             href: "#privacy-policy",
                                              className: "privacy-policy",
                                              text: "Privacy Policy",
+                                             onClick: () => {
+                                                  RouteManager.navigate("#privacy-policy");
+                                             },
                                         },
                                    }, //privacy-policy
 

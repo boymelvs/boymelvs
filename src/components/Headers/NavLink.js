@@ -34,6 +34,7 @@ const NavLink = (props, context) => {
                                                        ],
                                                        onClick: (e) => {
                                                             closeBurger();
+                                                            RouteManager.navigate(`${item === "home" ? "/" : "#" + item}`);
                                                        },
                                                   },
                                              },
