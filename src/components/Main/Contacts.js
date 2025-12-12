@@ -1,4 +1,4 @@
-const Contacts = (props, { getState, setState, juris }) => {
+const Contacts = (props, { getState, setState, APIManager }) => {
      return {
           section: {
                id: "contact",
@@ -38,24 +38,14 @@ const Contacts = (props, { getState, setState, juris }) => {
                                                             className: "contact-ctas",
                                                             children: [
                                                                  {
-                                                                      button: {
+                                                                      a: {
+                                                                           href: "https://m.me/0000z0zz",
                                                                            className: "btn btn-primary",
+                                                                           target: "_blank",
+                                                                           rel: "noopenner noreferrer",
                                                                            text: "💬 Messenger",
-                                                                           onClick: () => {
-                                                                                window.open("https://m.me/0000z0zz", "_blank");
-                                                                           },
                                                                       },
                                                                  },
-
-                                                                 // {
-                                                                 //      button: {
-                                                                 //           className: "btn btn-ghost",
-                                                                 //           text: "✉️ Email Me",
-                                                                 //           onClick: () => {
-                                                                 //                window.location.href = "mailto:melvin.enmocino@gmail.com";
-                                                                 //           },
-                                                                 //      },
-                                                                 // },
                                                             ],
                                                        },
                                                   },
@@ -68,6 +58,21 @@ const Contacts = (props, { getState, setState, juris }) => {
                                              children: [
                                                   {
                                                        form: {
+                                                            onSubmit: (e) => {
+                                                                 e.preventDefault();
+
+                                                                 if (APIManager.validate()) {
+                                                                      setState("spinner", true);
+                                                                      const getData = {
+                                                                           name: getState("name", ""),
+                                                                           email: getState("email", ""),
+                                                                           goal: getState("goal", ""),
+                                                                           message: getState("message", ""),
+                                                                      };
+
+                                                                      APIManager.formContactSubmit(getData);
+                                                                 }
+                                                            },
                                                             id: "contactForm",
                                                             className: "contact-form",
                                                             children: [
@@ -81,8 +86,41 @@ const Contacts = (props, { getState, setState, juris }) => {
                                                                                           type: "text",
                                                                                           placeholder: "Full name",
                                                                                           required: "true",
+                                                                                          value: () => getState("name", ""),
+                                                                                          onInput: (e) => {
+                                                                                               setState("name", e.target.value.trim());
+                                                                                               APIManager.validate();
+                                                                                          },
                                                                                      },
                                                                                 },
+
+                                                                                {
+                                                                                     div: {
+                                                                                          className: "error-container",
+                                                                                          children: [
+                                                                                               {
+                                                                                                    span: {
+                                                                                                         className: "error",
+                                                                                                         text: () => getState("errors.name"),
+                                                                                                         style: {
+                                                                                                              display: "block",
+                                                                                                              textAlign: "right",
+                                                                                                              fontSize: "1.2rem",
+                                                                                                              color: "hsl(0, 100%, 63%)",
+                                                                                                              fontWeight: "500",
+                                                                                                         },
+                                                                                                    },
+                                                                                               },
+                                                                                          ],
+                                                                                          style: {
+                                                                                               display: "block",
+                                                                                               height: "1.6rem",
+                                                                                               position: "absolute",
+                                                                                               top: "0",
+                                                                                               right: "0",
+                                                                                          },
+                                                                                     },
+                                                                                }, //error
                                                                            ],
                                                                       },
                                                                  },
@@ -97,8 +135,41 @@ const Contacts = (props, { getState, setState, juris }) => {
                                                                                           type: "email",
                                                                                           placeholder: "Email Address",
                                                                                           required: "true",
+                                                                                          value: () => getState("email", ""),
+                                                                                          onInput: (e) => {
+                                                                                               setState("email", e.target.value.trim());
+                                                                                               APIManager.validate();
+                                                                                          },
                                                                                      },
                                                                                 },
+
+                                                                                {
+                                                                                     div: {
+                                                                                          className: "error-container",
+                                                                                          children: [
+                                                                                               {
+                                                                                                    span: {
+                                                                                                         className: "error",
+                                                                                                         text: () => getState("errors.email"),
+                                                                                                         style: {
+                                                                                                              display: "block",
+                                                                                                              textAlign: "right",
+                                                                                                              fontSize: "1.2rem",
+                                                                                                              color: "hsl(0, 100%, 63%)",
+                                                                                                              fontWeight: "500",
+                                                                                                         },
+                                                                                                    },
+                                                                                               },
+                                                                                          ],
+                                                                                          style: {
+                                                                                               display: "block",
+                                                                                               height: "1.6rem",
+                                                                                               position: "absolute",
+                                                                                               top: "0",
+                                                                                               right: "0",
+                                                                                          },
+                                                                                     },
+                                                                                }, //error
                                                                            ],
                                                                       },
                                                                  },
@@ -113,8 +184,41 @@ const Contacts = (props, { getState, setState, juris }) => {
                                                                                           type: "text",
                                                                                           placeholder: "Primary goal (e.g., automate inquiries)",
                                                                                           required: "true",
+                                                                                          value: () => getState("goal", ""),
+                                                                                          onInput: (e) => {
+                                                                                               setState("goal", e.target.value.trim());
+                                                                                               APIManager.validate();
+                                                                                          },
                                                                                      },
                                                                                 },
+
+                                                                                {
+                                                                                     div: {
+                                                                                          className: "error-container",
+                                                                                          children: [
+                                                                                               {
+                                                                                                    span: {
+                                                                                                         className: "error",
+                                                                                                         text: () => getState("errors.goal"),
+                                                                                                         style: {
+                                                                                                              display: "block",
+                                                                                                              textAlign: "right",
+                                                                                                              fontSize: "1.2rem",
+                                                                                                              color: "hsl(0, 100%, 63%)",
+                                                                                                              fontWeight: "500",
+                                                                                                         },
+                                                                                                    },
+                                                                                               },
+                                                                                          ],
+                                                                                          style: {
+                                                                                               display: "block",
+                                                                                               height: "1.6rem",
+                                                                                               position: "absolute",
+                                                                                               top: "0",
+                                                                                               right: "0",
+                                                                                          },
+                                                                                     },
+                                                                                }, //error
                                                                            ],
                                                                       },
                                                                  },
@@ -128,21 +232,72 @@ const Contacts = (props, { getState, setState, juris }) => {
                                                                                           id: "message",
                                                                                           placeholder: "Short project description...",
                                                                                           rows: "4",
+                                                                                          value: () => getState("message", ""),
+                                                                                          onInput: (e) => {
+                                                                                               setState("message", e.target.value.trim());
+                                                                                               APIManager.validate();
+                                                                                          },
                                                                                      },
                                                                                 },
+
+                                                                                {
+                                                                                     div: {
+                                                                                          className: "error-container",
+                                                                                          children: [
+                                                                                               {
+                                                                                                    span: {
+                                                                                                         className: "error",
+                                                                                                         text: () => getState("errors.message"),
+                                                                                                         style: {
+                                                                                                              display: "block",
+                                                                                                              textAlign: "right",
+                                                                                                              fontSize: "1.2rem",
+                                                                                                              color: "hsl(0, 100%, 63%)",
+                                                                                                              fontWeight: "500",
+                                                                                                         },
+                                                                                                    },
+                                                                                               },
+                                                                                          ],
+                                                                                          style: {
+                                                                                               display: "block",
+                                                                                               height: "1.6rem",
+                                                                                               position: "absolute",
+                                                                                               top: "0",
+                                                                                               right: "0",
+                                                                                          },
+                                                                                     },
+                                                                                }, //error
                                                                            ],
                                                                       },
                                                                  },
 
                                                                  {
                                                                       button: {
-                                                                           className: "send-btn",
+                                                                           className: () => `contact-btn send-btn ${getState("spinner", false) ? "loading" : null}`,
                                                                            type: "submit",
-                                                                           text: "Start Your Project",
+                                                                           children: [
+                                                                                {
+                                                                                     span: { className: "spinner" },
+                                                                                },
+                                                                                " Start Your Project",
+                                                                           ],
+                                                                           disabled: () => getState("spinner", false),
                                                                       },
                                                                  },
                                                                  {
-                                                                      div: { id: "formFeedback", className: "form-feedback" },
+                                                                      div: {
+                                                                           className: "formFeedback",
+                                                                           text: () =>
+                                                                                getState("messageSent", false) ? "Message Successfully Sent!" : getState("messageError", null),
+                                                                           style: {
+                                                                                marginTop: "8px",
+                                                                                fontSize: "13px",
+                                                                                color: () => (getState("messageSent", false) ? "var(--green)" : "var(--light-red)"),
+                                                                                width: "100%",
+                                                                                textAlign: "center",
+                                                                                height: "1.6rem",
+                                                                           },
+                                                                      },
                                                                  },
                                                             ],
                                                        },

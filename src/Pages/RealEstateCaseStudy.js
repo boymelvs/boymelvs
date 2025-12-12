@@ -1,4 +1,4 @@
-const CaseStudy = (props, { RouteManager }) => {
+const RealEstateCaseStudy = (props, { RouteManager }) => {
      RouteManager.scrollUp();
 
      return {
@@ -76,12 +76,20 @@ const CaseStudy = (props, { RouteManager }) => {
 
                                                                  {
                                                                       div: {
-                                                                           className: "case-study-card",
+                                                                           className: "case-study-card hero-right",
+                                                                           ariaHidden: "true",
                                                                            children: [
                                                                                 {
-                                                                                     img: {
-                                                                                          src: "/assets/images/RealEstate_Inquiry_Assistant_tempv2.0.png",
-                                                                                          alt: "n8n Workflow Screenshot",
+                                                                                     iframe: {
+                                                                                          className: "mock",
+                                                                                          width: "560",
+                                                                                          height: "350",
+                                                                                          // src: "https://youtu.be/ad20tIvqTLc",
+                                                                                          src: "/assets/video/demo-real-estate.mp4",
+                                                                                          title: "YouTube video player",
+                                                                                          frameborder: "0",
+                                                                                          allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
+                                                                                          loading: "lazy",
                                                                                      },
                                                                                 },
                                                                            ],
@@ -333,4 +341,4 @@ const CaseStudy = (props, { RouteManager }) => {
      };
 };
 
-export default CaseStudy;
+export default RealEstateCaseStudy;

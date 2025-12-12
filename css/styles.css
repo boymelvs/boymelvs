@@ -125,7 +125,8 @@ body {
      font-size: 1.6rem;
 }
 
-.expertise {
+.expertise,
+.muted {
      color: var(--muted);
      font-size: 1.1rem;
 }
@@ -135,7 +136,8 @@ body {
           font-size: 2rem;
      }
 
-     .expertise {
+     .expertise,
+     .muted {
           font-size: 1.4rem;
      }
 }
@@ -279,6 +281,7 @@ body {
 @media (min-width: 768px) {
      .main {
           padding: 14rem 4rem 0 4rem;
+          gap: 14rem;
      }
 }
 
@@ -346,9 +349,13 @@ p.lead {
 }
 
 .btn:hover {
-     transform: scale(1.05);
+     transform: translateY(-0.3rem);
      cursor: pointer;
      color: var(--athens-gray);
+}
+
+.btn:active {
+     transform: translateY(0.1rem);
 }
 
 .btn-primary {
@@ -567,6 +574,24 @@ p.lead {
      opacity: 1;
 }
 
+/* Process / steps */
+.steps {
+     display: flex;
+     gap: 14px;
+     flex-wrap: wrap;
+}
+.step {
+     flex: 1;
+     min-width: 220px;
+     padding: 16px;
+     border-radius: 12px;
+     background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.06));
+     border: 1px solid var(--glass-border);
+}
+.step h4 {
+     margin: 0 0 8px;
+}
+
 /* Contact card */
 .contact-card {
      display: flex;
@@ -615,11 +640,17 @@ p.lead {
      width: 100%;
 }
 
-.form-field {
+/* form contact */
+.contact-form {
      display: flex;
      flex-direction: column;
      gap: 1rem;
-     margin-bottom: 1rem;
+}
+
+.form-field {
+     display: flex;
+     flex-direction: column;
+     position: relative;
 }
 
 input,
@@ -627,7 +658,8 @@ textarea {
      background: rgba(255, 255, 255, 0.02);
      border: 0.1rem solid rgba(255, 255, 255, 0.03);
      color: hsl(214, 44%, 94%);
-     padding: 1rem;
+     padding: 1.6rem 1rem;
+     font-size: 1.6rem;
      border-radius: 0.8rem;
 }
 
@@ -644,9 +676,13 @@ textarea {
 }
 
 .send-btn:hover {
-     transform: scale(1.05);
+     transform: translateY(-0.3rem);
      cursor: pointer;
      color: var(--athens-gray);
+}
+
+.send-btn:active {
+     transform: translateY(0.1rem);
 }
 
 /* footer */
@@ -670,6 +706,14 @@ textarea {
      justify-content: space-between;
 }
 
+@media (max-width: 600px) {
+     .footer-container {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 2rem;
+     }
+}
+
 .footer-name-logo {
      font-size: 1.4rem;
      font-size: 1.4rem;
@@ -684,6 +728,12 @@ textarea {
      color: var(--muted);
      font-size: 1.4rem;
      position: relative;
+}
+
+@media (max-width: 600px) {
+     .privacy-policy {
+          align-self: center;
+     }
 }
 
 .footer-container .privacy-policy:hover {
@@ -710,6 +760,12 @@ textarea {
 .social-media {
      display: flex;
      gap: 1rem;
+}
+
+@media (max-width: 600px) {
+     .social-media {
+          align-self: center;
+     }
 }
 
 .social-media a img {
@@ -802,9 +858,15 @@ textarea {
      border: 0.1rem solid var(--glass-border);
 }
 
+.case-study-card {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+
 .case-study-card img {
      width: 100%;
-     height: 25rem;
+     height: 100%;
      object-fit: cover;
      display: block;
 }
@@ -934,6 +996,7 @@ textarea {
      padding: 2rem;
      display: flex;
      flex-direction: column;
+     gap: 2rem;
 }
 
 .sheet-panel {
@@ -1034,4 +1097,65 @@ textarea {
 .privacy-policy-overview a:hover::before {
      transform: scale(1, 1);
      transform-origin: left;
+}
+
+/* 404 pages */
+.left-404 {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     gap: 2rem;
+}
+
+.eyebrow {
+     letter-spacing: 0.1rem;
+     text-transform: uppercase;
+}
+
+.left-404 h1 {
+     font-size: 10rem;
+     color: var(--athens-gray);
+}
+
+.lead-404 {
+     max-width: 56ch;
+}
+
+.loading {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: 1rem;
+}
+
+.spinner {
+     display: none;
+     width: 2rem;
+     height: 2rem;
+     border: 0.2rem solid var(--athens-gray);
+     border-top: 0.2rem solid var(--accent-2);
+     border-radius: 50%;
+     animation: spin 1.2s linear infinite;
+}
+
+.loading .spinner {
+     display: inline-block;
+}
+
+.send-btn:disabled {
+     opacity: 0.7;
+     cursor: not-allowed;
+     transform: none;
+     background: var(--muted);
+}
+
+@keyframes spin {
+     0% {
+          transform: rotate(0deg);
+     }
+
+     100% {
+          transform: rotate(360deg);
+     }
 }

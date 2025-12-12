@@ -5,46 +5,25 @@ const Works = (props, { getState, setState, juris, RouteManager }) => {
                image: "/assets/images/RealEstate_Inquiry_Assistant_tempv2.0.png",
                info: {
                     title: "Real Estate AI Inquiry Assistant",
-                    benefits: [
-                         "Role: Designer & developer of end-to-end workflow (webhook → state machine → AI → Google Sheets)",
-                         "Impact: Reduced response time from minutes → instant; saved ~2-4 hours/day for agents",
-                    ],
+                    benefits: ["Impact: Reduced response time from minutes → instant; Agents save ~2-4 hours per day from repetitive messages"],
                },
           },
 
           {
-               id: "Trave_Tour",
-               image: "/assets/images/RealEstate_Inquiry_Assistant_tempv2.0.png",
+               id: "ai-social-media-posting",
+               image: "/assets/images/ai-social-media-posting.png",
                info: {
-                    title: "Real Estate AI Inquiry Assistant",
-                    benefits: [
-                         "Role: Designer & developer of end-to-end workflow (webhook → state machine → AI → Google Sheets)",
-                         "Impact: Reduced response time from minutes → instant; saved ~2-4 hours/day for agents",
-                    ],
+                    title: "AI Social Media Posting Automation",
+                    benefits: ["Impact: Fully automates daily posting; Saves page owners 2-3 hours/day on writing, designing, and scheduling posts"],
                },
           },
 
           {
-               id: "shoppe_lazada",
+               id: "calendar-appointment-scheduler",
                image: "/assets/images/RealEstate_Inquiry_Assistant_tempv2.0.png",
                info: {
-                    title: "Real Estate AI Inquiry Assistant",
-                    benefits: [
-                         "Role: Designer & developer of end-to-end workflow (webhook → state machine → AI → Google Sheets)",
-                         "Impact: Reduced response time from minutes → instant; saved ~2-4 hours/day for agents",
-                    ],
-               },
-          },
-
-          {
-               id: "AI_Social_Post",
-               image: "/assets/images/RealEstate_Inquiry_Assistant_tempv2.0.png",
-               info: {
-                    title: "Real Estate AI Inquiry Assistant",
-                    benefits: [
-                         "Role: Designer & developer of end-to-end workflow (webhook → state machine → AI → Google Sheets)",
-                         "Impact: Reduced response time from minutes → instant; saved ~2-4 hours/day for agents",
-                    ],
+                    title: "AI-Powered Calendar Appointment Scheduler",
+                    benefits: ["Impact: Reduced admin time by 80% by automating customer qualification, scheduling, and calendar management."],
                },
           },
      ];
@@ -99,9 +78,6 @@ const Works = (props, { getState, setState, juris, RouteManager }) => {
                                                                                 children: [
                                                                                      {
                                                                                           li: { text: project.info.benefits[0] },
-                                                                                     },
-                                                                                     {
-                                                                                          li: { text: project.info.benefits[1] },
                                                                                      },
                                                                                 ],
                                                                            },

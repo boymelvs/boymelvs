@@ -34,7 +34,7 @@ const Headers = (props, { getState, setState, juris }) => {
                                                                       div: { className: "name-logo", text: "Melvin A. Enmocino" },
                                                                  },
                                                                  {
-                                                                      div: { className: "expertise", text: "AI • n8n • API • Automation Specialist" },
+                                                                      div: { className: "expertise", text: "n8n • API Integrations • Automation Specialist" },
                                                                  },
                                                             ],
                                                        },

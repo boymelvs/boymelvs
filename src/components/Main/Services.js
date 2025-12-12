@@ -11,8 +11,8 @@ const Services = (props, { getState, setState, juris }) => {
           },
 
           {
-               title: "AI Social Posting",
-               description: "Generate Taglish captions, hashtags, and scheduling for FB.",
+               title: "AI Social Media Posting",
+               description: "Generate Quotes, taglish captions, hashtags, and scheduling for Facebook Pages.",
           },
 
           {

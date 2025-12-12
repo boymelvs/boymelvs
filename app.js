@@ -18,7 +18,14 @@ const jurisInstance = new Juris({
 
      layout: [{ All: {} }], //layout
 
-     states: {},
+     states: {
+          name: "",
+          email: "",
+          goal: "",
+          message: "",
+          messageSent: false,
+          spinner: false,
+     },
 });
 
 jurisInstance.render("#app");

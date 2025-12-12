@@ -9,7 +9,7 @@ const PrivacyPolicy = (props, { RouteManager }) => {
                          h1: { className: "privacy-policy-title", text: "Privacy Policy" },
                     },
                     {
-                         p: { className: "updated", text: "Last updated: January 2025" },
+                         p: { className: "updated", text: "Last updated: Dec 2025" },
                     },
                     {
                          p: {

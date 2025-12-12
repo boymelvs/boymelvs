@@ -1,14 +1,14 @@
-const DemoChatbotPages = (props, { getState, setState, RouteManager }) => {
+import ChatBox from "../components/ChatBox.js";
+
+const DemoRealStateChatbotPages = (props, { getState, setState, juris, RouteManager }) => {
      RouteManager.scrollUp();
 
-     const refreshUrl = () => {
-          return "https://docs.google.com/spreadsheets/d/1RLkDF_PVKWzefHOKDHyl9ndFFLgisT9U_iaZOjCfSGE/preview";
-     };
+     juris.registerComponent("ChatBox", ChatBox);
 
      setInterval(() => {
           const iframe = document.getElementById("leadSheet");
           iframe.src = iframe.src.split("?")[0] + "?t=" + new Date().getTime();
-     }, 10000);
+     }, 12000);
 
      return {
           main: {
@@ -108,7 +108,7 @@ const DemoChatbotPages = (props, { getState, setState, RouteManager }) => {
                                                        li: { text: "Lead info is written to the Google Sheet." },
                                                   },
                                                   {
-                                                       li: { text: `Type "delete" to remove lead info to Google Sheet.` },
+                                                       li: { text: `Type "delete" to remove lead info in Google Sheet.` },
                                                   },
                                              ],
                                         },
@@ -202,21 +202,23 @@ const DemoChatbotPages = (props, { getState, setState, RouteManager }) => {
                                    {
                                         div: {
                                              className: "chat-input",
-                                             children: [
-                                                  {
-                                                       iframe: {
-                                                            src: "https://mnfm.cloud/webhook/81e21c32-9a42-49ba-abfd-2a3335cfaac2/chat",
-                                                            width: "400",
-                                                            height: "600",
-                                                            title: "Chat",
-                                                       },
-                                                  },
-                                             ],
+                                             children: [{ ChatBox: {} }],
                                         },
                                    },
                               ],
                          },
                     }, //chat-panel
+
+                    {
+                         ul: {
+                              children: [
+                                   {
+                                        li: { text: `Type "delete" to remove lead info in Google Sheet.` },
+                                   },
+                              ],
+                              style: { paddingLeft: "5rem" },
+                         },
+                    },
                ],
                style: {
                     gap: "1rem",
@@ -226,4 +228,4 @@ const DemoChatbotPages = (props, { getState, setState, RouteManager }) => {
      };
 };
 
-export default DemoChatbotPages;
+export default DemoRealStateChatbotPages;
