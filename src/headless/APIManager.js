@@ -17,7 +17,7 @@ const APIManager = (props, { getState, setState }) => {
           message.source = "melvin-portfolio";
 
           try {
-               const res = await fetch("https://mnfm.cloud/webhook/melvin-portfolio", {
+               const res = await fetch("https://n8n.mnfm.cloud/webhook/melvin-portfolio", {
                     method: "POST",
                     headers: {
                          "Content-Type": "application/json",

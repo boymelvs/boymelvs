@@ -3,7 +3,7 @@ const ChatBox = (props, { getState, setState, APIManager }) => {
 
      return {
           iframe: {
-               src: `https://mnfm.cloud/webhook/81e21c32-9a42-49ba-abfd-2a3335cfaac2/chat?username=${username}&password=${password}`,
+               src: `https://n8n.mnfm.cloud/webhook/81e21c32-9a42-49ba-abfd-2a3335cfaac2/chat?username=${username}&password=${password}`,
                width: "400",
                height: "600",
                title: "Chat",
