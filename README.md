@@ -4,7 +4,7 @@
 
 I help small businesses streamline operations with AI-powered automation—reducing manual and repetitive tasks.
 
--    Continuously developing and enhance my skills in **n8n**, **Javascript**, **Node Js (Express Js)**.
+-    Continuously developing and enhance my skills in **n8n**, **AI Automations**, **Javascript**, **Node Js (Express Js)**.
 -    📫 How to reach me? **melvin.enmocino@gmail.com**
 -    Live Site: **[My Portfolio](https://mnfm.cloud/)**
 
