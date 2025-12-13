@@ -19,11 +19,11 @@ const Works = (props, { getState, setState, juris, RouteManager }) => {
           },
 
           {
-               id: "calendar-appointment-scheduler",
-               image: "/assets/images/RealEstate_Inquiry_Assistant_tempv2.0.png",
+               id: "rag-pipeline",
+               image: "/assets/images/rag-pipeline.png",
                info: {
-                    title: "AI-Powered Calendar Appointment Scheduler",
-                    benefits: ["Impact: Reduced admin time by 80% by automating customer qualification, scheduling, and calendar management."],
+                    title: "AI Knowledge Base Chatbot (RAG Pipeline)",
+                    benefits: ["Impact: Reduced support workload and human errors and faster response times for users"],
                },
           },
      ];
@@ -42,7 +42,7 @@ const Works = (props, { getState, setState, juris, RouteManager }) => {
                                    },
 
                                    {
-                                        p: { className: "expertise", text: "Selected projects using n8n, AI, Google API, SMS API and FB API integrations" },
+                                        p: { className: "expertise", text: "Selected projects using n8n, AI, Google API, and FB API integrations" },
                                    },
                               ],
                          },
@@ -61,6 +61,7 @@ const Works = (props, { getState, setState, juris, RouteManager }) => {
                                                        {
                                                             img: {
                                                                  src: project.image,
+                                                                 alt: project.id,
                                                             },
                                                        },
 

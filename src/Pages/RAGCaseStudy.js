@@ -1,4 +1,4 @@
-const RealEstateCaseStudy = (props, { RouteManager }) => {
+const RAGCaseStudy = (props, { RouteManager }) => {
      RouteManager.scrollUp();
 
      return {
@@ -14,10 +14,13 @@ const RealEstateCaseStudy = (props, { RouteManager }) => {
                                              className: "case-study-title",
                                              children: [
                                                   {
-                                                       h1: { text: "Real Estate AI Inquiry Assistant" },
+                                                       h1: { text: "RAG (Retrieval-Augmented Generation)" },
                                                   },
                                                   {
-                                                       p: { className: "subtitle", text: "Messenger + n8n Automation | 24/7 Inquiry Handling | Auto-Reply | Lead Capture" },
+                                                       p: {
+                                                            className: "subtitle",
+                                                            text: "n8n + Google Drive + Supabase Vector DB + Gemini AI | Real-Time Knowledge Sync | Accurate AI Answers",
+                                                       },
                                                   },
                                              ],
                                         },
@@ -33,16 +36,27 @@ const RealEstateCaseStudy = (props, { RouteManager }) => {
                                                   {
                                                        p: {
                                                             children: [
-                                                                 "The Real Estate AI Inquiry Assistant is a fully automated messaging system built using ",
-                                                                 { span: { text: "n8n + Messenger API + Google API + AI. ", style: { fontWeight: "700" } } },
-                                                                 "It responds instantly to property inquiries, sends pricing, collects lead details, and pre - qualifies buyers—all without manual intervention.",
+                                                                 "The AI Knowledge Base Chatbot is a Retrieval-Augmented Generation (RAG) system built using ",
+                                                                 {
+                                                                      span: {
+                                                                           text: "n8n, Google Drive, Supabase Vector Store, and Google Gemini AI. ",
+                                                                           style: { fontWeight: "700" },
+                                                                      },
+                                                                 },
+                                                                 "It allows users to chat with an AI assistant that answers questions strictly based on uploaded documents—ensuring accurate, up-to-date, and hallucination-free responses.",
                                                             ],
                                                        },
                                                   },
 
                                                   {
                                                        p: {
-                                                            text: "This project was designed to help real estate agents avoid missed inquiries, speed up response time, and improve lead quality.",
+                                                            text: "This system automatically syncs files from Google Drive into a vector database. Any document updates, additions, or deletions are reflected in real time, without manual retraining or re-uploading.",
+                                                       },
+                                                  },
+
+                                                  {
+                                                       p: {
+                                                            text: "The project was designed for businesses that need a reliable AI chatbot trained on their own documents, such as FAQs, policies, product details, or internal knowledge bases.",
                                                        },
                                                   },
                                              ],
@@ -66,8 +80,8 @@ const RealEstateCaseStudy = (props, { RouteManager }) => {
                                                                            children: [
                                                                                 {
                                                                                      img: {
-                                                                                          src: "/assets/images/RealEstate_Inquiry_Assistant_tempv2.0.png",
-                                                                                          alt: "Messenger Bot Demo Screenshot",
+                                                                                          src: "/assets/images/rag-pipeline.png",
+                                                                                          alt: "AI Knowledge Base Chatbot (RAG Pipeline)",
                                                                                      },
                                                                                 },
                                                                            ],
@@ -80,16 +94,9 @@ const RealEstateCaseStudy = (props, { RouteManager }) => {
                                                                            ariaHidden: "true",
                                                                            children: [
                                                                                 {
-                                                                                     iframe: {
-                                                                                          className: "mock",
-                                                                                          width: "560",
-                                                                                          height: "350",
-                                                                                          // src: "https://youtu.be/ad20tIvqTLc",
-                                                                                          src: "/assets/video/demo-real-estate.mp4",
-                                                                                          title: "AI Real Estate Inquiry Assistant Demo",
-                                                                                          frameborder: "0",
-                                                                                          allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
-                                                                                          loading: "lazy",
+                                                                                     img: {
+                                                                                          src: "/assets/images/rag-pipeline.png",
+                                                                                          alt: "AI Knowledge Base Chatbot (RAG Pipeline)",
                                                                                      },
                                                                                 },
                                                                            ],
@@ -110,25 +117,28 @@ const RealEstateCaseStudy = (props, { RouteManager }) => {
                                                        h2: { text: "Client Problem" },
                                                   },
                                                   {
-                                                       p: { text: "Real estate agents receive dozens of inquiries daily on Messenger. However, most of them:" },
+                                                       p: { text: "Businesses want to use AI chatbots but face common challenges:" },
                                                   },
                                                   {
                                                        ul: {
                                                             children: [
                                                                  {
-                                                                      li: { text: "Cannot reply instantly." },
+                                                                      li: { text: "AI gives incorrect or hallucinated answers." },
                                                                  },
                                                                  {
-                                                                      li: { text: "Need to manually send pricing and details each time." },
+                                                                      li: { text: "Updating knowledge requires manual re-training." },
                                                                  },
                                                                  {
-                                                                      li: { text: "Lose warm leads when they reply late." },
+                                                                      li: { text: "No centralized knowledge source." },
                                                                  },
                                                                  {
-                                                                      li: { text: "Have no system to pre-qualify buyers." },
+                                                                      li: { text: "Difficult to manage multiple documents." },
                                                                  },
                                                                  {
-                                                                      li: { text: "Use notebooks or screenshots to track leads." },
+                                                                      li: { text: "AI answers are not localized or context-aware." },
+                                                                 },
+                                                                 {
+                                                                      li: { text: "No control over what the AI is allowed to answer." },
                                                                  },
                                                             ],
                                                        },
@@ -146,33 +156,65 @@ const RealEstateCaseStudy = (props, { RouteManager }) => {
                                                   },
                                                   {
                                                        p: {
-                                                            text: " I built an AI-powered automation system using n8n that answers inquiries 24/7. The bot provides instant information, collects data, and updates the agent's lead sheet automatically.",
+                                                            text: "I built a fully automated RAG pipeline using n8n that connects Google Drive, a vector database, and Gemini AI into a single intelligent system.",
                                                        },
                                                   },
+                                                  { p: { text: "Whenever a file is created, updated, or deleted in Google Drive:" } },
+                                                  {
+                                                       ul: {
+                                                            children: [
+                                                                 {
+                                                                      li: { text: "The system automatically processes the document." },
+                                                                 },
+                                                                 {
+                                                                      li: { text: "Old embeddings are removed." },
+                                                                 },
+                                                                 {
+                                                                      li: { text: "New embeddings are generated." },
+                                                                 },
+                                                                 {
+                                                                      li: { text: "The vector database stays perfectly in sync." },
+                                                                 },
+                                                            ],
+                                                       },
+                                                  },
+                                                  {
+                                                       p: {
+                                                            text: "The AI agent is strictly instructed to only answer based on retrieved documents, ensuring accuracy and reliability.",
+                                                            style: { marginTop: "2rem" },
+                                                       },
+                                                  },
+
                                                   { h3: { text: "Key Features" } },
                                                   {
                                                        ul: {
                                                             children: [
                                                                  {
-                                                                      li: { text: "Instant AI replies to property inquiries." },
+                                                                      li: { text: "Real-time document sync from Google Drive" },
                                                                  },
                                                                  {
-                                                                      li: { text: "Automatically sends sample Pag-IBIG & Bank Financing computations." },
+                                                                      li: { text: "Automatic vector embedding using Google Gemini" },
                                                                  },
                                                                  {
-                                                                      li: { text: "Provides property details, maps, amenities, and requirements." },
+                                                                      li: { text: "Supabase-powered Vector Store for fast retrieval" },
                                                                  },
                                                                  {
-                                                                      li: { text: "Collects name, contact number, and preferred schedule." },
+                                                                      li: { text: "AI agent restricted to knowledge base only (no hallucinations)" },
                                                                  },
                                                                  {
-                                                                      li: { text: "Logs buyer details to Google Sheets / CRM." },
+                                                                      li: { text: "Supports PDFs, Docs, Sheets, Slides, and more" },
                                                                  },
                                                                  {
-                                                                      li: { text: "Auto follow-up messages after 12-24 hours." },
+                                                                      li: { text: "Auto-deletes outdated knowledge when files change" },
                                                                  },
                                                                  {
-                                                                      li: { text: "Supports unlimited properties and pages." },
+                                                                      li: { text: "Chat interface via webhook (ready for web or Messenger integration)" },
+                                                                 },
+                                                                 {
+                                                                      li: { text: "Taglish + polite (“po”) responses when needed" },
+                                                                 },
+                                                                 {
+                                                                      li: { text: "Scalable for hundreds or thousands of documents" },
                                                                  },
                                                             ],
                                                        },
@@ -197,7 +239,7 @@ const RealEstateCaseStudy = (props, { RouteManager }) => {
                                                                                 {
                                                                                      span: { text: "n8n", style: { fontWeight: "700" } },
                                                                                 },
-                                                                                " - main automation engine",
+                                                                                " - Automation & orchestration engine",
                                                                            ],
                                                                       },
                                                                  },
@@ -206,8 +248,9 @@ const RealEstateCaseStudy = (props, { RouteManager }) => {
                                                                       li: {
                                                                            children: [
                                                                                 {
-                                                                                     span: { text: "Facebook Messenger Graph API", style: { fontWeight: "700" } },
+                                                                                     span: { text: "Google Drive API", style: { fontWeight: "700" } },
                                                                                 },
+                                                                                "- Document source & triggers",
                                                                            ],
                                                                       },
                                                                  },
@@ -216,8 +259,9 @@ const RealEstateCaseStudy = (props, { RouteManager }) => {
                                                                       li: {
                                                                            children: [
                                                                                 {
-                                                                                     span: { text: "OpenAI / Gemini AI", style: { fontWeight: "700" } },
+                                                                                     span: { text: "Supabase Vector Store", style: { fontWeight: "700" } },
                                                                                 },
+                                                                                "- Knowledge database",
                                                                            ],
                                                                       },
                                                                  },
@@ -226,18 +270,29 @@ const RealEstateCaseStudy = (props, { RouteManager }) => {
                                                                       li: {
                                                                            children: [
                                                                                 {
-                                                                                     span: { text: "Google Drive, Google Sheets API", style: { fontWeight: "700" } },
+                                                                                     span: { text: "Google Gemini (PaLM)", style: { fontWeight: "700" } },
                                                                                 },
+                                                                                "- Embeddings & chat model",
                                                                            ],
                                                                       },
                                                                  },
-
                                                                  {
                                                                       li: {
                                                                            children: [
                                                                                 {
-                                                                                     span: { text: "Webhook triggers" },
+                                                                                     span: { text: "LangChain nodes (n8n)", style: { fontWeight: "700" } },
                                                                                 },
+                                                                                "- RAG implementation",
+                                                                           ],
+                                                                      },
+                                                                 },
+                                                                 {
+                                                                      li: {
+                                                                           children: [
+                                                                                {
+                                                                                     span: { text: "Webhook Chat Trigger", style: { fontWeight: "700" } },
+                                                                                },
+                                                                                "- Chat interface integration",
                                                                            ],
                                                                       },
                                                                  },
@@ -260,35 +315,35 @@ const RealEstateCaseStudy = (props, { RouteManager }) => {
                                                             children: [
                                                                  {
                                                                       li: {
-                                                                           children: [
-                                                                                "Response time improved from minutes → ",
-                                                                                { span: { text: "instant replies", style: { fontWeight: "700" } } },
-                                                                           ],
+                                                                           text: "AI answers are 100% grounded in documents",
                                                                       },
                                                                  },
 
                                                                  {
                                                                       li: {
-                                                                           children: [
-                                                                                "Agents save ",
-                                                                                { span: { text: "2-4 hours per day", style: { fontWeight: "700" } } },
-                                                                                " from repetitive messages",
-                                                                           ],
+                                                                           text: "Knowledge updates reflected within minutes",
                                                                       },
                                                                  },
 
                                                                  {
                                                                       li: {
-                                                                           children: [
-                                                                                "Significant increase in ",
-                                                                                { span: { text: "qualified leads", style: { fontWeight: "700" } } },
-                                                                           ],
+                                                                           textt: "Zero manual retraining required",
                                                                       },
                                                                  },
 
                                                                  {
                                                                       li: {
-                                                                           text: "Better follow-up, higher engagement",
+                                                                           text: "Reduced misinformation and support errors",
+                                                                      },
+                                                                 },
+                                                                 {
+                                                                      li: {
+                                                                           text: "Faster response times for users",
+                                                                      },
+                                                                 },
+                                                                 {
+                                                                      li: {
+                                                                           text: "Scalable AI assistant for business knowledge",
                                                                       },
                                                                  },
                                                             ],
@@ -297,42 +352,6 @@ const RealEstateCaseStudy = (props, { RouteManager }) => {
                                              ],
                                         },
                                    }, //outcome
-
-                                   {
-                                        div: {
-                                             className: "demo",
-                                             children: [
-                                                  {
-                                                       div: {
-                                                            children: [
-                                                                 {
-                                                                      h2: { text: "Demo" },
-                                                                 },
-                                                                 {
-                                                                      p: { text: "You may try the demo version of this chatbot here:" },
-                                                                 },
-                                                            ],
-                                                       },
-                                                  },
-                                                  {
-                                                       div: {
-                                                            children: [
-                                                                 {
-                                                                      a: {
-                                                                           href: "#demo-chat-real-estate-ai",
-                                                                           className: "btn btn-primary",
-                                                                           text: "Try the Demo Chatbot",
-                                                                           onClick: () => {
-                                                                                RouteManager.navigate("#demo-chat-real-estate-ai");
-                                                                           },
-                                                                      },
-                                                                 },
-                                                            ],
-                                                       },
-                                                  },
-                                             ],
-                                        },
-                                   }, //demo
                               ],
                          },
                     },
@@ -341,4 +360,4 @@ const RealEstateCaseStudy = (props, { RouteManager }) => {
      };
 };
 
-export default RealEstateCaseStudy;
+export default RAGCaseStudy;

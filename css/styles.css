@@ -346,6 +346,7 @@ p.lead {
      box-shadow: 0 1rem 3rem hsla(217, 37%, 7%, 0.5);
      transition: all 0.3s ease;
      text-decoration: none;
+     font-size: 1.4rem;
 }
 
 .btn:hover {
@@ -665,14 +666,16 @@ textarea {
 
 .send-btn {
      width: 100%;
-     padding: 1.2rem;
+     padding: 1.2rem 1.8rem;
      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+     box-shadow: 0 1rem 3rem hsla(217, 37%, 7%, 0.5);
      color: #001018;
      border: none;
      font-weight: var(--font-weight-700);
      border-radius: 1rem;
      cursor: pointer;
      transition: all 0.3s ease;
+     font-size: 1.4rem;
 }
 
 .send-btn:hover {
@@ -1024,6 +1027,7 @@ textarea {
 /* Chat Input */
 .chat-input {
      display: flex;
+     justify-content: center;
 }
 
 .chat-input iframe {
@@ -1158,4 +1162,10 @@ textarea {
      100% {
           transform: rotate(360deg);
      }
+}
+
+/* resume */
+
+.resume {
+     width: 100%;
 }

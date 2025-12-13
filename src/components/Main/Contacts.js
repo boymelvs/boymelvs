@@ -273,7 +273,7 @@ const Contacts = (props, { getState, setState, APIManager }) => {
 
                                                                  {
                                                                       button: {
-                                                                           className: () => `contact-btn send-btn ${getState("spinner", false) ? "loading" : null}`,
+                                                                           className: () => `send-btn ${getState("spinner", false) ? "loading" : null}`,
                                                                            type: "submit",
                                                                            children: [
                                                                                 {
