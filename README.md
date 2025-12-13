@@ -1,12 +1,12 @@
 # I'm Melvin 👋
 
-**n8n | AI Automations | API Integrations | Web Developer**
+**AI Automation Specialist | n8n Developer | AI Chatbots & RAG Systems | Helping Businesses Respond Faster and Convert More Leads**
 
-I build AI-powered automation systems for real estate agents, and small businesses — reducing manual work and converting leads faster.
+I help small businesses streamline operations with AI-powered automation—reducing manual and repetitive tasks.
 
--    Continuously developing and enhance my skills in **Javascript**, **n8n**, **Node Js (Express Js)**.
+-    Continuously developing and enhance my skills in **n8n**, **Javascript**, **Node Js (Express Js)**.
 -    📫 How to reach me? **melvin.enmocino@gmail.com**
--    Live Site: **[My Portfolio](https://boymelvs.vercel.app/)**
+-    Live Site: **[My Portfolio](https://mnfm.cloud/)**
 
 <!-- WAKA TIME -->
 
