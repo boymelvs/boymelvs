@@ -22,7 +22,7 @@ const Works = (props, { getState, setState, juris, RouteManager }) => {
                id: "rag-pipeline",
                image: "/assets/images/rag-pipeline.png",
                info: {
-                    title: "AI Knowledge Base Chatbot (RAG Pipeline)",
+                    title: "AI Knowledge Base Assistant (RAG Pipeline)",
                     benefits: ["Impact: Reduced support workload and human errors and faster response times for users"],
                },
           },

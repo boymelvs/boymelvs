@@ -34,7 +34,7 @@ const Hero = (props, { getState, setState, juris }) => {
                                    {
                                         p: {
                                              className: "lead",
-                                             text: "I build AI-powered automation systems for real estate agents, and small businesses — reducing manual work and converting leads faster.",
+                                             text: "I help small businesses streamline operations with AI-powered automation—reducing manual and repetitive tasks.",
                                         },
                                    }, //lead
 

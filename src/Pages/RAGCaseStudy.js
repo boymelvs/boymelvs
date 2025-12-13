@@ -327,7 +327,7 @@ const RAGCaseStudy = (props, { RouteManager }) => {
 
                                                                  {
                                                                       li: {
-                                                                           textt: "Zero manual retraining required",
+                                                                           text: "Zero manual retraining required",
                                                                       },
                                                                  },
 
