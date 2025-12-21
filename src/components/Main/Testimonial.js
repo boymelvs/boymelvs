@@ -1,7 +1,8 @@
 const Testimonial = (props, { getState, setState }) => {
      return {
           section: {
-               classNamee: "",
+               id: "testimonials",
+               className: "",
                children: [
                     {
                          div: {
@@ -27,7 +28,46 @@ const Testimonial = (props, { getState, setState }) => {
                                                                                 },
                                                                                 {
                                                                                      strong: {
-                                                                                          text: "— Real Estate Agent",
+                                                                                          text: "— Jayson A.",
+                                                                                          style: {
+                                                                                               color: "var(--accent)",
+                                                                                          },
+                                                                                     },
+                                                                                },
+                                                                                {
+                                                                                     p: {
+                                                                                          className: "occupation",
+                                                                                          text: "Real Estate Agent",
+                                                                                          style: {
+                                                                                               color: "var(--accent)",
+                                                                                          },
+                                                                                     },
+                                                                                },
+                                                                           ],
+                                                                      },
+                                                                 },
+
+                                                                 {
+                                                                      div: {
+                                                                           className: "testimonial",
+                                                                           children: [
+                                                                                {
+                                                                                     p: {
+                                                                                          text: "“Before using the AI Assistant, we missed several inquiries daily. Now, every question gets an instant reply, and our lead conversion has gone up noticeably. Highly efficient and reliable!”",
+                                                                                     },
+                                                                                },
+                                                                                {
+                                                                                     strong: {
+                                                                                          text: "— Con A.",
+                                                                                          style: {
+                                                                                               color: "var(--accent)",
+                                                                                          },
+                                                                                     },
+                                                                                },
+                                                                                {
+                                                                                     p: {
+                                                                                          className: "occupation",
+                                                                                          text: "Real Estate Agent",
                                                                                           style: {
                                                                                                color: "var(--accent)",
                                                                                           },
@@ -46,7 +86,46 @@ const Testimonial = (props, { getState, setState }) => {
                                                                                 },
                                                                                 {
                                                                                      strong: {
-                                                                                          text: "— Shopee Seller",
+                                                                                          text: "— Neriza Dumawal",
+                                                                                          style: {
+                                                                                               color: "var(--accent)",
+                                                                                          },
+                                                                                     },
+                                                                                },
+                                                                                {
+                                                                                     p: {
+                                                                                          className: "occupation",
+                                                                                          text: "Shopee Seller",
+                                                                                          style: {
+                                                                                               color: "var(--accent)",
+                                                                                          },
+                                                                                     },
+                                                                                },
+                                                                           ],
+                                                                      },
+                                                                 },
+
+                                                                 {
+                                                                      div: {
+                                                                           className: "testimonial",
+                                                                           children: [
+                                                                                {
+                                                                                     p: {
+                                                                                          text: "“Automating cart recovery has been a game-changer. We’re recovering more sales, and the system runs effortlessly in the background.”",
+                                                                                     },
+                                                                                },
+                                                                                {
+                                                                                     strong: {
+                                                                                          text: "— Francis Araneta",
+                                                                                          style: {
+                                                                                               color: "var(--accent)",
+                                                                                          },
+                                                                                     },
+                                                                                },
+                                                                                {
+                                                                                     p: {
+                                                                                          className: "occupation",
+                                                                                          text: "Lazada Seller",
                                                                                           style: {
                                                                                                color: "var(--accent)",
                                                                                           },
@@ -70,7 +149,7 @@ const Testimonial = (props, { getState, setState }) => {
                                                   },
                                                   {
                                                        details: {
-                                                            open: false,
+                                                            open: true,
                                                             children: [
                                                                  {
                                                                       summary: { text: "How fast can you deliver?" },
@@ -83,7 +162,7 @@ const Testimonial = (props, { getState, setState }) => {
                                                   },
                                                   {
                                                        details: {
-                                                            open: false,
+                                                            open: true,
                                                             children: [
                                                                  {
                                                                       summary: { text: "How do I start?" },
@@ -99,7 +178,7 @@ const Testimonial = (props, { getState, setState }) => {
                                                   },
                                                   {
                                                        details: {
-                                                            open: false,
+                                                            open: true,
                                                             children: [
                                                                  {
                                                                       summary: { text: "What tools do you use?" },

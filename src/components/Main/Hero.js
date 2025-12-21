@@ -18,6 +18,7 @@ const Hero = (props, { getState, setState, juris }) => {
 
      return {
           section: {
+               id: "home",
                className: "hero",
                children: [
                     {

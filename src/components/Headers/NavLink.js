@@ -24,7 +24,7 @@ const NavLink = (props, context) => {
                                              {
                                                   a: {
                                                        href: `${item === "home" ? "/" : "#" + item}`,
-                                                       className: "nav-link",
+                                                       className: () => `nav-link ${getState("activeNavLink", "home") === item ? "active" : null}`,
                                                        children: [
                                                             {
                                                                  i: { className: `${navIcons[index]}` },
@@ -35,6 +35,7 @@ const NavLink = (props, context) => {
                                                        onClick: (e) => {
                                                             closeBurger();
                                                             const link = item === "home" ? "/" : item === "resume" ? "#resume" : "#" + item;
+                                                            setState("activeNavLink", item);
                                                             RouteManager.navigate(link);
                                                        },
                                                   },

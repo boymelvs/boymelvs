@@ -113,10 +113,10 @@ body {
      width: 4.5rem;
      height: 4.5rem;
      border-radius: 1rem;
-     background: linear-gradient(135deg, var(--accent), var(--accent-2));
      box-shadow: 0 0.6rem 2rem rgba(58, 208, 255, 0.12), 0 0.1rem 0 rgba(255, 255, 255, 0.02) inset;
      font-weight: var(--font-weight-800);
-     color: var(--blue-charcoal);
+     background: linear-gradient(135deg, hsl(180, 100%, 50%), hsl(210, 100%, 60%));
+     color: var(--athens-gray);
 }
 
 .name-logo {
@@ -187,6 +187,16 @@ body {
      transform: scale(0, 1);
      transform-origin: right;
      transition: transform 300ms ease-in-out;
+}
+
+.nav-link.active::before {
+     transform: scale(1, 1);
+     transform-origin: left;
+     color: var(--athens-gray);
+}
+
+.nav-link.active {
+     color: var(--athens-gray);
 }
 
 .nav-link:hover::before {
@@ -314,6 +324,7 @@ body {
 .accent {
      background: linear-gradient(90deg, var(--accent), var(--accent-2));
      -webkit-background-clip: text;
+     background: linear-gradient(135deg, hsl(180, 100%, 50%), hsl(210, 100%, 60%));
      background-clip: text;
      color: transparent;
 }
@@ -360,7 +371,7 @@ p.lead {
 }
 
 .btn-primary {
-     background: linear-gradient(90deg, var(--accent), var(--accent-2));
+     background: linear-gradient(135deg, hsl(180, 100%, 50%), hsl(210, 100%, 60%));
      color: var(--blue-charcoal);
 }
 .btn-ghost {
@@ -597,34 +608,34 @@ p.lead {
 .test-grid {
      display: grid;
      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-     gap: 18px;
+     gap: 1rem;
 }
 .testimonial {
-     padding: 18px;
-     border-radius: 12px;
+     padding: 1.8rem;
+     border-radius: 1.2rem;
      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.06));
-     border: 1px solid var(--glass-border);
+     border: 0.1rem solid var(--glass-border);
 }
-.testimonial p {
-     margin: 0 0 8px;
+
+.testimonial .occupation {
+     font-size: 1.3rem;
 }
 
 /* FAQ */
 details {
      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.04));
-     padding: 14px;
-     border-radius: 10px;
-     border: 1px solid var(--glass-border);
-     margin: 10px 0;
+     padding: 1.4rem;
+     border-radius: 1rem;
+     border: 0.1rem solid var(--glass-border);
 }
 details p {
-     padding-left: 15px;
+     padding-left: 1.5rem;
 }
 
 summary {
      font-weight: 700;
      cursor: pointer;
-     margin-bottom: 12px;
+     margin-bottom: 1.2rem;
 }
 
 /* Contact card */
@@ -960,17 +971,17 @@ textarea {
 }
 
 .comparison table {
-     padding: 3rem;
+     padding: 1.5rem;
 }
 
 .comparison table thead tr th {
      text-align: center;
-     padding: 1.5rem 2rem;
+     padding: 1.5rem;
      border: 1px solid var(--muted);
 }
 
 .comparison table tbody tr td {
-     padding: 1rem 2rem;
+     padding: 1rem;
      text-align: center;
      border: 1px solid var(--muted);
 }
