@@ -7,6 +7,7 @@ import RealEstateCaseStudy from "./Pages/RealEstateCaseStudy.js";
 import AISocialMediaPostingCaseStudy from "./Pages/AISocialMediaPostingCaseStudy.js";
 import RAGCaseStudy from "./Pages/RAGCaseStudy.js";
 import DemoRealStateChatbotPages from "./Pages/DemoRealStateChatbotPages.js";
+import SMSCartRecoveryCaseStudyPages from "./Pages/SMSCartRecoveryCaseStudyPages.js";
 import PrivacyPolicy from "./Pages/PrivacyPolicy.js";
 import Pages404 from "./Pages/Pages404.js";
 
@@ -18,6 +19,7 @@ const All = (props, { getState, setState, juris }) => {
      juris.registerComponent("AISocialMediaPostingCaseStudy", AISocialMediaPostingCaseStudy);
      juris.registerComponent("RAGCaseStudy", RAGCaseStudy);
      juris.registerComponent("DemoRealStateChatbotPages", DemoRealStateChatbotPages);
+     juris.registerComponent("SMSCartRecoveryCaseStudyPages", SMSCartRecoveryCaseStudyPages);
      juris.registerComponent("PrivacyPolicy", PrivacyPolicy);
      juris.registerComponent("Pages404", Pages404);
      juris.registerComponent("Resume", Resume);
@@ -46,6 +48,9 @@ const All = (props, { getState, setState, juris }) => {
 
                     case "#rag-pipeline":
                          return { RAGCaseStudy: {} };
+
+                    case "#sms-abandoned-cart-recovery":
+                         return { SMSCartRecoveryCaseStudyPages: {} };
 
                     case "#demo-chat-real-estate-ai":
                          return { DemoRealStateChatbotPages: {} };

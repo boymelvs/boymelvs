@@ -19,6 +19,19 @@ const Works = (props, { getState, setState, juris, RouteManager }) => {
           },
 
           {
+               id: "sms-abandoned-cart-recovery",
+               image: "/assets/images/smsrecoveryn8n.png",
+               info: {
+                    title: "SMS Abandoned Cart Recovery System",
+                    benefits: [
+                         "Impact: Recovers 8-15% of abandoned carts, increasing sales for Shopee & Lazada sellers",
+                         "Saves sellers 1-2 hours/day by automating follow-up messages",
+                         "Personalized SMS with product details and checkout link improves customer engagement",
+                    ],
+               },
+          },
+
+          {
                id: "rag-pipeline",
                image: "/assets/images/rag-pipeline.png",
                info: {

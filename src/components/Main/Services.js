@@ -19,6 +19,10 @@ const Services = (props, { getState, setState, juris }) => {
                title: "AI Knowledge Base Assistant (RAG Pipeline)",
                description: "Document-based AI answers, real-time file sync, zero hallucinations, scalable knowledge retrieval.",
           },
+          {
+               title: "Shopee / Lazada Cart Recovery",
+               description: "SMS/Email recovery flows that recover abandoned carts with measurable uplift.",
+          },
 
           {
                title: "Custom Workflows",

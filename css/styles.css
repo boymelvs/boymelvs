@@ -593,6 +593,40 @@ p.lead {
      margin: 0 0 8px;
 }
 
+/* Testimonials */
+.test-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+     gap: 18px;
+}
+.testimonial {
+     padding: 18px;
+     border-radius: 12px;
+     background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.06));
+     border: 1px solid var(--glass-border);
+}
+.testimonial p {
+     margin: 0 0 8px;
+}
+
+/* FAQ */
+details {
+     background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.04));
+     padding: 14px;
+     border-radius: 10px;
+     border: 1px solid var(--glass-border);
+     margin: 10px 0;
+}
+details p {
+     padding-left: 15px;
+}
+
+summary {
+     font-weight: 700;
+     cursor: pointer;
+     margin-bottom: 12px;
+}
+
 /* Contact card */
 .contact-card {
      display: flex;
@@ -917,6 +951,47 @@ textarea {
 
 .outcome ul {
      padding-left: 3rem;
+}
+
+.comparison h2 {
+     color: var(--athens-gray);
+     font-size: 2.4rem;
+     padding: 2rem 0;
+}
+
+.comparison table {
+     padding: 3rem;
+}
+
+.comparison table thead tr th {
+     text-align: center;
+     padding: 1.5rem 2rem;
+     border: 1px solid var(--muted);
+}
+
+.comparison table tbody tr td {
+     padding: 1rem 2rem;
+     text-align: center;
+     border: 1px solid var(--muted);
+}
+
+.diagram-only h2 {
+     color: var(--athens-gray);
+     font-size: 2.4rem;
+     padding: 2rem 0;
+}
+
+.diagram-only ul {
+     padding-left: 3rem;
+}
+
+.diagram-container {
+     width: 100%;
+}
+
+.diagram-container img {
+     padding: 2rem 0;
+     width: 50%;
 }
 
 .demo {
