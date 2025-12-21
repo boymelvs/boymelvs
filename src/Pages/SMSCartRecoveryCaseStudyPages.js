@@ -236,7 +236,7 @@ const SMSCartRecoveryCaseStudyPages = (props, { RouteManager }) => {
 
                                                   {
                                                        p: {
-                                                            text: "This table compares a typical small-to-mid e-commerce seller before and after implementing the SMS Abandoned Cart Recovery system.",
+                                                            text: "This table compares a typical small-to-mid e-commerce seller before and after implementing the SMS Abandoned Cart Recovery system, based on low-ticket products with an average order value around ₱100.",
                                                        },
                                                   },
 
@@ -276,8 +276,8 @@ const SMSCartRecoveryCaseStudyPages = (props, { RouteManager }) => {
                                                                                      tr: {
                                                                                           children: [
                                                                                                { td: { text: "Cart Recovery Rate" } },
-                                                                                               { td: { text: "0-2%" } },
-                                                                                               { td: { text: "8-15%" } },
+                                                                                               { td: { text: "1–2%" } },
+                                                                                               { td: { text: "5–8%" } },
                                                                                           ],
                                                                                      },
                                                                                 },
@@ -285,8 +285,8 @@ const SMSCartRecoveryCaseStudyPages = (props, { RouteManager }) => {
                                                                                      tr: {
                                                                                           children: [
                                                                                                { td: { text: "Recovered Orders / Day" } },
-                                                                                               { td: { text: "0-1" } },
-                                                                                               { td: { text: "2-3" } },
+                                                                                               { td: { text: "0–1" } },
+                                                                                               { td: { text: "1–2" } },
                                                                                           ],
                                                                                      },
                                                                                 },
@@ -294,8 +294,8 @@ const SMSCartRecoveryCaseStudyPages = (props, { RouteManager }) => {
                                                                                      tr: {
                                                                                           children: [
                                                                                                { td: { text: "Average Order Value" } },
-                                                                                               { td: { text: "₱800" } },
-                                                                                               { td: { text: "₱800" } },
+                                                                                               { td: { text: "₱100" } },
+                                                                                               { td: { text: "₱110" } },
                                                                                           ],
                                                                                      },
                                                                                 },
@@ -303,8 +303,8 @@ const SMSCartRecoveryCaseStudyPages = (props, { RouteManager }) => {
                                                                                      tr: {
                                                                                           children: [
                                                                                                { td: { text: "Recovered Revenue / Day" } },
-                                                                                               { td: { text: "₱0 - ₱800" } },
-                                                                                               { td: { text: "₱1,600 - ₱2,400" } },
+                                                                                               { td: { text: "₱0 – ₱110" } },
+                                                                                               { td: { text: "₱110 – ₱220" } },
                                                                                           ],
                                                                                      },
                                                                                 },
@@ -312,8 +312,8 @@ const SMSCartRecoveryCaseStudyPages = (props, { RouteManager }) => {
                                                                                      tr: {
                                                                                           children: [
                                                                                                { td: { text: "Estimated Monthly Recovery" } },
-                                                                                               { td: { text: "₱0 - ₱24,000" } },
-                                                                                               { td: { text: "₱48,000 - ₱72,000" } },
+                                                                                               { td: { text: "₱900 – ₱1,800" } },
+                                                                                               { td: { text: "₱3,300 – ₱6,600" } },
                                                                                           ],
                                                                                      },
                                                                                 },
@@ -321,7 +321,7 @@ const SMSCartRecoveryCaseStudyPages = (props, { RouteManager }) => {
                                                                                      tr: {
                                                                                           children: [
                                                                                                { td: { text: "Manual Follow-ups" } },
-                                                                                               { td: { text: "High effort" } },
+                                                                                               { td: { text: "Manual / inconsistent" } },
                                                                                                { td: { text: "Fully automated" } },
                                                                                           ],
                                                                                      },
@@ -336,7 +336,7 @@ const SMSCartRecoveryCaseStudyPages = (props, { RouteManager }) => {
                                                   {
                                                        p: {
                                                             className: "note",
-                                                            text: "* Figures are based on pilot benchmarks and conservative industry averages. Actual results vary by product and traffic volume.",
+                                                            text: "* Figures are based on conservative benchmarks for low-ticket Shopee/Lazada sellers. Even with a ₱100 AOV, automated SMS follow-ups consistently recover otherwise lost revenue.",
                                                        },
                                                   },
                                              ],
