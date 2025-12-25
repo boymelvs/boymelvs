@@ -1,0 +1,683 @@
+{
+  "name": "AI_Social_Media_Posting",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 9,12,17,19 * * *"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        48,
+        112
+      ],
+      "id": "ec7ddcb8-2a05-47c2-aa1c-70afd1d06ce6",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1EFHj3-BYrmSiMUV6pMMcPS6ygQZmsg-b7X-V_vBVQAU",
+          "mode": "list",
+          "cachedResultName": "Social_Media_Quotes",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1EFHj3-BYrmSiMUV6pMMcPS6ygQZmsg-b7X-V_vBVQAU/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "social_media",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1EFHj3-BYrmSiMUV6pMMcPS6ygQZmsg-b7X-V_vBVQAU/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Quotes": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Quotes__using_to_match_', ``, 'string') }}",
+            "Timestamp": "={{ new Date().toLocaleString(\"en-US\", { timeZone: \"Asia/Manila\" }) }}",
+            "img_url": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('img_url', ``, 'string') }}",
+            "Captions": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Captions', ``, 'string') }}",
+            "Hashtag": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Hashtag', ``, 'string') }}"
+          },
+          "matchingColumns": [
+            "Quotes"
+          ],
+          "schema": [
+            {
+              "id": "Quotes",
+              "displayName": "Quotes",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Captions",
+              "displayName": "Captions",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Hashtag",
+              "displayName": "Hashtag",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "img_url",
+              "displayName": "img_url",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Timestamp",
+              "displayName": "Timestamp",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.7,
+      "position": [
+        576,
+        304
+      ],
+      "id": "df5e55d9-3c71-46db-9add-78d0c33ca003",
+      "name": "Save_Quotes",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "C6GtwYpIVH0koWFW",
+          "name": "GAS-CONNECT-SHEETS-12DEC2025"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1EFHj3-BYrmSiMUV6pMMcPS6ygQZmsg-b7X-V_vBVQAU",
+          "mode": "list",
+          "cachedResultName": "Social_Media_Quotes",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1EFHj3-BYrmSiMUV6pMMcPS6ygQZmsg-b7X-V_vBVQAU/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "social_media",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1EFHj3-BYrmSiMUV6pMMcPS6ygQZmsg-b7X-V_vBVQAU/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Quotes",
+              "lookupValue": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('values0_Value', ``, 'string') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.7,
+      "position": [
+        416,
+        304
+      ],
+      "id": "c426497d-ed51-4680-9c24-c23248af18b0",
+      "name": "Check_Quotes",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "C6GtwYpIVH0koWFW",
+          "name": "GAS-CONNECT-SHEETS-12DEC2025"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "\n// Create a prompt for the AI\nconst randomPageNumber = Math.floor(Math.random() * 100);\n\nconst randomNumber = Math.floor(Math.random() * 10);\n\nconst days = [\n  \"sunday\",\n  \"monday\",\n  \"tuesday\",\n  \"wednesday\",\n  \"thursday\",\n  \"friday\",\n  \"saturday\"\n];\n\nconst dayThemes = {\n  0: \"Rest & self-love\",\n  1: \"Start your week strong\",\n  2: \"Relatable hugot quote\",\n  3: \"Inspirational wisdom\",\n  4: \"Thankful\",\n  5: \"Faith & spirituality\",\n  6: \"Weekend Vibes\"\n};\n\n\nconst today = new Date();\nconst dayTheme = dayThemes[today.getDay()];\n\nconst prompt = `\n# Overview\nYour name is Neriza. An intelligent content creator for facebook pages. Your only responsibility is to create meaningful quotes, captions and hashtag that align with the theme of the day. And generate image URL base on background suggestions.\n\n\n# Tools\n**Check_Quotes** - validates the quote to avoid duplicates.\n**Save_Quotes** - use this tool to save the generated quote, caption, and image URLs.\n**Get_Image** - use this tool to generated image URL.\n\n# Themes\n1. Monday - Motivation Monday (e.g, 1. \"Consistency beats talent. Keep going!\" 2. \"Huwag kang matakot magsimula ulit. Baka ito na ang simula ng mas maganda.\")\n**Background_Suggestions**\n- Sunrise over mountains\n- Person running early morning\n- Minimalist desk setup with coffee\n- Bright morning skyline\n- Long road stretching ahead\n\n2. Tuesday - Hugot Tuesday (quoutes: e.g 1. \"Ikaw ang dahilan kung bakit masaya ang bawat araw ko.\" 2. \"Hindi ko man masabi palagi, pero mahal na mahal kita.\" captions:e.g, \"Actions speak louder than words.\")\n**Background_Suggestions**\n- Rainy window with soft blur\n- Dimly lit bedroom with warm lamp\n- Empty park bench at sunset\n- Silhouette looking out the window\n- Broken-heart bokeh background\n\n3. Wednesday - Wisdom Wednesday (quotes: e.g, \"I pay attention to actions, not words. I heard what you said, but I see how you act.\" captions:e.g, \"Minsan, hindi na kailangan ng maraming paliwanag. Yung kilos mo na mismo ang sumisigaw ng totoo.\n\nKasi kahit anong ganda ng salita, kung kabaligtaran naman ng gawa - wala rin.\")\n**Background_Suggestions**\n- Forest pathway into the distance\n- Old books with warm lighting\n- Open road toward the horizon\n- Mountain trail with footprints\n- Glowing light bulb in darkness\n\n4. Thursday - Thankful Thursday (e.g, 1. \"Grateful ako sa mga taong hindi nang-iwan.\" 2. \"Count blessings, not problems.\")\n**Background_Suggestions**\n- Hands holding coffee at sunrise\n- Nature field with sun rays\n- Cozy breakfast table\n- Ocean horizon with pastel sky\n- Hands in a prayer pose\n\n5. Friday - Faith Friday (e.g, 1. \"Faith makes things possible, not easy.\" 2. \"Prayer is the key to open the day and lock the night.\")\n**Background_Suggestions**\n- Light rays through clouds\n- Cross silhouette at sunset\n- Chapel interior with candles\n- Mountain peaks above clouds\n- Hands lifted in worship\n\n6. Saturday - Weekend Vibes Saturday (1. e.g, \"Chill lang, life is short to stress sa maliliit na bagay.\" 2. \"Ang taong marunong maghintay, mas masarap ang biyayang matatanggap.\")\n**Background_Suggestions**\n- Beach waves + sunny vibe\n- Cozy bed with soft lighting\n- Coffee + book weekend setup\n- Minimalist room with string lights\n- Sunset picnic aesthetic\n\n7. Sunday - Self-care Sunday (e.g, 1. \"Your mind needs rest as much as your body does.\" 2. \"Kung mahal mo sarili mo, matututo ka rin magpatawad.\")\n**Background_Suggestions**\n- Spa setup with candles\n- Soft pastel cloudy sky\n- Bed with peaceful white sheets\n- Green plants with natural light\n- Calm lakeside morning scenery\n\n# Rules\n1. Always generate fresh new quotes, captions and hashtags based on the given theme of the day.\n2. Generate image URL base on the given theme of the day and Background_Suggestions using Get_Image and get the link from response[0].results[${randomNumber}].urls.regular.\n3. Avoid generating duplicate or repeated quotes. Always verify that newly generated quotes are not existing or previously used by checking Check_Quotes.\n4. Save generated fresh new quotes, captions, hashtags and image URL to Save_Quotes.\n5. Always return valid JSON like this:\n[{\n\"quotes\",\n\"captions\",\n\"hashtag\",\n\"imgUrl\"\n}]\n\n# Today Date:\nday: ${days[today.getDay()]}\ndate: ${ new Date().toLocaleString(\"en-PH\", { timeZone: \"Asia/Manila\" }) }`\n\n\nreturn [\n    {\n        json: {            \n            prompt,\n            randomPageNumber,\n            dayTheme,\n            pagesName: \"JokesQuotesAstigNaBanat\"\n        }\n    }\n];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        288,
+        112
+      ],
+      "id": "607ae155-9293-4f86-b7c4-28da5726b7a9",
+      "name": "AI Prompt Generator"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "models/gemini-2.5-flash",
+          "mode": "list",
+          "cachedResultName": "models/gemini-2.5-flash"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "={{ $json.prompt }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1,
+      "position": [
+        496,
+        112
+      ],
+      "id": "e442ffb9-ee95-4400-a8d2-eb307edf1eaf",
+      "name": "Message a model",
+      "retryOnFail": true,
+      "credentials": {
+        "googlePalmApi": {
+          "id": "MJgvDptuEhojzQVD",
+          "name": "GAS-CONNECT-12DEC2025-Gemini(PaLM)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "https://api.unsplash.com/search/photos",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "query",
+              "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('parameters0_Value', ``, 'string') }}"
+            },
+            {
+              "name": "page",
+              "value": "={{ $json.randomPageNumber }}"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Client-ID Wc8mJstv96FVSon0AoTvDDLo4k_QW_wUIPZ3cACx0nE"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.3,
+      "position": [
+        752,
+        304
+      ],
+      "id": "7f20592c-5c1c-403c-a42a-84e83dd56fc5",
+      "name": "Get_Image"
+    },
+    {
+      "parameters": {
+        "jsCode": "let raw = $input.first()?.json?.content?.parts[0]?.text\n\n// --- Safety: If empty or missing ---\nif (!raw || typeof raw !== \"string\" || raw.trim() === \"\") {\n  return { error: \"No output received\", data: null };\n}\n\n// --- Clean messy AI output ---\nlet clean = raw\n  .replace(/```(?:json)?/gi, \"\")  // remove ``` or ```json\n  .replace(/```/g, \"\")\n  .replace(/,\\s*([}\\]])/g, \"$1\") // trailing commas\n  .replace(/([{,]\\s*)([a-zA-Z_][a-zA-Z0-9_]*)(\\s*:)/g, '$1\"$2\"$3') // ensure keys have quotes\n  .replace(/^\\uFEFF/, \"\")  // remove BOM\n  .trim();\n\n// --- Extra guard: if still empty ---\nif (!clean) {\n  return { error: \"Cleaned output is empty\", data: raw };\n}\n\n// --- Try JSON parsing safely ---\ntry {\n  return JSON.parse(clean);\n} catch (err) {\n  // return the raw + cleaned output for debugging\n  return {\n    error: \"Invalid JSON\",\n    message: err.message,\n    raw: raw,\n    cleaned: clean\n  };\n}\n\n                 "
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        48,
+        576
+      ],
+      "id": "ebd13719-52bd-418d-838c-1959b2d75fa6",
+      "name": "Clean_JSON"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://render.imejis.io/v1/Ofwikq8OQCoQ7MbMkmhp3",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "dma-api-key",
+              "value": "VOnzzq-_3xxenQvPKOuKW"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"background_img\": {\n    \"image\": \"{{ $json.imgUrl }}\",\n    \"opacity\": 1,\n    \"borderColor\": \"transparent\"\n  },\n  \"quotes\": {\n    \"text\": \"\\\"{{ $json.quotes }}\\\"\",\n    \"color\": \"#ffffff\",\n    \"backgroundColor\": \"transparent\",\n    \"textBackgroundColor\": \"transparent\",\n    \"borderColor\": \"transparent\",\n    \"strokeColor\": \"transparent\"\n  },\n  \"theme\": {\n    \"text\": \"{{ $json.dayTheme }}\",\n    \"color\": \"#ffffff\",\n    \"backgroundColor\": \"transparent\",\n    \"textBackgroundColor\": \"transparent\",\n    \"borderColor\": \"transparent\",\n    \"strokeColor\": \"transparent\"\n  },\n  \"pages_name\": {\n    \"text\": \"{{ $json.pagesName }}\",\n    \"color\": \"#ffffff\",\n    \"backgroundColor\": \"transparent\",\n    \"textBackgroundColor\": \"transparent\",\n    \"borderColor\": \"transparent\",\n    \"strokeColor\": \"transparent\"\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        464,
+        576
+      ],
+      "id": "6d5b4d9a-4c2e-4e1b-844c-be062de8e77b",
+      "name": "Image_Quotes_Creation",
+      "alwaysOutputData": false,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "e428073d-d70c-4db2-a819-9439eb31e27c",
+              "name": "quotes",
+              "value": "={{ $json.quotes }}",
+              "type": "string"
+            },
+            {
+              "id": "c5b068c9-84f7-4a31-a3c4-c6e4f9e75525",
+              "name": "captions",
+              "value": "={{ $json.captions }}",
+              "type": "string"
+            },
+            {
+              "id": "2265c190-a0d5-468e-8edc-d57fc8ec58cc",
+              "name": "hashtag",
+              "value": "={{ $json.hashtag }}",
+              "type": "string"
+            },
+            {
+              "id": "6695b889-7a5a-460a-93b2-2628371a5105",
+              "name": "imgUrl",
+              "value": "={{ $json.imgUrl }}",
+              "type": "string"
+            },
+            {
+              "id": "68fe33f6-ec40-4d23-b23b-d9c1996e3f3b",
+              "name": "dayTheme",
+              "value": "={{ $('AI Prompt Generator').item.json.dayTheme }}",
+              "type": "string"
+            },
+            {
+              "id": "3d2cc7d6-b447-48c6-94f2-b1f922dd1d00",
+              "name": "pagesName",
+              "value": "={{ $('AI Prompt Generator').item.json.pagesName }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        272,
+        576
+      ],
+      "id": "0669ead1-6d4f-425a-ad9e-ba788c1aae27",
+      "name": "Normalize_Data"
+    },
+    {
+      "parameters": {
+        "httpRequestMethod": "POST",
+        "graphApiVersion": "v23.0",
+        "node": "me",
+        "edge": "=photos",
+        "sendBinaryData": true,
+        "binaryPropertyName": "data",
+        "options": {
+          "queryParameters": {
+            "parameter": [
+              {
+                "name": "message",
+                "value": "={{ $('Normalize_Data').item.json.captions }}\n\n\n\n\n\n\n\n\n{{ $('Normalize_Data').item.json.hashtag }}"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.facebookGraphApi",
+      "typeVersion": 1,
+      "position": [
+        1168,
+        560
+      ],
+      "id": "066c6b6b-ce72-496f-8dfc-4bd395a3ec87",
+      "name": "FB_Pages",
+      "executeOnce": false,
+      "credentials": {
+        "facebookGraphApi": {
+          "id": "8xOtvfTf5BPOunpN",
+          "name": "Facebook Graph account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "# Image Processing up to Facebook Posting",
+        "height": 384,
+        "width": 1360,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        0,
+        464
+      ],
+      "typeVersion": 1,
+      "id": "d28937d9-30a7-485b-bf90-301803a18bb7",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "# Generate Quote, Captions, Hashtag, Image",
+        "height": 464,
+        "width": 560,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        416,
+        0
+      ],
+      "typeVersion": 1,
+      "id": "594eb9aa-5779-432f-95b6-1725b52fff89",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "# Trigger Schedules",
+        "height": 464,
+        "width": 416
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        0,
+        0
+      ],
+      "typeVersion": 1,
+      "id": "04397fd4-cd53-4b64-8950-78cd1f6f4554",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.download_url }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        1024,
+        688
+      ],
+      "id": "8716b733-523e-48c5-a1a6-53dde6aababf",
+      "name": "Download_Image"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apitemplate.io/v1/create?template_id=a8c77b2353992656",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "X-API-KEY",
+              "value": "f388NDQ1MzM6NDE3NDU6Sm1idGYxMkU0V2ZvTnVkcA="
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n    \"overrides\": [\n        {\n            \"name\": \"image\",\n            \"stroke\": \"#000000\",\n            \"src\": \"{{ $('Normalize_Data').item.json.imgUrl }}\"\n        },\n        {\n            \"name\": \"cover_dark\",\n            \"stroke\": \"#000000\",\n            \"backgroundColor\": \"#000000\"\n        },\n        {\n            \"name\": \"themeback\",\n            \"stroke\": \"#000000\",\n            \"backgroundColor\": \"#000000\"\n        },\n        {\n            \"name\": \"theme-text\",\n            \"text\": \"{{ $('Normalize_Data').item.json.dayTheme }}\",\n            \"textBackgroundColor\": \"rgba(0, 0, 0, 0)\",\n            \"color\": \"#FFFFFF\"\n        },\n        {\n            \"name\": \"quotes\",\n            \"text\": \"\\\"{{ $('Normalize_Data').item.json.quotes }}\\\"\",\n            \"textBackgroundColor\": \"rgba(0, 0, 0, 0)\",\n            \"color\": \"#FFFFFF\"\n        },\n        {\n            \"name\": \"pagename\",\n            \"text\": \"{{ $('Normalize_Data').item.json.pagesName }}\",\n            \"textBackgroundColor\": \"rgba(0, 0, 0, 0)\",\n            \"color\": \"#FFFFFF\"\n        }\n    ]\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        832,
+        688
+      ],
+      "id": "555bc45d-9d43-4a50-82b0-56e91e2d02dc",
+      "name": "Image_Quotes_Creation1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "24999114-4362-4381-a2a6-28a86bbdcee7",
+              "leftValue": "={{ $json.error }}",
+              "rightValue": "",
+              "operator": {
+                "type": "object",
+                "operation": "notExists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        672,
+        576
+      ],
+      "id": "c99655ec-6202-4499-8c9f-9d0ae74c3365",
+      "name": "If"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "AI Prompt Generator",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save_Quotes": {
+      "ai_tool": [
+        [
+          {
+            "node": "Message a model",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check_Quotes": {
+      "ai_tool": [
+        [
+          {
+            "node": "Message a model",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Prompt Generator": {
+      "main": [
+        [
+          {
+            "node": "Message a model",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get_Image": {
+      "ai_tool": [
+        [
+          {
+            "node": "Message a model",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model": {
+      "main": [
+        [
+          {
+            "node": "Clean_JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Clean_JSON": {
+      "main": [
+        [
+          {
+            "node": "Normalize_Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Image_Quotes_Creation": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normalize_Data": {
+      "main": [
+        [
+          {
+            "node": "Image_Quotes_Creation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Image_Quotes_Creation1": {
+      "main": [
+        [
+          {
+            "node": "Download_Image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "FB_Pages",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Image_Quotes_Creation1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download_Image": {
+      "main": [
+        [
+          {
+            "node": "FB_Pages",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "FB_Pages": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "timeSavedMode": "fixed",
+    "timezone": "Asia/Manila",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false
+  },
+  "versionId": "3dd328b3-1c6e-4a74-b48a-f36173c5b114",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "280aeb97b3dc5b55f0179a211135cfc27754b42a7c838b7e0124e37703f7fde9"
+  },
+  "id": "v96JDciUadHYUbeo",
+  "tags": []
+}

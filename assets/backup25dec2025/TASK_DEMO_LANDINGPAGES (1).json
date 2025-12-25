@@ -1,0 +1,351 @@
+{
+  "name": "TASK_DEMO_LANDINGPAGES",
+  "nodes": [
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"success\": \"true\",\n  \"message\":\"Email Send To User\"\n}",
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        1248,
+        0
+      ],
+      "id": "b24da7f0-f3c9-462e-8bd1-5a6bd1b4810d",
+      "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "b2b227aa-862f-41e2-b4ed-c32cb6b1a9d1",
+              "leftValue": "={{ $json.body.source }}",
+              "rightValue": "melvin-task-demo",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            },
+            {
+              "id": "33608d01-c7fe-47d9-aa08-54819dc42860",
+              "leftValue": "={{ $json.headers.origin }}",
+              "rightValue": "=https://boymelvs.github.io",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -272,
+        16
+      ],
+      "id": "593218c3-4488-485f-acfa-2908cc7b47bf",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "{\n  \"success\": \"false\",\n  \"message\":\"unauthorized\"\n}",
+        "options": {
+          "responseCode": 403
+        }
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        0,
+        208
+      ],
+      "id": "7bb23dfd-a01e-45e2-8e5f-5eca7dedd04f",
+      "name": "Response_Failed"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ac726d10-2884-4e99-b2dd-908d7b858650",
+              "name": "body.name",
+              "value": "={{ $json.body.name }}",
+              "type": "string"
+            },
+            {
+              "id": "96a267e3-ebf5-4500-a43a-1d7a4b5e1e38",
+              "name": "body.email",
+              "value": "={{ $json.body.email }}",
+              "type": "string"
+            },
+            {
+              "id": "67aef58e-cb16-4cc1-9202-40ecf7b80057",
+              "name": "body.subject",
+              "value": "={{ $json.body.subject }}",
+              "type": "string"
+            },
+            {
+              "id": "eecdb14b-11c9-497d-8b5d-78e8b9eb6911",
+              "name": "body.message",
+              "value": "={{ $json.body.message }}",
+              "type": "string"
+            },
+            {
+              "id": "1827c3f1-bee6-40d1-82f1-617145df8f96",
+              "name": "body.source",
+              "value": "={{ $json.body.source }}",
+              "type": "string"
+            },
+            {
+              "id": "e54487ce-0e87-40c2-96b5-66a6eabd313a",
+              "name": "=timtestamp",
+              "value": "={{ new Date().toLocaleString(\"en-US\", { timeZone: \"Asia/Manila\" }) }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        0,
+        0
+      ],
+      "id": "98c93526-d7c5-47b4-bf05-9876ba4d8d08",
+      "name": "Normalize Data"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "models/gemini-2.5-flash",
+          "mode": "list",
+          "cachedResultName": "models/gemini-2.5-flash"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=Generate an email base on these message:  {{ $json.body.message }}\n\nOther user information: {{ JSON.stringify($json.body) }}"
+            }
+          ]
+        },
+        "options": {
+          "systemMessage": "=# Overview\nYou are an intelligent assistant. Your ONLY job is generate an automated response email for a marketing agency.\n\n# Tools\n1 **Send_Email** - a tool that you can use to send message and acknowledges receipt of the customer inquiry.\n\n**Email requirements:**\n- Include a clear subject line.(e.g, We’ve Received Your Message - Elevate Marketing Agency)\n- Keep the message concise and professional.\n- Do not sound robotic or overly promotional.\n- Use neutral, agency-appropriate language.\n- Sign off as Elevate Marketing Agency.\n- Never mention that this is automated response.\n\n# General Rules\n1. Write a professional, friendly, and human-like email that:\n- Thanks the customer for reaching out.\n- Informs the customer that a team member will follow up shortly.\n- Maintains a polite, warm, and business-appropriate tone.\n\n2. Use Send_Email after generating a response.\n\n3. Never included suggestions, explanations and mention that this is automated response.\n\n4. Your response should be formatted as a complete email and ready to send.\n\n5. Always return a valid JSON format like this:\n{ \"name\":\"{{ $json.body.name }}\",\n  \"email\":\"{{ $json.body.email }}\",\n  \"subjectLine\":\"We’ve Received Your Message - Elevate Marketing Agency\",\n  \"emailBody\":\"your generated response\"  \n}\n\n\n\n\n\n# Date\nToday is: {{ $now.format('cccc') }}, {{ new Date().toLocaleString(\"en-PH\", { timeZone: \"Asia/Manila\" }) }}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1,
+      "position": [
+        448,
+        0
+      ],
+      "id": "046bdf40-f59a-4c90-93d2-4c88f932557e",
+      "name": "Message a model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "MJgvDptuEhojzQVD",
+          "name": "GAS-CONNECT-12DEC2025-Gemini(PaLM)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "let raw = $input.first()?.json?.content?.parts[0]?.text;   \n// --- Safety: If empty or missing ---\nif (!raw || typeof raw !== \"string\" || raw.trim() === \"\") {\n  return { error: \"No output received\", data: null };\n}\n\n// --- Clean messy AI output ---\nlet clean = raw\n  .replace(/```(?:json)?/gi, \"\")  // remove ``` or ```json\n  .replace(/```/g, \"\")\n  .replace(/,\\s*([}\\]])/g, \"$1\") // trailing commas\n  .replace(/([{,]\\s*)([a-zA-Z_][a-zA-Z0-9_]*)(\\s*:)/g, '$1\"$2\"$3') // ensure keys have quotes\n  .replace(/^\\uFEFF/, \"\")  // remove BOM\n  .trim();\n\n// --- Extra guard: if still empty ---\nif (!clean) {\n  return { error: \"Cleaned output is empty\", data: raw };\n}\n\n// --- Try JSON parsing safely ---\ntry {\n  return JSON.parse(clean);\n} catch (err) {\n  // return the raw + cleaned output for debugging\n  return {\n    error: \"Invalid JSON\",\n    message: err.message,\n    raw: raw,\n    cleaned: clean\n  };\n}\n\n                 "
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        800,
+        0
+      ],
+      "id": "379d5f10-f17b-4a7f-b71e-3045cab7be1c",
+      "name": "Clean_JSON"
+    },
+    {
+      "parameters": {
+        "amount": 1
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        240,
+        0
+      ],
+      "id": "8ba3124f-81d9-4339-b5a0-097eec96acc3",
+      "name": "Wait",
+      "webhookId": "e7567540-92f6-4de4-a1b2-1c08dee092ef"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "task-demo",
+        "authentication": "basicAuth",
+        "responseMode": "responseNode",
+        "options": {
+          "allowedOrigins": "https://boymelvs.github.io",
+          "ignoreBots": true
+        }
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -480,
+        16
+      ],
+      "id": "9a87926b-823a-4796-a57a-2bca94cac669",
+      "name": "Contact_Form",
+      "webhookId": "7e996be1-b186-4dda-b89e-e1dae6f3eebb",
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "lIBUO9azxF8WMEbf",
+          "name": "TASKDEMO-CONNECT22DEC2025"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.email }}",
+        "subject": "={{ $json.subjectLine }}",
+        "emailType": "text",
+        "message": "={{ $json.emailBody }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        1024,
+        0
+      ],
+      "id": "24be6372-9626-4708-b150-a62c1402016e",
+      "name": "Send a message",
+      "webhookId": "0f9e4c19-f711-4bc1-b435-73e19e3dd70c",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "WUWFcIKbUQR8IDkZ",
+          "name": "GAS-CONNECT-GMAIL-12DEC2025"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Normalize Data",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Response_Failed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normalize Data": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model": {
+      "main": [
+        [
+          {
+            "node": "Clean_JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Clean_JSON": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Message a model",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Contact_Form": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a message": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "timeSavedMode": "fixed",
+    "timezone": "Asia/Manila",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false
+  },
+  "versionId": "d1133a18-a5b0-4973-ba8b-87eae5e7313e",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "280aeb97b3dc5b55f0179a211135cfc27754b42a7c838b7e0124e37703f7fde9"
+  },
+  "id": "IfQAVvS4lBZ2yims",
+  "tags": []
+}

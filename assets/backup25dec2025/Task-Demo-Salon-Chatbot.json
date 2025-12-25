@@ -1,0 +1,1388 @@
+{
+  "name": "Task-Demo-Salon-Chatbot",
+  "nodes": [
+    {
+      "parameters": {
+        "operation": "get",
+        "documentURL": "1q_QCgCtA-zTfS0WGjdgdgb02A6i2OYKs3zIwpTgZQEg"
+      },
+      "type": "n8n-nodes-base.googleDocsTool",
+      "typeVersion": 2,
+      "position": [
+        864,
+        192
+      ],
+      "id": "010b4880-e67c-4146-8c79-3def356f7fa4",
+      "name": "Read_Salon_FAQ",
+      "credentials": {
+        "googleDocsOAuth2Api": {
+          "id": "pPe7SGm3mKm4pWR9",
+          "name": "GAS-Connect-Google-Docs21Dec2025"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "let raw = $input.first()?.json?.output;\n\n// --- Safety: If empty or missing ---\nif (!raw || typeof raw !== \"string\" || raw.trim() === \"\") {\n  return { error: \"No output received\", data: null };\n}\n\n// --- Clean messy AI output ---\nlet clean = raw\n  .replace(/```(?:json)?/gi, \"\")  // remove ``` or ```json\n  .replace(/```/g, \"\")\n  .replace(/,\\s*([}\\]])/g, \"$1\") // trailing commas\n  .replace(/([{,]\\s*)([a-zA-Z_][a-zA-Z0-9_]*)(\\s*:)/g, '$1\"$2\"$3') // ensure keys have quotes\n  .replace(/^\\uFEFF/, \"\")  // remove BOM\n  .trim();\n\n// --- Extra guard: if still empty ---\nif (!clean) {\n  return { error: \"Cleaned output is empty\", data: raw };\n}\n\n// --- Try JSON parsing safely ---\ntry {\n  return JSON.parse(clean);\n} catch (err) {\n  // return the raw + cleaned output for debugging\n  return {\n    error: \"Invalid JSON\",\n    message: err.message,\n    raw: raw,\n    cleaned: clean\n  };\n}\n\n                 "
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1296,
+        640
+      ],
+      "id": "2215a3e6-2a3c-48b7-aef9-224228baa7c5",
+      "name": "Clean_JSON",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "calendar": {
+          "__rl": true,
+          "value": "gasgasmati@gmail.com",
+          "mode": "list",
+          "cachedResultName": "gasgasmati@gmail.com"
+        },
+        "timeMax": "={{ $now.plus({ week: 2 }) }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        720,
+        640
+      ],
+      "id": "91f64620-6b31-4f14-bc38-c931178b17ca",
+      "name": "Check_Availability",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "NxyI7L2bboxFaZQR",
+          "name": "GAS-CONNECT-Calendar12DEC2025"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const botReply = $input.first().json;\nconst stage = $input.first().json.stage;\n\nif (stage === \"greeting\"){\n  return {json:{botReply}}\n}\n\nif (stage === \"thanks\"){\n  return {json:{botReply}}\n}\n\nreturn {json:{botReply}}\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -560,
+        144
+      ],
+      "id": "6f97c27e-dfd1-4ae9-ba86-d9d2708f4990",
+      "name": "more filter"
+    },
+    {
+      "parameters": {
+        "jsCode": "\nconst sessionId = $input.first().json.body.sessionId\nconst msg = $input.first().json.body.msg\nconst chatHistory = $input.first().json.body.chatHistory\nconst proofOfPaymentFileName = $input.first().json.body.proofOfPaymentFileName\nconst proofOfPaymentLink = $input.first().json.body.proofOfPaymentLink\nconst proofOfPaymentUploaded = $input.first().json.body.proofOfPaymentUploaded\nconst proofOfPaymentStatus = $input.first().json.body.proofOfPaymentStatus\n  \n// --- Greetings / low-intent ---\nlet botReply = null;\nlet state ={};\n  \nif (msg === 'hi' || msg === 'hello' || msg === 'kumusta' || msg === 'musta') botReply = 'Hi! Thanks for reaching out! How can I help you today?'; if (msg === 'thank' || msg === 'thanks' || msg === 'thank you' || msg === 'salamat') botReply = \"You're welcome! Anything else I can help with?\";\nif (msg === 'gago' || msg === 'tanga' || msg === 'tang ina' || msg === 'bobo' || msg ==='8080') botReply = \"Hi!, May i help?\";\n\nif (botReply) {\n        state.stage = botReply.includes('Hi') \n          ? 'greeting'  \n          : botReply.includes('May')\n          ? 'curse'\n          : 'thanks';\n  \nreturn [{ json: { stage: state.stage, reply: botReply,sessionId, msg } }];\n}\n\nstate.stage = 'ai';\nreturn [{ json: { stage:  state.stage, sessionId, msg, chatHistory, proofOfPaymentFileName, proofOfPaymentLink, proofOfPaymentUploaded, proofOfPaymentStatus } }];\n    "
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -320,
+        -48
+      ],
+      "id": "a6a9fa7e-d505-4bf1-bf5a-20bb00478276",
+      "name": "Filter_Common_Msg"
+    },
+    {
+      "parameters": {
+        "calendar": {
+          "__rl": true,
+          "value": "gasgasmati@gmail.com",
+          "mode": "list",
+          "cachedResultName": "gasgasmati@gmail.com"
+        },
+        "start": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Start', ``, 'string') }}",
+        "end": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('End', ``, 'string') }}",
+        "useDefaultReminders": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Use_Default_Reminders', `send reminder notification 24 hours before appointment`, 'boolean') }}",
+        "additionalFields": {
+          "attendees": [
+            "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('attendees0_Attendees', `only email address should be here`, 'string') }}"
+          ],
+          "description": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Description', `service requested`, 'string') }}",
+          "summary": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Summary', `service requested - customer name`, 'string') }}"
+        }
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        880,
+        640
+      ],
+      "id": "27da6efd-7442-4c29-832f-5b26f778a244",
+      "name": "Book_Appointment",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "NxyI7L2bboxFaZQR",
+          "name": "GAS-CONNECT-Calendar12DEC2025"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {
+          "maxOutputTokens": 2048,
+          "temperature": 0.2,
+          "topK": 40,
+          "topP": 0.8
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        560,
+        640
+      ],
+      "id": "d630e236-6250-451f-90a0-a8b625231bd3",
+      "name": "Google Gemini Chat Model2",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "MJgvDptuEhojzQVD",
+          "name": "GAS-CONNECT-12DEC2025-Gemini(PaLM)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Reply to these message: {{ $('If').item.json.msg }}\n\nCustomer Information: {\n\"customerName\": \"{{ $json.customerName || null }}\",\n\"phone\":\"{{ $json.phone  || null}}\",\n\"email\":\"{{ $json.email  || null}}\",\n\"serviceRequested:\"{{ $json.serviceRequested  || null}}\",\n\"preferredDate\":\"{{ $json.preferredDate  || null}}\",\n\"payAmount:\"{{ $json.paymentAmount  || null}}\",\n\"paymentMethod:\"{{ $json.paymentMethod  || null}}\",\n\"receiptImageURL\":\"{{ $json.receiptImageURL ||  $('Filter_Common_Msg').item.json.proofOfPaymentLink|| null}}\",\n\"bookingStatus\":\"{{ $json.uniqueBookingId ? \"confirmed\" : \"pending\"  || null}}\",\n\"paymentStatus\":\"{{ $json.paymentStatus  || null}}\",\n\"uniqueBookingId:\"{{ $json.uniqueBookingId  || null}}\"\n}\n\nProof of payment uploaded: {{ $json.receiptImageURL ? true : $('Filter_Common_Msg').item.json.proofOfPaymentLink ? true : false}}\n\nProof of Payment Status: {{ $('If').item.json.proofOfPaymentStatus }}\n\nChatHistory: {{ JSON.stringify($('Filter_Common_Msg').item.json.chatHistory) }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=# Overview\nYou are an intelligent ai assistant of a salon business. Your ONLY job is to analyze and detect customer intent, answer customer message, extract customer information, book an apppointment slot, ask customer to upload proof of payment, and store all extracted informaton to a database.\n\n# Detect intent:\nClassify into one of below lists:\n1. **greeting** - Customer is greeting or starting a conversation. No need to do anything. Just response.\nExamples:\n- \"hi\"\n- \"hello\"\n- \"good morning\"\n- \"kumusta (musta)\"\n\n2. **thankyou** - Customer is showing appreciation. No need to do anything. Just response.\nExamples:\n- \"thank you\"\n- \"thanks\"\n- \"salamat\"\n\n3. **inquiry** - Customer is asking for service offered, price, details, availability, payment method, booking process and how/what/where questions. Your answer must be always pull in Read_Salon_FAQ.\nExamples:\n- \"how much?\"\n- \"hm\"\n- \"is it available?\"\n- \"magkano\"\n- \"Do you have promos?\"\n\n4. **pay** - Customer indicates want to pay or they've already made the payment. Any related about payment. \nExample:\n- \"i already pay\"\n- \"payment sent\"\n- \"how to pay\"\n- \"do you accept credit card, gcash payment?\"\n\n5. **book** - Customer indicates want to book an appointment.\nExample:\n- \"How do I book an appointment?\"\n- \"Do I need to book an appointment?\"\n- \"I want to book\"\n\n6. **unknown** - Fallback for anything that does not fit any classification. No need to do anything. Just ask how to help and ask to clarify the message.\nExamples:\n- Emojis\n- Random messages\n- “hahaha”\n- Anything unclear\n\n\n# Tools\n1. **Read_Salon_FAQ** - a tool that allow you to pulls salon operation details and FAQs to accurately answer to customer inquiries.\n2. **Calendar_Manager** - an ai assistant that will assist you to view available date and time slots from 9:00 AM to 8:00 PM, every day. And assist you to book an appointment.\n3. **Com_Manager** - an ai assistant that will help you notify salon admin of pending approval.\n\n# Conversation Style to Customer\n1. Always make sure your response concise, polite, friendly tone and on point.\n\n# General Rules\n1. Always be aware of the present date and time.\n2. Always detect the customer intent.\n3. Always insert to aiReply property your response.\n4. Always return a valid JSON format like this:\n{\n\"sessionId\":\"{{ $json.sessionId || null}}\"\n\"intent\":\"detected intent\",\n\"customerName\":\"{{ $json.customerName || null}}\",\n\"phoneNumber\":\"{{ $json.phone || null}}\",\n\"email\":\"{{ $json.email || null}}\",\n\"serviceRequested\":\"{{ $json.serviceRequested || null}}\",\n\"preferredDate\":\"{{ $json.preferredDate || null }}\",\n\"paymentAmount\":\"{{ $json.paymentAmount || null }}\",\n\"paymentMethod\":\"{{ $json.paymentMethod || null}}\",\n\"receiptImageURL\":\"{{ $json.receiptImageURL || null}}\",\n\"bookingStatus\":\"{{ $json.uniqueBookingId || null}}\",\n\"paymentStatus\":\"{{ $json.paymentStatus  || null}}\",\n\"iCalUID\":\"{{ $json.uniqueBookingId || null }}\",\n\"aiReply\":\"your response\"\n}\n\n# intent **inquiry** Rules\n1. Always pull salon information in Read_Salon_FAQ to answer customer message. \n\n# intent **pay** Rules\n1. When proof of payment is uploaded. You must always ask customer name, phone number, email,service requested, preferred date,  payment method used, and payment amount.\n\n# intent **book** Rules\n1. Before booking an appointment slot. Always make sure, proof of payment is uploaded, verify and approved.\n2. Call Calendar_Manager to ask if customer preferred date and time is available.\n3. When customer preferred date and time is available. Call Calendar_Manager to book an appointment and you must provide all extracted customer information.\n4. When booking an appointment is successfully done. For internal use, get the iCalUID.\n\n# Salon Operating hours: 9:00 AM to 8:00 PM everyday.\n\n# Date\nToday is: {{ $now.format('cccc') }}, {{ new Date().toLocaleString(\"en-PH\", { timeZone: \"Asia/Manila\" }) }}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        688,
+        -64
+      ],
+      "id": "84d47263-356d-4c8d-bd6f-9c5a6c9c8b24",
+      "name": "AI Agent Assistant"
+    },
+    {
+      "parameters": {
+        "options": {
+          "maxOutputTokens": 2048,
+          "temperature": 0.7,
+          "topK": 40,
+          "topP": 0.8
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        560,
+        192
+      ],
+      "id": "8529f706-e7f5-4f21-944a-6be5da78d596",
+      "name": "Google Gemini",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "MJgvDptuEhojzQVD",
+          "name": "GAS-CONNECT-12DEC2025-Gemini(PaLM)"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "toolDescription": "AI intelligent assistant calendar manager for a salon business.",
+        "text": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Prompt__User_Message_', `AI agent assistant will call you, when a customer intent is all about booking.`, 'string') }}",
+        "options": {
+          "systemMessage": "=# Overview\nYou are an intelligent assistant of a salon businesses. Your ONLY job are to check slots availability and book an apppointment.\n\n# Tools\n1. **Check_Availability** - a tool that allows you to view available date and time slots from 9:00 AM to 8:00 PM, every day.\n2. **Book_Appointment** - A tool for creating and book an appointment slots.\n\n# General Rules\n1. Always extract customer name, service requested, prefered date and time, phone number and email before booking an appointment slot.\n\n# Checking Slot Availability Rules\n1.  When customer intent to book. Always check available date and time slots from 9:00 AM to 8:00 PM in Check_Availability,\n2. When the Check_Availability return an EMPTY array([]), that CONFIRMS availability. Empty array means NO APPOINTMENTS. Do NOT assume unavailability from missing data. \n3. When customer preferred date and time is not available. Suggest nearest date and time.\n\n# Booking Slot Rules\n1. Make sure customer information such as name, phone number, email, service requested, preferred date and time are all extracted. Ask customer when there is missing.\n2. When slot is successfully booked. Get the booking id and use this id as unique booking id in Customer_Records.\n\n# Salon Operating hours: 9:00 AM to 8:00 PM\n\n# Date\nToday is: {{ $now.format('cccc') }}, {{ new Date().toLocaleString(\"en-PH\", { timeZone: \"Asia/Manila\" }) }}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agentTool",
+      "typeVersion": 2.2,
+      "position": [
+        736,
+        384
+      ],
+      "id": "704ed4c1-e637-4b60-bd7b-ab47a4bd4e4a",
+      "name": "Calendar_Manager"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Filter_Common_Msg').item.json.sessionId }}",
+        "contextWindowLength": 20
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        720,
+        192
+      ],
+      "id": "82a6c3ee-565e-4154-a8af-d039d2e6befd",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n\t\"type\": \"object\",\n\t\"properties\": \n    {\n      \"sessionId\": {\n      \"type\": \"string\"\n      },\n      \"intent\": {\n      \"type\": \"string\"\n      },\n      \"customerName\": {\n      \"type\": \"string\"\n      },\t\t\n      \"phoneNumber\": {\t\t\n\t\t\"type\": \"string\"\t\t\n      },\n      \"email\": {\n\t\t\"type\": \"string\"\n      },\n      \"serviceRequested\": {\n\t\t\"type\": \"string\"\n      },\n      \"preferredDate\": {\n\t\t\"type\": \"string\"\t\t\n      },\n      \"paymentAmount\": {\n\t\t\"type\": \"string\"\t\t\n      },\n      \"paymentMethod\": {\n\t\t\"type\": \"string\"\t\n      },\n      \"receiptImageURL\": {\n\t\t\"type\": \"string\"\t\n      },\n      \"bookingStatus\": {\n\t\t\"type\": \"string\"\t\n      },\n      \"paymentStatus\": {\n\t\t\"type\": \"string\"\t\n      },\n      \"uniqueBookingId\": {\n\t\t\"type\": \"string\"\t\n      },\n      \"aiReply\": {\n\t\t\"type\": \"string\"\t\n      }\n\t\t\n\t}\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        1024,
+        192
+      ],
+      "id": "82b8acc8-db4a-465a-badd-7bed40baea14",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "multipleMethods": true,
+        "httpMethod": [
+          "POST"
+        ],
+        "path": "salon-chatbot",
+        "responseMode": "responseNode",
+        "options": {
+          "allowedOrigins": "*",
+          "ignoreBots": true
+        }
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -1680,
+        -64
+      ],
+      "id": "916a4dd6-c567-4f90-81b5-dad5323bfa60",
+      "name": "Webhook",
+      "webhookId": "b8bd11d0-0eba-47e6-84e5-69350add6cdb"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"success\":\"true\",\n  \"sessionId\":\"{{ $json.botReply.sessionId }}\",\n  \"messages\": {{JSON.stringify($json.botReply.reply) }}\n}",
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        -320,
+        144
+      ],
+      "id": "49507d8e-3d60-4758-970f-aaa11173f3b8",
+      "name": "Quick Response"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"success\":\"true\",\n  \"sessionId\":\"{{ $('Filter_Common_Msg').item.json.sessionId }}\",\n  \"messages\": {{JSON.stringify($('AI Agent Assistant').item.json.output.aiReply) }}\n}",
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        2032,
+        -48
+      ],
+      "id": "b367b3a5-644e-40e7-bda5-891596973b8b",
+      "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "be16e4fa-c53c-40ce-934b-58d8e086b8ee",
+              "leftValue": "={{ $binary.proofOfPayment }}",
+              "rightValue": "",
+              "operator": {
+                "type": "object",
+                "operation": "exists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        -1440,
+        -64
+      ],
+      "id": "d4ef633b-76c2-483c-8d03-80671c4fd070",
+      "name": "is file upload"
+    },
+    {
+      "parameters": {
+        "inputDataFieldName": "proofOfPayment",
+        "name": "={{ $binary.proofOfPayment.fileName }}",
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "1bcZc9ATu9FaAttFPpk_jFYzQF0tpLJHn",
+          "mode": "list",
+          "cachedResultName": "SALON_IMAGE",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/1bcZc9ATu9FaAttFPpk_jFYzQF0tpLJHn"
+        },
+        "options": {
+          "simplifyOutput": false
+        }
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        -1184,
+        -192
+      ],
+      "id": "b27d0b1b-3c86-48c5-b9c3-93445c3a1e50",
+      "name": "Upload file",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "RF5WxSQ0PCIa1gmy",
+          "name": "GAS-CONNECT-Google-Drive12DEC2025"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "share",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $json.id }}",
+          "mode": "id"
+        },
+        "permissionsUi": {
+          "permissionsValues": {
+            "role": "reader",
+            "type": "anyone"
+          }
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        -976,
+        -192
+      ],
+      "id": "e049722f-23f2-4202-ae3b-b688cb4fd4c4",
+      "name": "Share file",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "RF5WxSQ0PCIa1gmy",
+          "name": "GAS-CONNECT-Google-Drive12DEC2025"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d0d50f44-4b1c-45ad-a6cd-4f933bad6438",
+              "name": "body.sessionId",
+              "value": "={{ $('is file upload').item.json.body.id }}",
+              "type": "string"
+            },
+            {
+              "id": "2c89cccf-cfb5-4880-8bf8-f6daa3456083",
+              "name": "body.msg",
+              "value": "={{ $('is file upload').item.json.body.msg }}",
+              "type": "string"
+            },
+            {
+              "id": "4e9244bb-c679-47d6-a69e-efeccfe88f45",
+              "name": "body.chatHistory",
+              "value": "={{ $('is file upload').item.json.body.chatHistory }}",
+              "type": "string"
+            },
+            {
+              "id": "29d21eb0-375c-4831-8487-f2bb84db7034",
+              "name": "body.proofOfPaymentFileName",
+              "value": "={{ $('Upload file').isExecuted ? $('Upload file').item.json.name : null}}",
+              "type": "string"
+            },
+            {
+              "id": "0536d0d7-89b6-4a33-b26a-def0d76a6034",
+              "name": "body.proofOfPaymentLink",
+              "value": "={{ $('Upload file').isExecuted ? $('Upload file').item.json.webViewLink : null }}",
+              "type": "string"
+            },
+            {
+              "id": "61cec2bf-7af9-413c-930a-4c557787bfbf",
+              "name": "body.proofOfPaymentUploaded",
+              "value": "={{ $('Upload file').isExecuted }}",
+              "type": "boolean"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -560,
+        -48
+      ],
+      "id": "ca6b3572-5fc5-44a2-b32f-2500fea77989",
+      "name": "Normalize Data"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "687a3bd7-72ae-40a2-8771-3c3a37b928b2",
+              "leftValue": "={{ $json.stage }}",
+              "rightValue": "ai",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        -112,
+        -48
+      ],
+      "id": "e65c9760-37bf-44f5-9daf-b02bd804384e",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "updates": [
+          "callback_query"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -320,
+        304
+      ],
+      "id": "30b6722c-4de5-4017-9496-3202d5a34af7",
+      "name": "Telegram Trigger",
+      "webhookId": "bb8cafad-68d8-4d95-8c9c-35d449b9dad9",
+      "credentials": {
+        "telegramApi": {
+          "id": "gMENsczaX06fzGqg",
+          "name": "boymelvs_bot-Telegram-21Dec2025"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1L7BHiOczt3qAGzXGF4wnE4-8ZEzT-d3bb3VAYDQnppw",
+          "mode": "list",
+          "cachedResultName": "SALON_CUSTOMER_RECORDS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1L7BHiOczt3qAGzXGF4wnE4-8ZEzT-d3bb3VAYDQnppw/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "customer-records",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1L7BHiOczt3qAGzXGF4wnE4-8ZEzT-d3bb3VAYDQnppw/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "sessionId": "={{ $('If').item.json.sessionId }}",
+            "customerName": "={{ $json.output.customerName || null}}",
+            "phone": "={{ $json.output.phoneNumber || null}}",
+            "email": "={{ $json.output.email || null }}",
+            "serviceRequested": "={{ $json.output.serviceRequested || null}}",
+            "preferredDate": "={{ $json.output.preferredDate || null}}",
+            "paymentAmount": "={{ $json.output.paymentAmount || null}}",
+            "paymentMethod": "={{ $json.output.paymentMethod || null}}",
+            "receiptImageURL": "={{ $json.output.receiptImageURL || null}}",
+            "bookStatus": "={{ $json.output.bookingStatus || null}}",
+            "uniqueBookingId": "={{ $json.output.uniqueBookingId  || null}}",
+            "timestamp": "={{$('Filter_Common_Msg').item.json.sessionId ? $now.format('yyyy-MM-dd, hh:mm') : null}}",
+            "paymentStatus": "={{ $json.output.paymentStatus || null}}"
+          },
+          "matchingColumns": [
+            "sessionId"
+          ],
+          "schema": [
+            {
+              "id": "customerName",
+              "displayName": "customerName",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "phone",
+              "displayName": "phone",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "email",
+              "displayName": "email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "serviceRequested",
+              "displayName": "serviceRequested",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "preferredDate",
+              "displayName": "preferredDate",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "paymentAmount",
+              "displayName": "paymentAmount",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "paymentMethod",
+              "displayName": "paymentMethod",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "receiptImageURL",
+              "displayName": "receiptImageURL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "bookStatus",
+              "displayName": "bookStatus",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "paymentStatus",
+              "displayName": "paymentStatus",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "timestamp",
+              "displayName": "timestamp",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "uniqueBookingId",
+              "displayName": "uniqueBookingId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "sessionId",
+              "displayName": "sessionId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1088,
+        -64
+      ],
+      "id": "cf55484f-e8cd-4720-947d-5f95ade8fd3b",
+      "name": "Customer_Records",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "C6GtwYpIVH0koWFW",
+          "name": "GAS-CONNECT-SHEETS-12DEC2025"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1L7BHiOczt3qAGzXGF4wnE4-8ZEzT-d3bb3VAYDQnppw",
+          "mode": "list",
+          "cachedResultName": "SALON_CUSTOMER_RECORDS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1L7BHiOczt3qAGzXGF4wnE4-8ZEzT-d3bb3VAYDQnppw/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "customer-records",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1L7BHiOczt3qAGzXGF4wnE4-8ZEzT-d3bb3VAYDQnppw/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "sessionId",
+              "lookupValue": "={{ $json.sessionId }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        416,
+        -64
+      ],
+      "id": "fef0216c-c210-4b8d-a167-2b5e7eac7ee4",
+      "name": "Get_Customer_Records",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "C6GtwYpIVH0koWFW",
+          "name": "GAS-CONNECT-SHEETS-12DEC2025"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "af862a21-87c2-47c9-888c-f02873205803",
+              "leftValue": "={{ $json.customerName }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "94a0048e-541f-45bd-b120-dfb4f42654a3",
+              "leftValue": "={{ $json.phone }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "17cd55a8-b9ba-4d49-9800-3339cb3077a0",
+              "leftValue": "={{ $json.email }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "4ec49a9a-3e39-4c78-bba2-a092fb8d50ea",
+              "leftValue": "={{ $json.serviceRequested }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "a01208d6-38a2-4768-8ad0-a1e7786eb7de",
+              "leftValue": "={{ $json.receiptImageURL }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        1344,
+        -64
+      ],
+      "id": "009ff64f-af37-4fd0-b83c-89d93884171e",
+      "name": "is approved"
+    },
+    {
+      "parameters": {
+        "operation": "sendPhoto",
+        "chatId": "7059022781",
+        "binaryData": true,
+        "replyMarkup": "=inlineKeyboard",
+        "forceReply": {},
+        "inlineKeyboard": {
+          "rows": [
+            {
+              "row": {
+                "buttons": [
+                  {
+                    "text": "Approved",
+                    "additionalFields": {
+                      "callback_data": "=approve | {{ $json.sessionId }}"
+                    }
+                  },
+                  {
+                    "text": "Disapproved",
+                    "additionalFields": {
+                      "callback_data": "=disapprove | {{ $json.sessionId }}"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "replyKeyboardOptions": {},
+        "replyKeyboardRemove": {},
+        "additionalFields": {
+          "caption": "=<b>📄 New Submission</b>\n\n<b>👤 Name:</b> {{ $json.customerName }}\n<b>📞 Phone:</b> {{ $json.phone }}\n<b>📧 Email:</b> {{ $json.email }}\n<b>🛠 Service:</b> {{ $json.serviceRequested }}\n<b>📅 Date:</b> {{ $json.preferredDate }}\n\nPlease review and approve.\n",
+          "parse_mode": "HTML"
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1792,
+        -208
+      ],
+      "id": "6b0d5282-de7c-472c-9eb3-147a6dd87477",
+      "name": "Send a photo message",
+      "webhookId": "683a8e3d-4ff1-4fca-b587-f7626529ce93",
+      "credentials": {
+        "telegramApi": {
+          "id": "gMENsczaX06fzGqg",
+          "name": "boymelvs_bot-Telegram-21Dec2025"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $json.receiptImageURL }}",
+          "mode": "url"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        1568,
+        -208
+      ],
+      "id": "931d4158-e0b7-4057-ab6f-a821ae2f0ec4",
+      "name": "Download file",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "RF5WxSQ0PCIa1gmy",
+          "name": "GAS-CONNECT-Google-Drive12DEC2025"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "callback",
+        "queryId": "={{ $json.callback_query.id }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -112,
+        304
+      ],
+      "id": "f60b432f-b694-4c7f-8f61-66c0dda96ea4",
+      "name": "Answer callback",
+      "webhookId": "ea816c39-4287-41dc-811c-9aa06d651204",
+      "credentials": {
+        "telegramApi": {
+          "id": "gMENsczaX06fzGqg",
+          "name": "boymelvs_bot-Telegram-21Dec2025"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const parts = $('Telegram Trigger').first().json.callback_query.data.split(\"|\");\n\nconst action = parts[0];      \nconst sessionId = parts[1];   \n\nreturn { action, sessionId };\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        96,
+        304
+      ],
+      "id": "2e8bca87-41a5-4261-84f7-32c3be49291a",
+      "name": "get sessionId"
+    }
+  ],
+  "pinData": {
+    "Webhook": [
+      {
+        "json": {
+          "headers": {
+            "host": "n8n.mnfm.cloud",
+            "x-real-ip": "119.92.228.222",
+            "x-forwarded-for": "119.92.228.222",
+            "x-forwarded-proto": "https",
+            "connection": "upgrade",
+            "content-length": "2579",
+            "sec-ch-ua-platform": "\"Windows\"",
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+            "sec-ch-ua": "\"Microsoft Edge\";v=\"143\", \"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"",
+            "content-type": "multipart/form-data; boundary=----WebKitFormBoundaryW1cBxoXUBzlGO6oF",
+            "sec-ch-ua-mobile": "?0",
+            "accept": "*/*",
+            "origin": "http://127.0.0.1:5500",
+            "sec-fetch-site": "cross-site",
+            "sec-fetch-mode": "cors",
+            "sec-fetch-dest": "empty",
+            "referer": "http://127.0.0.1:5500/",
+            "accept-encoding": "gzip, deflate, br, zstd",
+            "accept-language": "en-US,en;q=0.9,fil;q=0.8"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "id": "ea49ad60-27b1-41e7-be75-448d20527483",
+            "msg": "payment send",
+            "chatHistory": "[{\"sessionId\":\"ea49ad60-27b1-41e7-be75-448d20527483\",\"from\":\"user\",\"msg\":\"i\"},{\"sessionId\":\"ea49ad60-27b1-41e7-be75-448d20527483\",\"from\":\"bot\",\"msg\":\"I'm sorry, I didn't quite understand your message. How can I help you today?\"},{\"sessionId\":\"ea49ad60-27b1-41e7-be75-448d20527483\",\"from\":\"user\",\"msg\":\"hi\"},{\"sessionId\":\"ea49ad60-27b1-41e7-be75-448d20527483\",\"from\":\"bot\",\"msg\":\"Hi! Thanks for reaching out! How can I help you today?\"},{\"sessionId\":\"ea49ad60-27b1-41e7-be75-448d20527483\",\"from\":\"user\",\"msg\":\"hm manicure\"},{\"sessionId\":\"ea49ad60-27b1-41e7-be75-448d20527483\",\"from\":\"bot\",\"msg\":\"A regular manicure costs ₱200, and a gel manicure costs ₱600.\"},{\"sessionId\":\"ea49ad60-27b1-41e7-be75-448d20527483\",\"from\":\"user\",\"msg\":\"i want to reserve a slot\"},{\"sessionId\":\"ea49ad60-27b1-41e7-be75-448d20527483\",\"from\":\"bot\",\"msg\":\"To reserve a slot, we require proof of payment first. Please upload your proof of payment, and once it's verified, we can proceed with your booking!\"},{\"sessionId\":\"ea49ad60-27b1-41e7-be75-448d20527483\",\"from\":\"user\",\"msg\":\"how to pay\"},{\"sessionId\":\"ea49ad60-27b1-41e7-be75-448d20527483\",\"from\":\"bot\",\"msg\":\"We accept cash, debit/credit cards, and GCash for payments.\"},{\"sessionId\":\"ea49ad60-27b1-41e7-be75-448d20527483\",\"from\":\"user\",\"msg\":\"payment sent\"},{\"sessionId\":\"ea49ad60-27b1-41e7-be75-448d20527483\",\"from\":\"user\",\"msg\":\"payment\"},{\"sessionId\":\"ea49ad60-27b1-41e7-be75-448d20527483\",\"from\":\"bot\",\"msg\":\"Thank you for uploading your proof of payment! To finalize your booking, please provide your full name, phone number, email, the service you requested, your preferred date for the appointment, the payment method you used, and the total payment amount.\"},{\"sessionId\":\"ea49ad60-27b1-41e7-be75-448d20527483\",\"from\":\"user\",\"msg\":\"melvin, 09499200932,melvin@gmail.com, manicure, dec 27 10am, gcash, 300\"},{\"sessionId\":\"ea49ad60-27b1-41e7-be75-448d20527483\",\"from\":\"bot\",\"msg\":\"Thank you, Melvin! We have received your details for a manicure on December 27th at 10 AM, paid via GCash for ₱300. We are now verifying your payment. Once approved, we will confirm your booking.\"},{\"sessionId\":\"ea49ad60-27b1-41e7-be75-448d20527483\",\"from\":\"user\",\"msg\":\"payment send\"}]"
+          },
+          "webhookUrl": "https://n8n.mnfm.cloud/webhook/salon-chatbot",
+          "executionMode": "production"
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      }
+    ],
+    "Telegram Trigger": [
+      {
+        "json": {
+          "update_id": 491991887,
+          "callback_query": {
+            "id": "2648155876911322259",
+            "from": {
+              "id": 7059022781,
+              "is_bot": false,
+              "first_name": "Boymelvs",
+              "language_code": "en"
+            },
+            "message": {
+              "message_id": 43,
+              "from": {
+                "id": 8352279803,
+                "is_bot": true,
+                "first_name": "kila bot",
+                "username": "boymelvs_bot"
+              },
+              "chat": {
+                "id": 7059022781,
+                "first_name": "Boymelvs",
+                "type": "private"
+              },
+              "date": 1766635169,
+              "photo": [
+                {
+                  "file_id": "AgACAgUAAxkDAAMpaUytIqMK0wwKHC98WOtFIyS5Nd4AAkwLaxte3mlWySyDoXaJQwwBAAMCAANzAAM2BA",
+                  "file_unique_id": "AQADTAtrG17eaVZ4",
+                  "file_size": 1251,
+                  "width": 76,
+                  "height": 90
+                },
+                {
+                  "file_id": "AgACAgUAAxkDAAMpaUytIqMK0wwKHC98WOtFIyS5Nd4AAkwLaxte3mlWySyDoXaJQwwBAAMCAANtAAM2BA",
+                  "file_unique_id": "AQADTAtrG17eaVZy",
+                  "file_size": 24815,
+                  "width": 270,
+                  "height": 320
+                },
+                {
+                  "file_id": "AgACAgUAAxkDAAMpaUytIqMK0wwKHC98WOtFIyS5Nd4AAkwLaxte3mlWySyDoXaJQwwBAAMCAAN5AAM2BA",
+                  "file_unique_id": "AQADTAtrG17eaVZ-",
+                  "file_size": 110401,
+                  "width": 719,
+                  "height": 851
+                },
+                {
+                  "file_id": "AgACAgUAAxkDAAMpaUytIqMK0wwKHC98WOtFIyS5Nd4AAkwLaxte3mlWySyDoXaJQwwBAAMCAAN4AAM2BA",
+                  "file_unique_id": "AQADTAtrG17eaVZ9",
+                  "file_size": 116296,
+                  "width": 676,
+                  "height": 800
+                }
+              ],
+              "caption": "📄 New Submission\n\n👤 Name: melvin\n📞 Phone: 9499200932\n📧 Email: melvin@gmail.com\n🛠 Service: manicure\n📅 Date: Dec 27 10:00 AM\n\nPlease review and approve.",
+              "caption_entities": [
+                {
+                  "offset": 0,
+                  "length": 17,
+                  "type": "bold"
+                },
+                {
+                  "offset": 19,
+                  "length": 8,
+                  "type": "bold"
+                },
+                {
+                  "offset": 35,
+                  "length": 9,
+                  "type": "bold"
+                },
+                {
+                  "offset": 56,
+                  "length": 9,
+                  "type": "bold"
+                },
+                {
+                  "offset": 66,
+                  "length": 16,
+                  "type": "email"
+                },
+                {
+                  "offset": 83,
+                  "length": 11,
+                  "type": "bold"
+                },
+                {
+                  "offset": 104,
+                  "length": 8,
+                  "type": "bold"
+                }
+              ],
+              "reply_markup": {
+                "inline_keyboard": [
+                  [
+                    {
+                      "text": "Approved",
+                      "callback_data": "approve"
+                    },
+                    {
+                      "text": "Disapproved",
+                      "callback_data": "disapprove"
+                    }
+                  ]
+                ]
+              }
+            },
+            "chat_instance": "4927831312727135503",
+            "data": "approve"
+          }
+        },
+        "pairedItem": {
+          "item": 0
+        }
+      }
+    ]
+  },
+  "connections": {
+    "Read_Salon_FAQ": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent Assistant",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Clean_JSON": {
+      "main": [
+        []
+      ]
+    },
+    "Check_Availability": {
+      "ai_tool": [
+        [
+          {
+            "node": "Calendar_Manager",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "more filter": {
+      "main": [
+        [
+          {
+            "node": "Quick Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter_Common_Msg": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Book_Appointment": {
+      "ai_tool": [
+        [
+          {
+            "node": "Calendar_Manager",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Calendar_Manager",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent Assistant": {
+      "main": [
+        [
+          {
+            "node": "Customer_Records",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent Assistant",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calendar_Manager": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent Assistant",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent Assistant",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "AI Agent Assistant",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "is file upload",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "is file upload": {
+      "main": [
+        [
+          {
+            "node": "Upload file",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Normalize Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload file": {
+      "main": [
+        [
+          {
+            "node": "Share file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Share file": {
+      "main": [
+        [
+          {
+            "node": "Normalize Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normalize Data": {
+      "main": [
+        [
+          {
+            "node": "Filter_Common_Msg",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Get_Customer_Records",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "more filter",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "Answer callback",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Customer_Records": {
+      "main": [
+        [
+          {
+            "node": "is approved",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get_Customer_Records": {
+      "main": [
+        [
+          {
+            "node": "AI Agent Assistant",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "is approved": {
+      "main": [
+        [
+          {
+            "node": "Download file",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a photo message": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download file": {
+      "main": [
+        [
+          {
+            "node": "Send a photo message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Answer callback": {
+      "main": [
+        [
+          {
+            "node": "get sessionId",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get sessionId": {
+      "main": [
+        [
+          {
+            "node": "Get_Customer_Records",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "timeSavedMode": "fixed",
+    "timezone": "Asia/Manila",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false
+  },
+  "versionId": "92eda616-ecfd-4ee5-8c8b-8d375b64c0b6",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "280aeb97b3dc5b55f0179a211135cfc27754b42a7c838b7e0124e37703f7fde9"
+  },
+  "id": "lzU4aN3vxCoVV2Xc",
+  "tags": []
+}
