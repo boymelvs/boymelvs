@@ -6,7 +6,10 @@ const DemoRealStateChatbotPages = (props, { getState, setState, juris, RouteMana
      juris.registerComponent("ChatBox", ChatBox);
 
      setInterval(() => {
-          const iframe = document.getElementById("leadSheet");
+          const iframe = document.getElementById("leadSheet") || "";
+
+          if (!iframe) return;
+
           iframe.src = iframe.src.split("?")[0] + "?t=" + new Date().getTime();
      }, 12000);
 

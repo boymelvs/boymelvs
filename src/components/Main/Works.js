@@ -39,6 +39,17 @@ const Works = (props, { getState, setState, juris, RouteManager }) => {
                     benefits: ["Impact: Reduced support workload and human errors and faster response times for users"],
                },
           },
+
+          {
+               id: "content-repurpose-zapier",
+               image: "/assets/images/zap-content-repurpose.png",
+               info: {
+                    title: "AI Video Content Repurposing Automation",
+                    benefits: [
+                         "Impact: Transforms a single uploaded video into multiple publish-ready content assets automatically. One video → blog posts + social media content with zero manual effort.",
+                    ],
+               },
+          },
      ];
 
      return {
@@ -55,7 +66,7 @@ const Works = (props, { getState, setState, juris, RouteManager }) => {
                                    },
 
                                    {
-                                        p: { className: "expertise", text: "Selected projects using n8n, AI, Google API, and FB API integrations" },
+                                        p: { className: "expertise", text: "Selected projects using n8n, Zapier, make.com, AI, Google API, and FB API integrations" },
                                    },
                               ],
                          },

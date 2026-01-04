@@ -27,7 +27,10 @@ const Footers = (props, { RouteManager }) => {
                                                                       div: { className: "name-logo footer-name-logo", text: "Melvin A. Enmocino" },
                                                                  },
                                                                  {
-                                                                      div: { className: "expertise footer-expertise", text: "n8n • API Integrations • Automation Specialist" },
+                                                                      div: {
+                                                                           className: "expertise footer-expertise",
+                                                                           text: "n8n • Zapier • Make.com • API Integrations",
+                                                                      },
                                                                  },
                                                             ],
                                                        },

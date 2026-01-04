@@ -8,6 +8,7 @@ import AISocialMediaPostingCaseStudy from "./Pages/AISocialMediaPostingCaseStudy
 import RAGCaseStudy from "./Pages/RAGCaseStudy.js";
 import DemoRealStateChatbotPages from "./Pages/DemoRealStateChatbotPages.js";
 import SMSCartRecoveryCaseStudyPages from "./Pages/SMSCartRecoveryCaseStudyPages.js";
+import ContentRepurposeCaseStudy from "./Pages/ContentRepurposeCaseStudy.js";
 import PrivacyPolicy from "./Pages/PrivacyPolicy.js";
 import Pages404 from "./Pages/Pages404.js";
 
@@ -20,6 +21,7 @@ const All = (props, { getState, setState, juris }) => {
      juris.registerComponent("RAGCaseStudy", RAGCaseStudy);
      juris.registerComponent("DemoRealStateChatbotPages", DemoRealStateChatbotPages);
      juris.registerComponent("SMSCartRecoveryCaseStudyPages", SMSCartRecoveryCaseStudyPages);
+     juris.registerComponent("ContentRepurposeCaseStudy", ContentRepurposeCaseStudy);
      juris.registerComponent("PrivacyPolicy", PrivacyPolicy);
      juris.registerComponent("Pages404", Pages404);
      juris.registerComponent("Resume", Resume);
@@ -54,6 +56,9 @@ const All = (props, { getState, setState, juris }) => {
 
                     case "#demo-chat-real-estate-ai":
                          return { DemoRealStateChatbotPages: {} };
+
+                    case "#content-repurpose-zapier":
+                         return { ContentRepurposeCaseStudy: {} };
 
                     case "#privacy-policy":
                          return { PrivacyPolicy: {} };

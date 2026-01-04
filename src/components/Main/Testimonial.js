@@ -86,7 +86,7 @@ const Testimonial = (props, { getState, setState }) => {
                                                                                 },
                                                                                 {
                                                                                      strong: {
-                                                                                          text: "— Neriza Dumawal",
+                                                                                          text: "— Neriza D.",
                                                                                           style: {
                                                                                                color: "var(--accent)",
                                                                                           },
@@ -186,7 +186,7 @@ const Testimonial = (props, { getState, setState }) => {
                                                                  {
                                                                       p: {
                                                                            className: "muted",
-                                                                           text: `n8n, Google APIs, Airtable, Facebook Graph APIs, OneWaySMS, Twilio, OpenAI/Gemini, Nodejs(express), JurisJS.`,
+                                                                           text: `n8n, Zapier, Make.com. Google APIs, Airtable, Facebook Graph APIs, OneWaySMS, Twilio, OpenAI/Gemini, Nodejs(express), JurisJS.`,
                                                                       },
                                                                  },
                                                             ],

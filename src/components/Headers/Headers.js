@@ -20,12 +20,12 @@ const Headers = (props, { getState, setState, juris }) => {
                                              id: "logo",
                                              className: "logo",
                                              children: [
-                                                  {
-                                                       div: {
-                                                            className: "logo-icon",
-                                                            text: "MAE",
-                                                       },
-                                                  },
+                                                  // {
+                                                  //      div: {
+                                                  //           className: "logo-icon",
+                                                  //           text: "MAE",
+                                                  //      },
+                                                  // },
 
                                                   {
                                                        div: {
@@ -34,7 +34,7 @@ const Headers = (props, { getState, setState, juris }) => {
                                                                       div: { className: "name-logo", text: "Melvin A. Enmocino" },
                                                                  },
                                                                  {
-                                                                      div: { className: "expertise", text: "n8n • API Integrations • Automation Specialist" },
+                                                                      div: { className: "expertise", text: "n8n • Zapier • Make.com • API Integrations" },
                                                                  },
                                                             ],
                                                        },

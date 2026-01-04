@@ -47,7 +47,7 @@ const Services = (props, { getState, setState, juris }) => {
                                         h2: { text: "Verified Expertise" },
                                    },
                                    {
-                                        div: { className: "expertise", text: "n8n automations • AI prompts • SMS • Google API • FB API integration" },
+                                        div: { className: "expertise", text: "n8n automations • zapier • make.com • Google API • FB API integration" },
                                    },
                               ],
                          },
